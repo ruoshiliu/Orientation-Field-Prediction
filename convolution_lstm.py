@@ -50,7 +50,7 @@ class encoderConvLSTM(nn.Module):
     # input_channels corresponds to the first input feature map
     # hidden state is a list of succeeding lstm layers.
     def __init__(self, input_channels, hidden_channels, kernel_size, step=1, effective_step=[1], bias=True):
-        super(ConvLSTM, self).__init__()
+        super(encoderConvLSTM, self).__init__()
         self.input_channels = [input_channels] + hidden_channels
         self.hidden_channels = hidden_channels
         self.kernel_size = kernel_size
@@ -92,7 +92,7 @@ class decoderConvLSTM(nn.Module):
     # input_channels corresponds to the first input feature map
     # hidden state is a list of succeeding lstm layers.
     def __init__(self, input_channels, hidden_channels, kernel_size, step=1, effective_step=[1], bias=True):
-        super(ConvLSTM, self).__init__()
+        super(decoderConvLSTM, self).__init__()
         self.input_channels = [input_channels] + hidden_channels
         self.hidden_channels = hidden_channels
         self.kernel_size = kernel_size
@@ -101,7 +101,7 @@ class decoderConvLSTM(nn.Module):
         self.bias = bias
         self.effective_step = effective_step
         self._all_layers = []
-        self.activateConv = nn.Conv2d(640, 1, 1, bias=True)
+        self.activateConv = nn.Conv2d(640, 3, 1, bias=True)
         for i in range(self.num_layers):
             name = 'cell{}'.format(i)
             cell = ConvLSTMCell(self.input_channels[i], self.hidden_channels[i], self.kernel_size, self.bias)
@@ -111,26 +111,28 @@ class decoderConvLSTM(nn.Module):
     def forward(self, input):
         internal_state = []
         outputs = []
+        x = input[0]
+        internal_state = input[1]
         for step in range(self.step):
             for i in range(self.num_layers):
                 # all cells are initialized in the first step
                 name = 'cell{}'.format(i)
+                
+#                 for decoding, use the last states of the encoder network
                 if step == 0:
                     bsize, _, height, width = x.size()
                     (h, c) = getattr(self, name).init_hidden(batch_size=bsize, hidden=self.hidden_channels[i], shape=(height, width))
-                    internal_state.append((h, c))
-
-                # do forward
+#                     internal_state.append((h, c))
                 (h, c) = internal_state[i]
                 x, new_c = getattr(self, name)(x, h, c)
                 internal_state[i] = (x, new_c)
             # only record effective steps
             if step in self.effective_step:
-                outputs.append(x)
-                h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
-                c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1]
+                h1,h2,h3,h4,h5 = internal_state[0][0],internal_state[1][0],internal_state[2][0],internal_state[3][0],internal_state[4][0]
+                c1,c2,c3,c4,c5 = internal_state[0][1],internal_state[1][1],internal_state[2][1],internal_state[3][1],internal_state[4][1]
                 states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)
                 x = self.activateConv(states_cat)
+                outputs.append(x)
         return outputs, x, new_c, internal_state
 
 if __name__ == '__main__':
