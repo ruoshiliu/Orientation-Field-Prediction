@@ -101,7 +101,7 @@ class decoderConvLSTM(nn.Module):
         self.bias = bias
         self.effective_step = effective_step
         self._all_layers = []
-        self.activateConv = nn.Conv2d(640, 3, 1, bias=True)
+        self.activateConv = nn.Conv2d(640, 1, 1, bias=True)
         for i in range(self.num_layers):
             name = 'cell{}'.format(i)
             cell = ConvLSTMCell(self.input_channels[i], self.hidden_channels[i], self.kernel_size, self.bias)
@@ -138,7 +138,7 @@ class decoderConvLSTM(nn.Module):
 if __name__ == '__main__':
 
     # gradient check
-    convlstm = ConvLSTM(input_channels=3, hidden_channels=[128, 64, 64, 32, 32], kernel_size=3, step=5, effective_step=[4]).cuda()
+    convlstm = ConvLSTM(input_channels=1, hidden_channels=[128, 64, 64, 32, 32], kernel_size=3, step=5, effective_step=[4]).cuda()
     loss_fn = torch.nn.CrossEntropyLoss()
 
     input = Variable(torch.randn(1, 512, 64, 32)).cuda()
