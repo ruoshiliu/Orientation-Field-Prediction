@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+import numpy as np
 
 
 class ConvLSTMCell(nn.Module):
@@ -142,7 +143,7 @@ class decoderConvLSTM(nn.Module):
         self.bias = bias
         self.effective_step = effective_step
         self._all_layers = []
-        self.activateConv = nn.Conv2d(640, 1, 1, bias=True)
+        self.activateConv = nn.Conv2d(np.sum(self.hidden_channels), self.input_chanels, 1, bias=True)
         for i in range(self.num_layers):
             name = 'cell{}'.format(i)
             cell = ConvLSTMCell(self.input_channels[i], self.hidden_channels[i], self.kernel_size, self.bias)

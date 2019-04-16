@@ -1,6 +1,7 @@
 import torch.nn as nn
 from torch.autograd import Variable
 import torch
+import numpy as np
 
 
 class ConvLSTMCell(nn.Module):
@@ -88,6 +89,7 @@ class ConvLSTM(nn.Module):
         self.bias = bias
         self.return_all_layers = return_all_layers
         self.predict_steps = predict_steps
+        self.activateConv = nn.Conv2d(np.sum(hidden_dim), num_layers, 1, bias=True)
 
         cell_list = []
         for i in range(0, self.num_layers):
@@ -144,7 +146,6 @@ class ConvLSTM(nn.Module):
                 h, c = self.cell_list[layer_idx](input_tensor=cur_layer_input[:, t, :, :, :],
                                                  cur_state=[h, c])
                 output_inner.append(h)
-                output_inner.shape
                 
             layer_output = torch.stack(output_inner, dim=1)
             cur_layer_input = layer_output
@@ -152,19 +153,31 @@ class ConvLSTM(nn.Module):
             layer_output_list.append(layer_output) # store all hidden states for each layer
             last_state_list.append([h, c]) # store all hidden and cell states for last step
             
-            len(last_state_list)
             
         if not self.return_all_layers:
             layer_output_list = layer_output_list[-1:]
             last_state_list   = last_state_list[-1:]
         
+        first_pred = self.activateConv(torch.cat(layer_output_list, dim=2)[:,seq_len-1,:,:,:])
+        pred_list = first_pred # output image sequence
         
+        cur_layer_input = first_pred # first input tensor will be the first predicted image
+        
+        hidden_states = []
+        
+        for step in self.perdict_steps:
+            for layer_idx in range(self.num_layers):
+                h, c = last_state_list[layer_idx]
+                h, c = self.cell_list[layer_idx](input_tensor=cur_layer_input, cur_state=[h, c])
+                last_state_list[layer_idx] = [h, c]
+                hidden_states.append(h)
+                cur_layer_input = h
+                
+            pred = self.activateConv(torch.cat(hidden_states, dim=2))
+            cur_layer_input = pred
+            pred_list.append(pred)
             
-#         for step in self.perdict_steps:
-#             for layer_idx in range(self.num_layers)
-            
-            
-        return layer_output_list, last_state_list
+        return layer_output_list, last_state_list, pred_list
 
     def _init_hidden(self, batch_size):
         init_states = []
