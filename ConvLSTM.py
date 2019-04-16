@@ -180,6 +180,8 @@ class ConvLSTM(nn.Module):
             cur_layer_input = pred
             pred_list.append(pred)
             
+        pred_list = torch.stack(pred_list,dim=1)
+        
         return layer_output_list, last_state_list, pred_list
 
     def _init_hidden(self, batch_size):

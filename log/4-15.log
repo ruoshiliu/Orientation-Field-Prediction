@@ -1,0 +1,2310 @@
+Script started on Mon 15 Apr 2019 10:18:18 PM EDT
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ python train.p[Kpy
+GPU in use
+Traceback (most recent call last):
+  File "train.py", line 173, in <module>
+    return_all_layers=True).cuda()
+  File "/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/modules/module.py", line 260, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/modules/module.py", line 187, in _apply
+    module._apply(fn)
+  File "/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/modules/module.py", line 193, in _apply
+    param.data = fn(param.data)
+  File "/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/modules/module.py", line 260, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+RuntimeError: CUDA error: out of memory
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ python train.py[1@%[1@e[1@n[1@v[1@ [1@C[1@U[1@D[1@A[1@_[1@V[1@I[1@S[1@I[1@B[1@L[1@E[1@_[1@D[1@E[1@V[1@I[1@C[1@E[1@S[1@=[1@1[1@,[1@2[1@,[1@3[C[C[1@ [1P[1P[1P[1P[1P
+GPU in use
+Epoch 0/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 13.9643 batch_loss: 10724.560547
+train Loss: 31.2353 batch_loss: 13264.158203
+train Loss: 49.4680 batch_loss: 14002.740234
+train Loss: 61.3994 batch_loss: 9163.265625
+train Loss: 72.0163 batch_loss: 8153.762695
+train Loss: 83.2842 batch_loss: 8653.815430
+train Loss: 94.6778 batch_loss: 8750.260742
+train Loss: 106.6170 batch_loss: 9169.310547
+train Loss: 116.1707 batch_loss: 7337.208496
+train Loss: 130.0207 batch_loss: 10636.843750
+train Loss: 142.6974 batch_loss: 9735.680664
+train Loss: 156.1325 batch_loss: 10318.128906
+train Loss: 167.4366 batch_loss: 8681.599609
+train Loss: 178.6162 batch_loss: 8585.880859
+train Loss: 192.3591 batch_loss: 10554.581055
+train Loss: 203.0002 batch_loss: 8172.340820
+train Loss: 213.9784 batch_loss: 8431.283203
+train Loss: 225.4315 batch_loss: 8795.939453
+train Loss: 235.0335 batch_loss: 7374.356934
+train Loss: 245.9254 batch_loss: 8365.002930
+train Loss: 258.0661 batch_loss: 9324.006836
+train Loss: 268.3046 batch_loss: 7863.192383
+train Loss: 281.1389 batch_loss: 9856.789062
+train Loss: 290.6709 batch_loss: 7320.579590
+train Loss: 303.4319 batch_loss: 9800.415039
+train Loss: 317.6328 batch_loss: 10906.296875
+train Loss: 332.1947 batch_loss: 11183.502930
+train Loss: 343.0688 batch_loss: 8351.337891
+train Loss: 353.6925 batch_loss: 8158.960938
+train Loss: 364.5609 batch_loss: 8346.938477
+train Loss: 376.1453 batch_loss: 8896.849609
+train Loss: 384.6968 batch_loss: 6567.522461
+train Loss: 396.5796 batch_loss: 9126.036133
+train Loss: 408.6908 batch_loss: 9301.351562
+train Loss: 421.1691 batch_loss: 9583.351562
+train Loss: 433.4473 batch_loss: 9429.666992
+train Loss: 443.5507 batch_loss: 7759.430664
+train Loss: 452.0207 batch_loss: 6504.924805
+train Loss: 463.3697 batch_loss: 8716.069336
+train Loss: 475.5560 batch_loss: 9359.055664
+train Loss: 484.5494 batch_loss: 6906.943848
+train Loss: 496.5489 batch_loss: 9215.608398
+train Loss: 505.7501 batch_loss: 7066.500977
+train Loss: 513.2963 batch_loss: 5795.483398
+train Loss: 526.8319 batch_loss: 10395.365234
+train Loss: 534.8128 batch_loss: 6129.327637
+train Loss: 546.7426 batch_loss: 9162.063477
+train Loss: 557.6744 batch_loss: 8395.646484
+train Loss: 569.7325 batch_loss: 9260.598633
+train Loss: 578.0637 batch_loss: 6398.355469
+train Loss: 590.3348 batch_loss: 9424.231445
+train Loss: 601.5947 batch_loss: 8647.574219
+train Loss: 613.8996 batch_loss: 9450.166016
+train Loss: 622.9163 batch_loss: 6924.850098
+train Loss: 631.6564 batch_loss: 6712.364746
+train Loss: 642.5221 batch_loss: 8344.873047
+train Loss: 652.0054 batch_loss: 7283.177246
+train Loss: 663.1540 batch_loss: 8562.153320
+train Loss: 673.1815 batch_loss: 7701.129883
+train Loss: 686.5235 batch_loss: 10246.625000
+train Loss: 694.9463 batch_loss: 6468.716309
+train Loss: 706.1453 batch_loss: 8600.860352
+train Loss: 716.8293 batch_loss: 8205.259766
+train Loss: 725.7858 batch_loss: 6878.611816
+train Loss: 732.8138 batch_loss: 5397.478027
+train Loss: 741.7302 batch_loss: 6847.807129
+train Loss: 750.6593 batch_loss: 6857.545410
+train Loss: 758.6004 batch_loss: 6098.782227
+train Loss: 766.7490 batch_loss: 6258.122070
+train Loss: 777.2717 batch_loss: 8081.446777
+train Loss: 784.0028 batch_loss: 5169.485352
+train Loss: 793.7089 batch_loss: 7454.270508
+train Loss: 801.6235 batch_loss: 6078.457520
+train Loss: 809.5592 batch_loss: 6094.563477
+train Loss: 819.1570 batch_loss: 7371.100098
+train Loss: 828.2408 batch_loss: 6976.364258
+train Loss: 835.2285 batch_loss: 5366.549316
+train Loss: 842.3017 batch_loss: 5432.266113
+train Loss: 852.4987 batch_loss: 7831.309570
+train Loss: 863.3848 batch_loss: 8360.510742
+train Loss: 871.5004 batch_loss: 6232.758789
+train Loss: 881.8284 batch_loss: 7931.908691
+train Loss: 888.9983 batch_loss: 5506.489746
+train Loss: 895.9096 batch_loss: 5307.857422
+train Loss: 903.3903 batch_loss: 5745.177734
+train Loss: 910.3909 batch_loss: 5376.438477
+train Loss: 921.4054 batch_loss: 8459.188477
+train Loss: 926.7207 batch_loss: 4082.117188
+train Loss: 935.6826 batch_loss: 6882.752441
+train Loss: 943.8064 batch_loss: 6239.115723
+train Loss: 952.3727 batch_loss: 6578.912598
+train Loss: 959.3286 batch_loss: 5342.106934
+train Loss: 966.0038 batch_loss: 5126.569336
+train Loss: 972.9771 batch_loss: 5355.458496
+train Loss: 981.5185 batch_loss: 6559.845215
+train Loss: 990.6450 batch_loss: 7009.149414
+train Loss: 1000.1968 batch_loss: 7335.728027
+train Loss: 1007.9637 batch_loss: 5964.963867
+train Loss: 1012.8460 batch_loss: 3749.664551
+train Loss: 1017.3321 batch_loss: 3445.300293
+train Loss: 1026.9955 batch_loss: 7421.532227
+train Loss: 1033.2685 batch_loss: 4817.665527
+train Loss: 1041.1222 batch_loss: 6031.618652
+train Loss: 1048.6219 batch_loss: 5759.776367
+train Loss: 1057.6883 batch_loss: 6962.968750
+train Loss: 1064.1565 batch_loss: 4967.617188
+train Loss: 1071.1129 batch_loss: 5342.464355
+train Loss: 1078.6571 batch_loss: 5793.929199
+train Loss: 1084.2149 batch_loss: 4268.390137
+train Loss: 1090.1968 batch_loss: 4594.129395
+train Loss: 1098.6569 batch_loss: 6497.396484
+train Loss: 1106.7578 batch_loss: 6221.463867
+train Loss: 1111.0550 batch_loss: 3300.229980
+train Loss: 1118.1919 batch_loss: 5481.157227
+train Loss: 1128.3239 batch_loss: 7781.330566
+train Loss: 1133.9726 batch_loss: 4338.260742
+train Loss: 1140.9296 batch_loss: 5342.989258
+train Loss: 1149.3706 batch_loss: 6482.654785
+train Loss: 1155.5394 batch_loss: 4737.645996
+train Loss: 1163.5543 batch_loss: 6155.444336
+train Loss: 1172.2686 batch_loss: 6692.580566
+train Loss: 1181.2597 batch_loss: 6905.151367
+train Loss: 1187.6463 batch_loss: 4904.915039
+train Loss: 1193.1111 batch_loss: 4196.993652
+train Loss: 1200.2294 batch_loss: 5466.819336
+train Loss: 1208.8911 batch_loss: 6652.226562
+train Loss: 1216.9160 batch_loss: 6163.081055
+train Loss: 1224.8945 batch_loss: 6127.517578
+train Loss: 1230.1745 batch_loss: 4055.013184
+train Loss: 1238.0110 batch_loss: 6018.450684
+train Loss: 1246.4092 batch_loss: 6449.807129
+train Loss: 1251.9920 batch_loss: 4287.568359
+train Loss: 1258.9340 batch_loss: 5331.474609
+train Loss: 1268.5874 batch_loss: 7413.829590
+train Loss: 1276.1675 batch_loss: 5821.536133
+train Loss: 1281.4545 batch_loss: 4060.352051
+train Loss: 1288.5108 batch_loss: 5419.237793
+train Loss: 1294.3987 batch_loss: 4521.895508
+train Loss: 1300.3295 batch_loss: 4554.908691
+train Loss: 1307.5590 batch_loss: 5552.234375
+train Loss: 1315.6399 batch_loss: 6206.106445
+train Loss: 1321.8382 batch_loss: 4760.333984
+train Loss: 1327.1480 batch_loss: 4077.898438
+train Loss: 1336.1018 batch_loss: 6876.517090
+train Loss: 1339.7944 batch_loss: 2835.900391
+train Loss: 1345.1603 batch_loss: 4121.045410
+train Loss: 1351.9421 batch_loss: 5208.426758
+train Loss: 1357.7299 batch_loss: 4444.993652
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[Atrain Loss: 1362.1370 batch_loss: 3384.675781
+train Loss: 1370.4071 batch_loss: 6351.452637
+train Loss: 1375.8164 batch_loss: 4154.317383
+train Loss: 1383.4528 batch_loss: 5864.782227
+train Loss: 1387.7272 batch_loss: 3282.733887
+train Loss: 1393.3725 batch_loss: 4335.625977
+train Loss: 1399.0456 batch_loss: 4356.922852
+train Loss: 1405.6573 batch_loss: 5077.746582
+train Loss: 1409.9036 batch_loss: 3261.183105
+train Loss: 1415.1846 batch_loss: 4055.835449
+train Loss: 1419.3709 batch_loss: 3215.066162
+train Loss: 1425.0184 batch_loss: 4337.225586
+train Loss: 1433.0964 batch_loss: 6203.946777
+train Loss: 1436.1433 batch_loss: 2339.999023
+train Loss: 1442.0381 batch_loss: 4527.202637
+train Loss: 1446.1522 batch_loss: 3159.677246
+train Loss: 1450.9046 batch_loss: 3649.775391
+train Loss: 1459.1224 batch_loss: 6311.342773
+train Loss: 1465.9341 batch_loss: 5231.311523
+train Loss: 1469.9807 batch_loss: 3107.790039
+train Loss: 1476.2163 batch_loss: 4788.948730
+train Loss: 1481.2068 batch_loss: 3832.749268
+train Loss: 1486.6033 batch_loss: 4144.492188
+train Loss: 1494.3960 batch_loss: 5984.757812
+train Loss: 1502.3919 batch_loss: 6140.878418
+train Loss: 1508.7196 batch_loss: 4859.683594
+train Loss: 1514.4748 batch_loss: 4419.965820
+train Loss: 1522.9210 batch_loss: 6486.742188
+train Loss: 1527.6900 batch_loss: 3662.523438
+train Loss: 1532.7326 batch_loss: 3872.721436
+train Loss: 1538.5235 batch_loss: 4447.437500
+train Loss: 1544.4196 batch_loss: 4528.204102
+train Loss: 1548.0313 batch_loss: 2773.813721
+train Loss: 1552.6965 batch_loss: 3582.859863
+train Loss: 1559.1613 batch_loss: 4964.987305
+train Loss: 1568.0235 batch_loss: 6806.122070
+train Loss: 1575.8598 batch_loss: 6018.311035
+train Loss: 1579.5526 batch_loss: 2836.035645
+train Loss: 1583.2921 batch_loss: 2871.967285
+train Loss: 1589.6491 batch_loss: 4882.151855
+train Loss: 1595.8615 batch_loss: 4771.113281
+train Loss: 1601.4425 batch_loss: 4286.234375
+train Loss: 1606.9006 batch_loss: 4191.796875
+train Loss: 1612.2120 batch_loss: 4079.201660
+^[[B^[[B^[[B^[[B^[[BLoss on the test images: 1032.83599 
+Epoch 1/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 4.9809 batch_loss: 3825.323486
+train Loss: 7.8284 batch_loss: 2186.868408
+train Loss: 14.9845 batch_loss: 5495.911133
+train Loss: 20.4215 batch_loss: 4175.625977
+train Loss: 24.9736 batch_loss: 3496.005127
+train Loss: 31.0759 batch_loss: 4686.571289
+train Loss: 35.2725 batch_loss: 3222.949463
+train Loss: 40.1327 batch_loss: 3732.659424
+train Loss: 46.3534 batch_loss: 4777.459961
+train Loss: 54.0548 batch_loss: 5914.714355
+train Loss: 58.1493 batch_loss: 3144.597656
+train Loss: 63.8599 batch_loss: 4385.732422
+train Loss: 69.7952 batch_loss: 4558.265625
+train Loss: 73.2259 batch_loss: 2634.824951
+train Loss: 77.8119 batch_loss: 3522.064453
+train Loss: 82.8341 batch_loss: 3857.017090
+train Loss: 87.4282 batch_loss: 3528.264893
+train Loss: 95.0629 batch_loss: 5863.462402
+train Loss: 102.8125 batch_loss: 5951.649902
+train Loss: 109.5214 batch_loss: 5152.454102
+train Loss: 115.8537 batch_loss: 4863.208008
+train Loss: 120.9055 batch_loss: 3879.784424
+train Loss: 127.3439 batch_loss: 4944.688477
+train Loss: 132.2024 batch_loss: 3731.370605
+train Loss: 136.8158 batch_loss: 3543.094482
+train Loss: 139.6537 batch_loss: 2179.499268
+train Loss: 144.1531 batch_loss: 3455.538574
+train Loss: 148.1459 batch_loss: 3066.433594
+train Loss: 152.0621 batch_loss: 3007.681152
+train Loss: 156.5232 batch_loss: 3426.107422
+train Loss: 161.7622 batch_loss: 4023.572998
+train Loss: 167.2402 batch_loss: 4207.067383
+train Loss: 173.5541 batch_loss: 4849.056152
+train Loss: 179.5538 batch_loss: 4607.764160
+train Loss: 182.0813 batch_loss: 1941.143921
+train Loss: 186.6509 batch_loss: 3509.449219
+train Loss: 192.3691 batch_loss: 4391.562500
+train Loss: 199.4595 batch_loss: 5445.430664
+train Loss: 204.3449 batch_loss: 3752.006348
+train Loss: 209.9911 batch_loss: 4336.253906
+train Loss: 216.9063 batch_loss: 5310.888672
+train Loss: 222.5107 batch_loss: 4304.178711
+train Loss: 226.9992 batch_loss: 3447.203125
+train Loss: 231.9742 batch_loss: 3820.760254
+train Loss: 238.3968 batch_loss: 4932.559570
+train Loss: 244.0837 batch_loss: 4367.537109
+train Loss: 247.8204 batch_loss: 2869.841064
+train Loss: 253.8994 batch_loss: 4668.657715
+train Loss: 259.4014 batch_loss: 4225.508789
+train Loss: 264.5463 batch_loss: 3951.313965
+train Loss: 270.6015 batch_loss: 4650.337402
+train Loss: 275.3531 batch_loss: 3649.224609
+train Loss: 279.8056 batch_loss: 3419.588379
+train Loss: 286.0636 batch_loss: 4806.121094
+train Loss: 291.9386 batch_loss: 4512.013184
+train Loss: 297.7709 batch_loss: 4479.156738
+train Loss: 302.2762 batch_loss: 3460.105957
+train Loss: 309.1343 batch_loss: 5266.994141
+train Loss: 312.1990 batch_loss: 2353.724609
+train Loss: 314.8221 batch_loss: 2014.531006
+train Loss: 318.3886 batch_loss: 2739.068848
+train Loss: 325.1029 batch_loss: 5156.582031
+train Loss: 329.7921 batch_loss: 3601.276123
+train Loss: 334.3049 batch_loss: 3465.832520
+train Loss: 340.0642 batch_loss: 4423.164551
+train Loss: 344.3856 batch_loss: 3318.856934
+train Loss: 349.6417 batch_loss: 4036.663330
+train Loss: 354.2605 batch_loss: 3547.220703
+train Loss: 358.5807 batch_loss: 3317.958252
+train Loss: 363.8056 batch_loss: 4012.698486
+train Loss: 369.1778 batch_loss: 4125.866211
+train Loss: 373.6052 batch_loss: 3400.258545
+train Loss: 378.4177 batch_loss: 3695.936768
+train Loss: 382.9812 batch_loss: 3504.815186
+train Loss: 389.5016 batch_loss: 5007.665039
+train Loss: 395.3727 batch_loss: 4508.992676
+train Loss: 401.1694 batch_loss: 4451.838379
+train Loss: 407.7215 batch_loss: 5032.047852
+train Loss: 411.8402 batch_loss: 3163.184814
+train Loss: 416.5280 batch_loss: 3600.161377
+train Loss: 421.7557 batch_loss: 4014.892090
+train Loss: 427.8076 batch_loss: 4647.909180
+train Loss: 433.3989 batch_loss: 4294.119629
+train Loss: 438.1455 batch_loss: 3645.361816
+train Loss: 442.8622 batch_loss: 3622.395020
+train Loss: 446.2539 batch_loss: 2604.827148
+train Loss: 452.6142 batch_loss: 4884.734863
+train Loss: 457.8626 batch_loss: 4030.750732
+train Loss: 463.2487 batch_loss: 4136.543945
+train Loss: 466.9783 batch_loss: 2864.357666
+train Loss: 473.1205 batch_loss: 4717.157715
+train Loss: 479.2187 batch_loss: 4683.439941
+train Loss: 483.6131 batch_loss: 3374.865234
+train Loss: 488.9119 batch_loss: 4069.505859
+train Loss: 492.5826 batch_loss: 2819.101562
+train Loss: 497.9507 batch_loss: 4122.671875
+train Loss: 504.5235 batch_loss: 5047.981934
+train Loss: 508.9177 batch_loss: 3374.703857
+train Loss: 512.3367 batch_loss: 2625.777344
+train Loss: 517.5074 batch_loss: 3971.085938
+train Loss: 521.5972 batch_loss: 3141.021240
+train Loss: 526.4342 batch_loss: 3714.770752
+train Loss: 532.8575 batch_loss: 4933.129883
+train Loss: 539.4228 batch_loss: 5042.109375
+train Loss: 543.8453 batch_loss: 3396.540283
+train Loss: 547.8369 batch_loss: 3065.546387
+train Loss: 551.3651 batch_loss: 2709.642578
+train Loss: 558.0103 batch_loss: 5103.526367
+train Loss: 562.6177 batch_loss: 3538.449951
+train Loss: 566.1591 batch_loss: 2719.777100
+train Loss: 570.8216 batch_loss: 3580.832031
+train Loss: 575.3652 batch_loss: 3489.475098
+train Loss: 579.8146 batch_loss: 3417.120605
+train Loss: 584.4267 batch_loss: 3542.119873
+train Loss: 591.0663 batch_loss: 5099.185059
+train Loss: 596.9616 batch_loss: 4527.624023
+train Loss: 604.3686 batch_loss: 5688.590820
+train Loss: 609.4625 batch_loss: 3912.094971
+train Loss: 613.5726 batch_loss: 3156.519043
+train Loss: 618.0984 batch_loss: 3475.876953
+train Loss: 621.3856 batch_loss: 2524.510498
+train Loss: 625.0521 batch_loss: 2815.898682
+train Loss: 630.2687 batch_loss: 4006.321045
+train Loss: 635.4676 batch_loss: 3992.771973
+train Loss: 640.8809 batch_loss: 4157.407227
+train Loss: 645.3409 batch_loss: 3425.317139
+train Loss: 650.3318 batch_loss: 3832.966797
+train Loss: 655.7418 batch_loss: 4154.889648
+train Loss: 659.8883 batch_loss: 3184.520020
+train Loss: 663.1919 batch_loss: 2537.163574
+train Loss: 669.6582 batch_loss: 4966.124512
+train Loss: 673.3535 batch_loss: 2837.975342
+train Loss: 677.8105 batch_loss: 3423.011719
+train Loss: 680.9744 batch_loss: 2429.840332
+train Loss: 687.0165 batch_loss: 4640.335449
+train Loss: 692.5134 batch_loss: 4221.631836
+train Loss: 699.4818 batch_loss: 5351.766602
+train Loss: 702.2843 batch_loss: 2152.307617
+train Loss: 707.8472 batch_loss: 4272.303711
+train Loss: 712.1030 batch_loss: 3268.434082
+train Loss: 717.1164 batch_loss: 3850.256592
+train Loss: 720.7766 batch_loss: 2811.097656
+train Loss: 725.1245 batch_loss: 3339.157715
+train Loss: 729.0596 batch_loss: 3022.175293
+train Loss: 737.1421 batch_loss: 6207.379395
+train Loss: 741.5921 batch_loss: 3417.597656
+train Loss: 748.6175 batch_loss: 5395.438477
+train Loss: 753.0803 batch_loss: 3427.462402
+train Loss: 757.0500 batch_loss: 3048.707031
+train Loss: 762.4740 batch_loss: 4165.641602
+train Loss: 766.3114 batch_loss: 2947.124512
+train Loss: 773.5695 batch_loss: 5574.204102
+train Loss: 778.6948 batch_loss: 3936.235596
+train Loss: 784.3919 batch_loss: 4375.394531
+train Loss: 789.6197 batch_loss: 4014.952393
+train Loss: 795.9881 batch_loss: 4890.958008
+train Loss: 801.3814 batch_loss: 4142.006836
+train Loss: 804.5612 batch_loss: 2442.085449
+train Loss: 808.5045 batch_loss: 3028.514160
+train Loss: 813.0464 batch_loss: 3488.140137
+train Loss: 819.3614 batch_loss: 4849.942871
+train Loss: 824.3425 batch_loss: 3825.490723
+train Loss: 830.3436 batch_loss: 4608.832520
+train Loss: 837.1592 batch_loss: 5234.340820
+train Loss: 842.3574 batch_loss: 3992.246826
+train Loss: 846.7229 batch_loss: 3352.707520
+train Loss: 849.8963 batch_loss: 2437.134766
+train Loss: 853.4944 batch_loss: 2763.343262
+train Loss: 857.3532 batch_loss: 2963.603760
+train Loss: 861.3172 batch_loss: 3044.369141
+train Loss: 865.6575 batch_loss: 3333.332764
+train Loss: 869.9040 batch_loss: 3261.291260
+train Loss: 876.3402 batch_loss: 4942.965820
+train Loss: 880.3105 batch_loss: 3049.236816
+train Loss: 884.2721 batch_loss: 3042.492432
+train Loss: 888.0426 batch_loss: 2895.731445
+train Loss: 893.6920 batch_loss: 4338.731445
+train Loss: 896.7825 batch_loss: 2373.531494
+train Loss: 899.9283 batch_loss: 2415.988525
+train Loss: 903.9329 batch_loss: 3075.486572
+train Loss: 908.0695 batch_loss: 3176.909424
+train Loss: 910.8594 batch_loss: 2142.701172
+train Loss: 915.4720 batch_loss: 3542.463379
+train Loss: 919.9513 batch_loss: 3440.110107
+train Loss: 925.0569 batch_loss: 3921.063232
+train Loss: 927.7316 batch_loss: 2054.204590
+train Loss: 932.6389 batch_loss: 3768.793457
+train Loss: 938.3993 batch_loss: 4423.990723
+train Loss: 943.3988 batch_loss: 3839.604736
+train Loss: 946.0795 batch_loss: 2058.801025
+train Loss: 952.1360 batch_loss: 4651.338867
+train Loss: 957.5803 batch_loss: 4181.238281
+Loss on the test images: 940.56641 
+Epoch 2/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 3.9147 batch_loss: 3006.479248
+train Loss: 9.4460 batch_loss: 4248.041992
+train Loss: 15.8753 batch_loss: 4937.713867
+train Loss: 21.4390 batch_loss: 4272.929688
+train Loss: 27.4318 batch_loss: 4602.461426
+train Loss: 32.0074 batch_loss: 3514.020264
+train Loss: 34.7277 batch_loss: 2089.239746
+train Loss: 39.3806 batch_loss: 3573.384277
+train Loss: 45.7089 batch_loss: 4860.178223
+train Loss: 49.8636 batch_loss: 3190.797119
+train Loss: 55.8144 batch_loss: 4570.224121
+train Loss: 61.5528 batch_loss: 4407.066406
+train Loss: 67.1572 batch_loss: 4304.159668
+train Loss: 71.7420 batch_loss: 3521.125488
+train Loss: 74.8408 batch_loss: 2379.930908
+train Loss: 81.6906 batch_loss: 5260.632812
+train Loss: 85.7737 batch_loss: 3135.829590
+train Loss: 89.7992 batch_loss: 3091.561279
+train Loss: 94.0561 batch_loss: 3269.276611
+train Loss: 99.7209 batch_loss: 4350.603516
+train Loss: 103.5362 batch_loss: 2930.182129
+train Loss: 109.9175 batch_loss: 4900.806152
+train Loss: 114.9532 batch_loss: 3867.379639
+train Loss: 118.6574 batch_loss: 2844.862305
+train Loss: 122.7227 batch_loss: 3122.170410
+train Loss: 127.8425 batch_loss: 3931.996094
+train Loss: 131.7969 batch_loss: 3036.982910
+train Loss: 135.4899 batch_loss: 2836.227295
+train Loss: 140.7833 batch_loss: 4065.346436
+train Loss: 144.7545 batch_loss: 3049.843750
+train Loss: 148.4901 batch_loss: 2868.960205
+train Loss: 152.5244 batch_loss: 3098.319336
+train Loss: 156.9746 batch_loss: 3417.788574
+train Loss: 162.7580 batch_loss: 4441.627441
+train Loss: 169.6158 batch_loss: 5266.788086
+train Loss: 172.8402 batch_loss: 2476.374023
+train Loss: 179.2129 batch_loss: 4894.175781
+train Loss: 185.5774 batch_loss: 4887.932617
+train Loss: 190.2539 batch_loss: 3591.556152
+train Loss: 196.1462 batch_loss: 4525.273926
+train Loss: 200.2003 batch_loss: 3113.568115
+train Loss: 204.8969 batch_loss: 3606.994873
+train Loss: 208.8874 batch_loss: 3064.718750
+train Loss: 215.8103 batch_loss: 5316.786621
+train Loss: 219.9369 batch_loss: 3169.237793
+train Loss: 222.2234 batch_loss: 1756.007812
+train Loss: 226.5764 batch_loss: 3343.117920
+train Loss: 231.4293 batch_loss: 3726.987061
+train Loss: 234.5409 batch_loss: 2389.767090
+train Loss: 239.3192 batch_loss: 3669.706543
+train Loss: 243.9217 batch_loss: 3534.688232
+train Loss: 252.3753 batch_loss: 6492.391602
+train Loss: 257.0557 batch_loss: 3594.592285
+train Loss: 261.8910 batch_loss: 3713.460449
+train Loss: 266.1596 batch_loss: 3278.307129
+train Loss: 269.6952 batch_loss: 2715.346191
+train Loss: 276.1062 batch_loss: 4923.623535
+train Loss: 282.1280 batch_loss: 4624.763184
+train Loss: 287.6540 batch_loss: 4243.968262
+train Loss: 293.4674 batch_loss: 4464.715820
+train Loss: 297.5958 batch_loss: 3170.591309
+train Loss: 303.3020 batch_loss: 4382.364258
+train Loss: 307.5025 batch_loss: 3226.001465
+train Loss: 312.2179 batch_loss: 3621.416504
+train Loss: 315.8972 batch_loss: 2825.686035
+train Loss: 318.7164 batch_loss: 2165.100098
+train Loss: 323.4025 batch_loss: 3598.934082
+train Loss: 327.1505 batch_loss: 2878.517090
+train Loss: 332.3783 batch_loss: 4014.910156
+train Loss: 337.9654 batch_loss: 4290.924805
+train Loss: 343.1631 batch_loss: 3991.813965
+train Loss: 345.6896 batch_loss: 1940.319946
+train Loss: 351.9255 batch_loss: 4789.181641
+train Loss: 354.5844 batch_loss: 2042.076782
+train Loss: 357.8223 batch_loss: 2486.724854
+train Loss: 365.1010 batch_loss: 5590.000488
+train Loss: 369.5813 batch_loss: 3440.906250
+train Loss: 374.4559 batch_loss: 3743.674316
+train Loss: 379.6796 batch_loss: 4011.778076
+train Loss: 385.2506 batch_loss: 4278.512695
+train Loss: 388.7689 batch_loss: 2702.093018
+train Loss: 396.8346 batch_loss: 6194.459473
+train Loss: 403.1058 batch_loss: 4816.281250
+train Loss: 407.2664 batch_loss: 3195.363770
+train Loss: 415.1229 batch_loss: 6033.755371
+train Loss: 418.9383 batch_loss: 2930.228027
+train Loss: 422.6313 batch_loss: 2836.191650
+train Loss: 426.3712 batch_loss: 2872.268066
+train Loss: 431.9856 batch_loss: 4311.894531
+train Loss: 436.1787 batch_loss: 3220.301025
+train Loss: 441.6745 batch_loss: 4220.738770
+train Loss: 447.2439 batch_loss: 4277.325684
+train Loss: 451.5662 batch_loss: 3319.507812
+train Loss: 456.6800 batch_loss: 3927.374268
+train Loss: 462.1568 batch_loss: 4206.221680
+train Loss: 468.9570 batch_loss: 5222.535156
+train Loss: 472.7850 batch_loss: 2939.895020
+train Loss: 476.7593 batch_loss: 3052.277832
+train Loss: 483.9548 batch_loss: 5526.158691
+train Loss: 488.4382 batch_loss: 3443.252686
+train Loss: 492.9782 batch_loss: 3486.701660
+train Loss: 499.8629 batch_loss: 5287.467285
+train Loss: 504.7078 batch_loss: 3720.872559
+train Loss: 508.2132 batch_loss: 2692.170654
+train Loss: 513.3291 batch_loss: 3928.989746
+train Loss: 519.8100 batch_loss: 4977.282715
+train Loss: 524.5597 batch_loss: 3647.840576
+train Loss: 528.5971 batch_loss: 3100.722168
+train Loss: 534.1762 batch_loss: 4284.719727
+train Loss: 537.9231 batch_loss: 2877.599854
+train Loss: 541.8218 batch_loss: 2994.214111
+train Loss: 547.9793 batch_loss: 4728.969238
+train Loss: 551.9288 batch_loss: 3033.211426
+train Loss: 557.5186 batch_loss: 4292.989746
+train Loss: 562.3049 batch_loss: 3675.851074
+train Loss: 565.1430 batch_loss: 2179.695801
+train Loss: 568.3993 batch_loss: 2500.775879
+train Loss: 574.0814 batch_loss: 4363.885742
+train Loss: 577.3192 batch_loss: 2486.664551
+train Loss: 581.9386 batch_loss: 3547.647705
+train Loss: 586.9605 batch_loss: 3856.864746
+train Loss: 593.2339 batch_loss: 4817.942871
+train Loss: 597.1392 batch_loss: 2999.255371
+train Loss: 599.8426 batch_loss: 2076.202637
+train Loss: 608.0181 batch_loss: 6278.842285
+train Loss: 612.0669 batch_loss: 3109.468262
+train Loss: 615.5274 batch_loss: 2657.665039
+train Loss: 622.5656 batch_loss: 5405.319336
+train Loss: 627.3412 batch_loss: 3667.628418
+train Loss: 633.3260 batch_loss: 4596.358398
+train Loss: 636.7871 batch_loss: 2658.090576
+train Loss: 640.5720 batch_loss: 2906.810547
+train Loss: 647.9322 batch_loss: 5652.631348
+train Loss: 652.7356 batch_loss: 3689.030029
+train Loss: 656.7982 batch_loss: 3120.085693
+train Loss: 660.3100 batch_loss: 2697.030029
+train Loss: 663.3276 batch_loss: 2317.531006
+train Loss: 668.5648 batch_loss: 4022.149170
+train Loss: 674.8680 batch_loss: 4840.909668
+train Loss: 679.5496 batch_loss: 3595.411621
+train Loss: 684.1811 batch_loss: 3557.028076
+train Loss: 688.3144 batch_loss: 3174.350098
+train Loss: 691.7264 batch_loss: 2620.415283
+train Loss: 697.0362 batch_loss: 4077.955811
+train Loss: 702.4718 batch_loss: 4174.569336
+train Loss: 706.4164 batch_loss: 3029.397949
+train Loss: 711.5476 batch_loss: 3940.810547
+train Loss: 713.6397 batch_loss: 1606.673218
+train Loss: 718.9505 batch_loss: 4078.723877
+train Loss: 722.9837 batch_loss: 3097.536621
+train Loss: 728.3194 batch_loss: 4097.806641
+train Loss: 733.4824 batch_loss: 3965.175049
+train Loss: 735.9933 batch_loss: 1928.338623
+train Loss: 738.5015 batch_loss: 1926.283569
+train Loss: 744.9120 batch_loss: 4923.280273
+train Loss: 750.3882 batch_loss: 4205.721680
+train Loss: 754.8079 batch_loss: 3394.324951
+train Loss: 758.9653 batch_loss: 3192.917969
+train Loss: 763.3649 batch_loss: 3378.846924
+train Loss: 768.5236 batch_loss: 3961.901611
+train Loss: 773.2277 batch_loss: 3612.790283
+train Loss: 778.3841 batch_loss: 3960.114746
+train Loss: 782.6982 batch_loss: 3313.178955
+train Loss: 785.4303 batch_loss: 2098.250244
+train Loss: 789.1459 batch_loss: 2853.633545
+train Loss: 793.6937 batch_loss: 3492.652344
+train Loss: 800.0775 batch_loss: 4902.748047
+train Loss: 805.9601 batch_loss: 4517.850586
+train Loss: 809.1166 batch_loss: 2424.178955
+train Loss: 812.1677 batch_loss: 2343.287109
+train Loss: 814.8491 batch_loss: 2059.340332
+train Loss: 818.2639 batch_loss: 2622.517334
+train Loss: 823.5679 batch_loss: 4073.468750
+train Loss: 831.0240 batch_loss: 5726.341309
+train Loss: 835.5162 batch_loss: 3449.984863
+train Loss: 839.6012 batch_loss: 3137.291748
+train Loss: 844.9131 batch_loss: 4079.504395
+train Loss: 850.5512 batch_loss: 4330.062012
+train Loss: 854.7478 batch_loss: 3223.004395
+train Loss: 858.3008 batch_loss: 2728.662842
+train Loss: 863.6619 batch_loss: 4117.357422
+train Loss: 865.8126 batch_loss: 1651.755249
+train Loss: 869.4547 batch_loss: 2797.120850
+train Loss: 874.1265 batch_loss: 3587.950439
+train Loss: 878.1401 batch_loss: 3082.447021
+train Loss: 882.7465 batch_loss: 3537.727295
+train Loss: 887.0332 batch_loss: 3292.136719
+train Loss: 892.9618 batch_loss: 4553.223633
+train Loss: 895.5066 batch_loss: 1954.363647
+train Loss: 899.3113 batch_loss: 2922.010986
+train Loss: 903.8329 batch_loss: 3472.621094
+train Loss: 908.4983 batch_loss: 3582.968018
+Loss on the test images: 931.24437 
+Epoch 3/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 2.1774 batch_loss: 1672.212524
+train Loss: 7.3311 batch_loss: 3958.042236
+train Loss: 10.6776 batch_loss: 2570.162842
+train Loss: 15.1907 batch_loss: 3466.036377
+train Loss: 21.7379 batch_loss: 5028.237793
+train Loss: 25.9285 batch_loss: 3218.433350
+train Loss: 31.6674 batch_loss: 4407.407227
+train Loss: 37.0273 batch_loss: 4116.446289
+train Loss: 44.9552 batch_loss: 6088.593750
+train Loss: 47.4108 batch_loss: 1885.889648
+train Loss: 51.3871 batch_loss: 3053.821289
+train Loss: 57.3003 batch_loss: 4541.324219
+train Loss: 61.7174 batch_loss: 3392.381592
+train Loss: 65.1088 batch_loss: 2604.540283
+train Loss: 70.2398 batch_loss: 3940.667969
+train Loss: 76.0667 batch_loss: 4475.057617
+train Loss: 79.9119 batch_loss: 2953.056885
+train Loss: 84.5971 batch_loss: 3598.286621
+train Loss: 89.8611 batch_loss: 4042.741455
+train Loss: 93.5756 batch_loss: 2852.755615
+train Loss: 97.9113 batch_loss: 3329.783203
+train Loss: 100.8331 batch_loss: 2243.939209
+train Loss: 107.2490 batch_loss: 4927.444336
+train Loss: 111.5142 batch_loss: 3275.617920
+train Loss: 118.8256 batch_loss: 5615.215332
+train Loss: 122.8914 batch_loss: 3122.527100
+train Loss: 127.7905 batch_loss: 3762.489746
+train Loss: 133.4697 batch_loss: 4361.643555
+train Loss: 137.9180 batch_loss: 3416.270020
+train Loss: 142.1848 batch_loss: 3276.883545
+train Loss: 147.1750 batch_loss: 3832.472656
+train Loss: 151.4999 batch_loss: 3321.554688
+train Loss: 157.4912 batch_loss: 4601.303711
+train Loss: 162.8175 batch_loss: 4090.597656
+train Loss: 168.4799 batch_loss: 4348.753418
+train Loss: 176.1634 batch_loss: 5900.901855
+train Loss: 181.7096 batch_loss: 4259.492188
+train Loss: 184.6325 batch_loss: 2244.752197
+train Loss: 190.5029 batch_loss: 4508.454102
+train Loss: 196.6434 batch_loss: 4715.925293
+train Loss: 201.0939 batch_loss: 3417.981934
+train Loss: 205.9563 batch_loss: 3734.314941
+train Loss: 209.5561 batch_loss: 2764.682129
+train Loss: 215.9901 batch_loss: 4941.326660
+train Loss: 218.9301 batch_loss: 2257.925781
+train Loss: 224.7164 batch_loss: 4443.872070
+train Loss: 229.8005 batch_loss: 3904.562988
+train Loss: 233.2278 batch_loss: 2632.190674
+train Loss: 240.2973 batch_loss: 5429.376465
+train Loss: 243.7312 batch_loss: 2637.228760
+train Loss: 248.3999 batch_loss: 3585.554688
+train Loss: 252.1516 batch_loss: 2881.258545
+train Loss: 255.6002 batch_loss: 2648.584473
+train Loss: 260.6525 batch_loss: 3880.175049
+train Loss: 264.7702 batch_loss: 3162.395264
+train Loss: 268.7685 batch_loss: 3070.689941
+train Loss: 272.7435 batch_loss: 3052.746826
+train Loss: 276.8695 batch_loss: 3168.800049
+train Loss: 279.2283 batch_loss: 1811.581421
+train Loss: 284.5974 batch_loss: 4123.414062
+train Loss: 288.7153 batch_loss: 3162.553223
+train Loss: 296.3717 batch_loss: 5880.131836
+train Loss: 300.2330 batch_loss: 2965.514893
+train Loss: 304.3167 batch_loss: 3136.282715
+train Loss: 307.2386 batch_loss: 2243.977051
+train Loss: 309.7370 batch_loss: 1918.737915
+train Loss: 317.8476 batch_loss: 6228.992676
+train Loss: 322.4975 batch_loss: 3571.119873
+train Loss: 325.9273 batch_loss: 2634.102783
+train Loss: 331.8855 batch_loss: 4575.877441
+train Loss: 336.2475 batch_loss: 3349.985840
+train Loss: 342.7247 batch_loss: 4974.514160
+train Loss: 349.2010 batch_loss: 4973.790039
+train Loss: 354.8420 batch_loss: 4332.280273
+train Loss: 359.4524 batch_loss: 3540.840332
+train Loss: 364.2990 batch_loss: 3722.121094
+train Loss: 369.5592 batch_loss: 4039.878906
+train Loss: 373.5428 batch_loss: 3059.384033
+train Loss: 378.8908 batch_loss: 4107.299805
+train Loss: 383.9124 batch_loss: 3856.522949
+train Loss: 388.0991 batch_loss: 3215.414062
+train Loss: 390.5892 batch_loss: 1912.388672
+train Loss: 394.2082 batch_loss: 2779.380859
+train Loss: 399.4123 batch_loss: 3996.760254
+train Loss: 404.3595 batch_loss: 3799.449951
+train Loss: 411.2196 batch_loss: 5268.546875
+train Loss: 415.0882 batch_loss: 2971.120850
+train Loss: 419.8028 batch_loss: 3620.817139
+train Loss: 425.4559 batch_loss: 4341.546387
+train Loss: 431.5484 batch_loss: 4679.088867
+train Loss: 436.0849 batch_loss: 3483.984863
+train Loss: 440.6820 batch_loss: 3530.562988
+train Loss: 446.0639 batch_loss: 4133.318848
+train Loss: 450.5364 batch_loss: 3434.913330
+train Loss: 455.4537 batch_loss: 3776.438721
+train Loss: 459.0495 batch_loss: 2761.625488
+train Loss: 464.1639 batch_loss: 3927.814453
+train Loss: 467.8119 batch_loss: 2801.653076
+train Loss: 471.5493 batch_loss: 2870.347412
+train Loss: 475.5435 batch_loss: 3067.512939
+train Loss: 481.1883 batch_loss: 4335.274902
+train Loss: 486.5391 batch_loss: 4109.382812
+train Loss: 491.0692 batch_loss: 3479.079590
+train Loss: 493.7829 batch_loss: 2084.145752
+train Loss: 499.1560 batch_loss: 4126.562012
+train Loss: 502.8849 batch_loss: 2863.751465
+train Loss: 507.7546 batch_loss: 3739.948730
+train Loss: 511.3140 batch_loss: 2733.646484
+train Loss: 516.6696 batch_loss: 4113.055664
+train Loss: 519.7214 batch_loss: 2343.795410
+train Loss: 525.2312 batch_loss: 4231.581055
+train Loss: 531.1178 batch_loss: 4520.884277
+train Loss: 534.2459 batch_loss: 2402.380127
+train Loss: 538.1091 batch_loss: 2966.902100
+train Loss: 543.3704 batch_loss: 4040.679688
+train Loss: 550.6420 batch_loss: 5584.637695
+train Loss: 554.8246 batch_loss: 3212.195801
+train Loss: 560.9526 batch_loss: 4706.302246
+train Loss: 564.5066 batch_loss: 2729.525879
+train Loss: 567.4754 batch_loss: 2279.964111
+train Loss: 572.8189 batch_loss: 4103.823242
+train Loss: 578.5564 batch_loss: 4406.416016
+train Loss: 584.1566 batch_loss: 4300.925293
+train Loss: 588.2512 batch_loss: 3144.723389
+train Loss: 592.1790 batch_loss: 3016.489502
+train Loss: 597.4050 batch_loss: 4013.591064
+train Loss: 603.0991 batch_loss: 4373.105469
+train Loss: 607.1823 batch_loss: 3135.871094
+train Loss: 609.9543 batch_loss: 2128.873535
+train Loss: 614.2218 batch_loss: 3277.466309
+train Loss: 621.6495 batch_loss: 5704.488281
+train Loss: 624.7035 batch_loss: 2345.450684
+train Loss: 628.8728 batch_loss: 3202.022949
+train Loss: 633.9502 batch_loss: 3899.436279
+train Loss: 640.2645 batch_loss: 4849.381836
+train Loss: 645.7256 batch_loss: 4194.127441
+train Loss: 649.4905 batch_loss: 2891.471924
+train Loss: 655.2683 batch_loss: 4437.339355
+train Loss: 659.6595 batch_loss: 3372.417969
+train Loss: 665.1850 batch_loss: 4243.587402
+train Loss: 670.3342 batch_loss: 3954.598389
+train Loss: 675.0322 batch_loss: 3608.036377
+train Loss: 680.2131 batch_loss: 3978.983154
+train Loss: 684.4036 batch_loss: 3218.233887
+train Loss: 689.4721 batch_loss: 3892.664062
+train Loss: 693.4127 batch_loss: 3026.396240
+train Loss: 695.4558 batch_loss: 1569.048096
+train Loss: 701.8755 batch_loss: 4930.318848
+train Loss: 707.0837 batch_loss: 3999.938965
+train Loss: 710.6713 batch_loss: 2755.229736
+train Loss: 716.3490 batch_loss: 4360.489746
+train Loss: 719.6151 batch_loss: 2508.395996
+train Loss: 723.4555 batch_loss: 2949.383301
+train Loss: 729.3194 batch_loss: 4503.494141
+train Loss: 731.8513 batch_loss: 1944.516968
+train Loss: 736.3124 batch_loss: 3426.095215
+train Loss: 741.1248 batch_loss: 3695.934814
+train Loss: 744.7870 batch_loss: 2812.611572
+train Loss: 750.3443 batch_loss: 4267.975586
+train Loss: 754.6687 batch_loss: 3321.126953
+train Loss: 760.2451 batch_loss: 4282.653809
+train Loss: 763.1579 batch_loss: 2237.039551
+train Loss: 765.6343 batch_loss: 1901.918945
+train Loss: 772.2094 batch_loss: 5049.639160
+train Loss: 778.7410 batch_loss: 5016.321289
+train Loss: 785.3527 batch_loss: 5077.787598
+train Loss: 788.9047 batch_loss: 2727.881592
+train Loss: 793.6576 batch_loss: 3650.260986
+train Loss: 796.1946 batch_loss: 1948.397827
+train Loss: 800.6381 batch_loss: 3412.581299
+train Loss: 807.7041 batch_loss: 5426.691406
+train Loss: 812.4879 batch_loss: 3673.979736
+train Loss: 816.6364 batch_loss: 3186.022705
+train Loss: 820.4310 batch_loss: 2914.275391
+train Loss: 824.2877 batch_loss: 2961.927246
+train Loss: 829.4079 batch_loss: 3932.352295
+train Loss: 833.9066 batch_loss: 3454.981689
+train Loss: 839.4699 batch_loss: 4272.605469
+train Loss: 845.4048 batch_loss: 4558.029785
+train Loss: 849.9442 batch_loss: 3486.258301
+train Loss: 855.8962 batch_loss: 4571.147461
+train Loss: 859.9268 batch_loss: 3095.447998
+train Loss: 866.3196 batch_loss: 4909.722656
+train Loss: 872.0793 batch_loss: 4423.399414
+train Loss: 876.0127 batch_loss: 3020.902344
+train Loss: 878.9253 batch_loss: 2236.882080
+train Loss: 883.1823 batch_loss: 3269.346191
+train Loss: 888.0594 batch_loss: 3745.601074
+train Loss: 892.0171 batch_loss: 3039.507568
+train Loss: 897.0488 batch_loss: 3864.360596
+train Loss: 900.6614 batch_loss: 2774.443359
+train Loss: 903.4370 batch_loss: 2131.710449
+Loss on the test images: 930.25911 
+Epoch 4/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 5.6609 batch_loss: 4347.564941
+train Loss: 9.7553 batch_loss: 3144.509277
+train Loss: 13.9576 batch_loss: 3227.351318
+train Loss: 17.0520 batch_loss: 2376.523438
+train Loss: 22.1569 batch_loss: 3920.534424
+train Loss: 28.2668 batch_loss: 4692.440430
+train Loss: 30.7728 batch_loss: 1924.606689
+train Loss: 35.0968 batch_loss: 3320.817871
+train Loss: 39.3380 batch_loss: 3257.272705
+train Loss: 43.8477 batch_loss: 3463.391846
+train Loss: 49.9301 batch_loss: 4671.268555
+train Loss: 55.8119 batch_loss: 4517.258301
+train Loss: 61.2984 batch_loss: 4213.667480
+train Loss: 66.5927 batch_loss: 4066.010254
+train Loss: 72.4895 batch_loss: 4528.755859
+train Loss: 76.3350 batch_loss: 2953.272217
+train Loss: 81.7705 batch_loss: 4174.509277
+train Loss: 84.7494 batch_loss: 2287.763184
+train Loss: 90.5029 batch_loss: 4418.722168
+train Loss: 96.4556 batch_loss: 4571.629883
+train Loss: 102.8060 batch_loss: 4877.151367
+train Loss: 106.0211 batch_loss: 2469.157471
+train Loss: 112.4660 batch_loss: 4949.687500
+train Loss: 116.2535 batch_loss: 2908.793457
+train Loss: 121.3326 batch_loss: 3900.794434
+train Loss: 127.1886 batch_loss: 4497.418945
+train Loss: 132.8341 batch_loss: 4335.748535
+train Loss: 136.4171 batch_loss: 2751.731934
+train Loss: 138.6935 batch_loss: 1748.262329
+train Loss: 142.3255 batch_loss: 2789.339600
+train Loss: 148.8261 batch_loss: 4992.506836
+train Loss: 151.9051 batch_loss: 2364.682861
+train Loss: 159.0203 batch_loss: 5464.431641
+train Loss: 162.4398 batch_loss: 2626.154297
+train Loss: 167.5512 batch_loss: 3925.562500
+train Loss: 173.5290 batch_loss: 4590.982422
+train Loss: 178.7214 batch_loss: 3987.748535
+train Loss: 183.6778 batch_loss: 3806.531250
+train Loss: 189.8528 batch_loss: 4742.426270
+train Loss: 192.8689 batch_loss: 2316.340576
+train Loss: 197.8147 batch_loss: 3798.385498
+train Loss: 201.7499 batch_loss: 3022.249756
+train Loss: 207.2273 batch_loss: 4206.602051
+train Loss: 210.4655 batch_loss: 2486.912109
+train Loss: 216.3103 batch_loss: 4488.866211
+train Loss: 222.2250 batch_loss: 4542.465332
+train Loss: 225.1756 batch_loss: 2266.092529
+train Loss: 230.9770 batch_loss: 4455.459473
+train Loss: 234.7669 batch_loss: 2910.643799
+train Loss: 238.8432 batch_loss: 3130.581787
+train Loss: 242.4580 batch_loss: 2776.186035
+train Loss: 246.4659 batch_loss: 3078.047852
+train Loss: 249.9597 batch_loss: 2683.235107
+train Loss: 257.3594 batch_loss: 5682.975098
+train Loss: 261.1939 batch_loss: 2944.906250
+train Loss: 264.6056 batch_loss: 2620.155762
+train Loss: 267.8740 batch_loss: 2510.109863
+train Loss: 270.2825 batch_loss: 1849.789062
+train Loss: 274.5562 batch_loss: 3282.212402
+train Loss: 278.5670 batch_loss: 3080.262939
+train Loss: 284.2836 batch_loss: 4390.358887
+train Loss: 287.4796 batch_loss: 2454.494141
+train Loss: 294.4396 batch_loss: 5345.326172
+train Loss: 299.7646 batch_loss: 4089.569580
+train Loss: 305.7099 batch_loss: 4566.017090
+train Loss: 311.0117 batch_loss: 4071.784668
+train Loss: 315.1808 batch_loss: 3201.837402
+train Loss: 321.0293 batch_loss: 4491.648926
+train Loss: 324.9894 batch_loss: 3041.382324
+train Loss: 329.3410 batch_loss: 3342.024902
+train Loss: 332.6826 batch_loss: 2566.299316
+train Loss: 337.9907 batch_loss: 4076.632324
+train Loss: 341.7981 batch_loss: 2924.089355
+train Loss: 346.4752 batch_loss: 3592.052246
+train Loss: 349.8419 batch_loss: 2585.593750
+train Loss: 353.7883 batch_loss: 3030.852051
+train Loss: 359.5397 batch_loss: 4417.068359
+train Loss: 363.3002 batch_loss: 2888.093994
+train Loss: 367.8801 batch_loss: 3517.332031
+train Loss: 371.6586 batch_loss: 2901.916504
+train Loss: 375.4900 batch_loss: 2942.477051
+train Loss: 380.9849 batch_loss: 4220.094727
+train Loss: 386.1441 batch_loss: 3962.237061
+train Loss: 390.3730 batch_loss: 3247.823486
+train Loss: 395.8571 batch_loss: 4211.775879
+train Loss: 401.5293 batch_loss: 4356.240234
+train Loss: 406.5406 batch_loss: 3848.675781
+train Loss: 410.6609 batch_loss: 3164.384277
+train Loss: 418.5071 batch_loss: 6025.894531
+train Loss: 423.5818 batch_loss: 3897.407715
+train Loss: 426.6835 batch_loss: 2382.089844
+train Loss: 432.3968 batch_loss: 4387.770508
+train Loss: 435.4143 batch_loss: 2317.443115
+train Loss: 440.5286 batch_loss: 3927.785645
+train Loss: 442.9226 batch_loss: 1838.638916
+train Loss: 448.1872 batch_loss: 4043.205078
+train Loss: 453.5480 batch_loss: 4117.104004
+train Loss: 459.8176 batch_loss: 4815.069336
+train Loss: 462.3656 batch_loss: 1956.864868
+train Loss: 466.7961 batch_loss: 3402.579590
+train Loss: 472.0861 batch_loss: 4062.704590
+train Loss: 476.7583 batch_loss: 3588.308594
+train Loss: 481.6881 batch_loss: 3786.065918
+train Loss: 485.9663 batch_loss: 3285.643311
+train Loss: 491.5166 batch_loss: 4262.616211
+train Loss: 496.8894 batch_loss: 4126.320312
+train Loss: 500.8698 batch_loss: 3056.961670
+train Loss: 507.6099 batch_loss: 5176.414062
+train Loss: 511.9302 batch_loss: 3317.925049
+train Loss: 516.3730 batch_loss: 3412.128906
+train Loss: 520.6543 batch_loss: 3288.000000
+train Loss: 528.3664 batch_loss: 5922.915527
+train Loss: 533.6762 batch_loss: 4077.915527
+train Loss: 538.3930 batch_loss: 3622.507812
+train Loss: 542.3086 batch_loss: 3007.184082
+train Loss: 547.7219 batch_loss: 4157.383789
+train Loss: 552.5216 batch_loss: 3686.199951
+train Loss: 554.7650 batch_loss: 1722.932861
+train Loss: 561.4542 batch_loss: 5137.269531
+train Loss: 566.8220 batch_loss: 4122.484863
+train Loss: 570.6926 batch_loss: 2972.630615
+train Loss: 574.0765 batch_loss: 2598.874512
+train Loss: 577.6194 batch_loss: 2720.914307
+train Loss: 580.6779 batch_loss: 2348.959229
+train Loss: 586.3541 batch_loss: 4359.256836
+train Loss: 589.7619 batch_loss: 2617.185547
+train Loss: 594.6066 batch_loss: 3720.747559
+train Loss: 599.7104 batch_loss: 3919.742188
+train Loss: 603.3658 batch_loss: 2807.378174
+train Loss: 609.2022 batch_loss: 4482.332031
+train Loss: 612.7078 batch_loss: 2692.313721
+train Loss: 619.4575 batch_loss: 5183.715820
+train Loss: 622.5673 batch_loss: 2388.349121
+train Loss: 625.3837 batch_loss: 2163.018066
+train Loss: 630.8916 batch_loss: 4230.069336
+train Loss: 635.2870 batch_loss: 3375.658691
+train Loss: 639.7958 batch_loss: 3462.719238
+train Loss: 644.7138 batch_loss: 3777.028809
+train Loss: 651.0986 batch_loss: 4903.518555
+train Loss: 655.0535 batch_loss: 3037.432617
+train Loss: 660.5723 batch_loss: 4238.418945
+train Loss: 662.9277 batch_loss: 1808.906860
+train Loss: 667.3565 batch_loss: 3401.305176
+train Loss: 673.9469 batch_loss: 5061.494629
+train Loss: 678.9588 batch_loss: 3849.114014
+train Loss: 683.3326 batch_loss: 3359.078613
+train Loss: 688.1245 batch_loss: 3680.163574
+train Loss: 694.1577 batch_loss: 4633.479492
+train Loss: 699.3251 batch_loss: 3968.608887
+train Loss: 703.3743 batch_loss: 3109.789062
+train Loss: 708.9001 batch_loss: 4243.797852
+train Loss: 713.3218 batch_loss: 3395.859375
+train Loss: 717.3076 batch_loss: 3061.079346
+train Loss: 722.6430 batch_loss: 4097.578125
+train Loss: 726.4074 batch_loss: 2891.072021
+train Loss: 731.4701 batch_loss: 3888.182861
+train Loss: 733.9804 batch_loss: 1927.869507
+train Loss: 738.1756 batch_loss: 3221.957520
+train Loss: 743.9644 batch_loss: 4445.797852
+train Loss: 749.0823 batch_loss: 3930.525879
+train Loss: 754.0510 batch_loss: 3815.993652
+train Loss: 756.8317 batch_loss: 2135.570801
+train Loss: 761.3018 batch_loss: 3433.041016
+train Loss: 763.8102 batch_loss: 1926.427002
+train Loss: 768.2168 batch_loss: 3384.249512
+train Loss: 774.1355 batch_loss: 4545.583496
+train Loss: 779.2821 batch_loss: 3952.575684
+train Loss: 785.4409 batch_loss: 4729.966309
+train Loss: 790.2661 batch_loss: 3705.740234
+train Loss: 796.7430 batch_loss: 4974.239258
+train Loss: 802.4777 batch_loss: 4404.262695
+train Loss: 806.6786 batch_loss: 3226.332031
+train Loss: 810.9631 batch_loss: 3290.439941
+train Loss: 813.4227 batch_loss: 1888.974365
+train Loss: 816.4559 batch_loss: 2329.528809
+train Loss: 821.8145 batch_loss: 4115.377930
+train Loss: 829.6748 batch_loss: 6036.712402
+train Loss: 834.3948 batch_loss: 3625.016357
+train Loss: 841.9476 batch_loss: 5800.538574
+train Loss: 846.2367 batch_loss: 3294.045410
+train Loss: 849.0494 batch_loss: 2160.154785
+train Loss: 853.3740 batch_loss: 3321.295410
+train Loss: 859.2463 batch_loss: 4509.911133
+train Loss: 862.4298 batch_loss: 2444.887939
+train Loss: 868.8654 batch_loss: 4942.556641
+train Loss: 874.7037 batch_loss: 4483.823242
+train Loss: 879.2827 batch_loss: 3516.655029
+train Loss: 885.8864 batch_loss: 5071.672852
+train Loss: 890.2936 batch_loss: 3384.693848
+train Loss: 893.3743 batch_loss: 2366.004150
+train Loss: 898.0376 batch_loss: 3581.407715
+train Loss: 902.9679 batch_loss: 3786.436768
+Loss on the test images: 930.29647 
+Epoch 5/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 5.1457 batch_loss: 3951.931641
+train Loss: 10.1989 batch_loss: 3880.844482
+train Loss: 17.5793 batch_loss: 5668.127930
+train Loss: 25.1250 batch_loss: 5795.086914
+train Loss: 31.0064 batch_loss: 4516.959473
+train Loss: 35.1463 batch_loss: 3179.446045
+train Loss: 38.2778 batch_loss: 2404.991211
+train Loss: 44.3112 batch_loss: 4633.621094
+train Loss: 47.5954 batch_loss: 2522.289551
+train Loss: 51.6280 batch_loss: 3097.038574
+train Loss: 57.8404 batch_loss: 4771.064941
+train Loss: 62.4856 batch_loss: 3567.572266
+train Loss: 66.2248 batch_loss: 2871.698242
+train Loss: 69.4125 batch_loss: 2448.131104
+train Loss: 75.4848 batch_loss: 4663.490723
+train Loss: 79.4383 batch_loss: 3036.301270
+train Loss: 85.1362 batch_loss: 4376.032227
+train Loss: 88.0840 batch_loss: 2263.857422
+train Loss: 91.9294 batch_loss: 2953.315918
+train Loss: 99.0093 batch_loss: 5437.338867
+train Loss: 102.6997 batch_loss: 2834.234863
+train Loss: 105.5767 batch_loss: 2209.550781
+train Loss: 111.5581 batch_loss: 4593.709961
+train Loss: 114.5332 batch_loss: 2284.833496
+train Loss: 119.0295 batch_loss: 3453.181152
+train Loss: 122.3414 batch_loss: 2543.550293
+train Loss: 125.8338 batch_loss: 2682.128418
+train Loss: 129.6036 batch_loss: 2895.217285
+train Loss: 135.2367 batch_loss: 4326.273926
+train Loss: 142.1051 batch_loss: 5274.894043
+train Loss: 148.7327 batch_loss: 5089.964844
+train Loss: 151.7745 batch_loss: 2336.118652
+train Loss: 154.1689 batch_loss: 1838.884033
+train Loss: 158.3403 batch_loss: 3203.638672
+train Loss: 162.2759 batch_loss: 3022.568604
+train Loss: 166.8166 batch_loss: 3487.251465
+train Loss: 173.5553 batch_loss: 5175.365723
+train Loss: 176.6579 batch_loss: 2382.738037
+train Loss: 181.8976 batch_loss: 4024.145264
+train Loss: 187.0010 batch_loss: 3919.403076
+train Loss: 193.8264 batch_loss: 5241.894531
+train Loss: 198.3992 batch_loss: 3511.886719
+train Loss: 203.8459 batch_loss: 4183.058105
+train Loss: 207.0712 batch_loss: 2477.083496
+train Loss: 210.9944 batch_loss: 3012.949707
+train Loss: 214.4031 batch_loss: 2617.878906
+train Loss: 217.8393 batch_loss: 2639.014893
+train Loss: 223.2710 batch_loss: 4171.575195
+train Loss: 228.0938 batch_loss: 3703.932861
+train Loss: 232.1179 batch_loss: 3090.499512
+train Loss: 236.2769 batch_loss: 3194.112061
+train Loss: 241.6328 batch_loss: 4113.325195
+train Loss: 247.1725 batch_loss: 4254.454102
+train Loss: 251.4583 batch_loss: 3291.482910
+train Loss: 256.6307 batch_loss: 3972.399170
+train Loss: 262.3756 batch_loss: 4412.104492
+train Loss: 265.9875 batch_loss: 2773.976807
+train Loss: 269.0970 batch_loss: 2388.074951
+train Loss: 273.4613 batch_loss: 3351.792236
+train Loss: 278.6163 batch_loss: 3959.047607
+train Loss: 282.7375 batch_loss: 3165.037598
+train Loss: 285.8667 batch_loss: 2403.267090
+train Loss: 291.0235 batch_loss: 3960.433594
+train Loss: 296.6073 batch_loss: 4288.354492
+train Loss: 300.8317 batch_loss: 3244.321045
+train Loss: 305.1403 batch_loss: 3308.970215
+train Loss: 309.4842 batch_loss: 3336.143066
+train Loss: 313.3792 batch_loss: 2991.390137
+train Loss: 319.8628 batch_loss: 4979.394531
+train Loss: 327.1790 batch_loss: 5618.801758
+train Loss: 333.9751 batch_loss: 5219.432617
+train Loss: 337.1819 batch_loss: 2462.845459
+train Loss: 340.3008 batch_loss: 2395.306641
+train Loss: 346.0691 batch_loss: 4430.062500
+train Loss: 352.6807 batch_loss: 5077.717773
+train Loss: 357.6875 batch_loss: 3845.218018
+train Loss: 363.6540 batch_loss: 4582.223633
+train Loss: 367.9864 batch_loss: 3327.297363
+train Loss: 373.1757 batch_loss: 3985.403809
+train Loss: 378.2789 batch_loss: 3919.250488
+train Loss: 382.8895 batch_loss: 3540.902344
+train Loss: 388.6472 batch_loss: 4421.944336
+train Loss: 394.1308 batch_loss: 4211.412598
+train Loss: 398.5890 batch_loss: 3423.890625
+train Loss: 403.6239 batch_loss: 3866.798828
+train Loss: 405.9172 batch_loss: 1761.254883
+train Loss: 408.2092 batch_loss: 1760.241211
+train Loss: 412.2282 batch_loss: 3086.593750
+train Loss: 420.2661 batch_loss: 6173.097656
+train Loss: 422.7769 batch_loss: 1928.341064
+train Loss: 428.1111 batch_loss: 4096.661133
+train Loss: 434.2156 batch_loss: 4688.233398
+train Loss: 440.6828 batch_loss: 4966.774414
+train Loss: 445.0706 batch_loss: 3369.862549
+train Loss: 449.5872 batch_loss: 3468.736816
+train Loss: 456.2125 batch_loss: 5088.284180
+train Loss: 461.4015 batch_loss: 3985.116699
+train Loss: 464.5428 batch_loss: 2412.552979
+train Loss: 468.7145 batch_loss: 3203.807373
+train Loss: 471.7094 batch_loss: 2300.103027
+train Loss: 475.3128 batch_loss: 2767.409424
+train Loss: 478.3672 batch_loss: 2345.765381
+train Loss: 482.4390 batch_loss: 3127.189941
+train Loss: 486.4275 batch_loss: 3063.176025
+train Loss: 492.3234 batch_loss: 4527.987305
+train Loss: 495.2092 batch_loss: 2216.322998
+train Loss: 501.8647 batch_loss: 5111.444824
+train Loss: 506.1091 batch_loss: 3259.650391
+train Loss: 510.6381 batch_loss: 3478.270264
+train Loss: 517.6558 batch_loss: 5389.638184
+train Loss: 521.5461 batch_loss: 2987.717285
+train Loss: 526.2273 batch_loss: 3595.214355
+train Loss: 532.6015 batch_loss: 4895.375000
+train Loss: 537.8644 batch_loss: 4041.900391
+train Loss: 542.5234 batch_loss: 3578.065674
+train Loss: 546.6559 batch_loss: 3173.803467
+train Loss: 551.7458 batch_loss: 3909.020752
+train Loss: 555.1767 batch_loss: 2634.970215
+train Loss: 558.6557 batch_loss: 2671.876221
+train Loss: 564.1014 batch_loss: 4182.295410
+train Loss: 569.8941 batch_loss: 4448.742188
+train Loss: 575.5370 batch_loss: 4333.787598
+train Loss: 579.8248 batch_loss: 3293.024170
+train Loss: 585.3378 batch_loss: 4233.971191
+train Loss: 589.6430 batch_loss: 3306.358154
+train Loss: 592.7876 batch_loss: 2415.044678
+train Loss: 596.7915 batch_loss: 3075.030518
+train Loss: 598.8917 batch_loss: 1612.943359
+train Loss: 603.2569 batch_loss: 3352.485840
+train Loss: 608.1514 batch_loss: 3758.978027
+train Loss: 612.4253 batch_loss: 3282.380859
+train Loss: 616.5543 batch_loss: 3171.063477
+train Loss: 619.5148 batch_loss: 2273.639404
+train Loss: 623.2585 batch_loss: 2875.204346
+train Loss: 628.2176 batch_loss: 3808.514160
+train Loss: 632.0010 batch_loss: 2905.693604
+train Loss: 635.8355 batch_loss: 2944.898438
+train Loss: 642.4622 batch_loss: 5089.274902
+train Loss: 647.0099 batch_loss: 3492.680908
+train Loss: 652.3265 batch_loss: 4083.098389
+train Loss: 656.2411 batch_loss: 3006.440918
+train Loss: 659.7792 batch_loss: 2717.241699
+train Loss: 664.0665 batch_loss: 3292.677734
+train Loss: 668.0994 batch_loss: 3097.235840
+train Loss: 674.8182 batch_loss: 5160.080566
+train Loss: 679.8085 batch_loss: 3832.561768
+train Loss: 684.0158 batch_loss: 3231.191650
+train Loss: 688.1572 batch_loss: 3180.560059
+train Loss: 691.5851 batch_loss: 2632.609863
+train Loss: 696.3991 batch_loss: 3697.148926
+train Loss: 702.3549 batch_loss: 4574.082520
+train Loss: 708.7064 batch_loss: 4877.971680
+train Loss: 713.5266 batch_loss: 3701.916016
+train Loss: 717.8609 batch_loss: 3328.693848
+train Loss: 723.1603 batch_loss: 4069.956543
+train Loss: 726.9132 batch_loss: 2882.248779
+train Loss: 732.8402 batch_loss: 4551.931641
+train Loss: 736.5585 batch_loss: 2855.665527
+train Loss: 742.0940 batch_loss: 4251.245605
+train Loss: 747.0609 batch_loss: 3814.565918
+train Loss: 751.9284 batch_loss: 3738.268311
+train Loss: 756.5387 batch_loss: 3540.723877
+train Loss: 761.9193 batch_loss: 4132.250977
+train Loss: 767.8913 batch_loss: 4586.558594
+train Loss: 770.4219 batch_loss: 1943.488281
+train Loss: 774.9644 batch_loss: 3488.640137
+train Loss: 776.9576 batch_loss: 1530.792236
+train Loss: 782.7901 batch_loss: 4479.309570
+train Loss: 788.5343 batch_loss: 4411.536621
+train Loss: 792.5670 batch_loss: 3097.156006
+train Loss: 796.4149 batch_loss: 2955.201660
+train Loss: 800.4010 batch_loss: 3061.284668
+train Loss: 807.1241 batch_loss: 5163.323730
+train Loss: 814.6588 batch_loss: 5786.691406
+train Loss: 818.7013 batch_loss: 3104.649658
+train Loss: 824.1251 batch_loss: 4165.477539
+train Loss: 828.5458 batch_loss: 3395.102295
+train Loss: 835.3774 batch_loss: 5246.672852
+train Loss: 840.6072 batch_loss: 4016.475830
+train Loss: 846.6996 batch_loss: 4678.918945
+train Loss: 853.0924 batch_loss: 4909.698242
+train Loss: 858.1674 batch_loss: 3897.596436
+train Loss: 862.4901 batch_loss: 3319.824951
+train Loss: 866.3460 batch_loss: 2961.317139
+train Loss: 871.5134 batch_loss: 3968.545410
+train Loss: 876.1102 batch_loss: 3530.341064
+train Loss: 879.9513 batch_loss: 2949.979980
+train Loss: 885.5962 batch_loss: 4335.327148
+train Loss: 888.6021 batch_loss: 2308.501465
+train Loss: 893.3361 batch_loss: 3635.737061
+train Loss: 898.7290 batch_loss: 4141.725586
+train Loss: 902.8473 batch_loss: 3162.828857
+Loss on the test images: 930.26816 
+Epoch 6/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 2.9445 batch_loss: 2261.344482
+train Loss: 8.8396 batch_loss: 4527.502930
+train Loss: 14.3194 batch_loss: 4208.453125
+train Loss: 19.6686 batch_loss: 4108.169434
+train Loss: 24.1055 batch_loss: 3407.541016
+train Loss: 28.1843 batch_loss: 3132.502686
+train Loss: 33.7829 batch_loss: 4299.754883
+train Loss: 39.2067 batch_loss: 4165.476562
+train Loss: 43.5978 batch_loss: 3372.367920
+train Loss: 48.3240 batch_loss: 3629.711670
+train Loss: 53.1170 batch_loss: 3681.024902
+train Loss: 58.6692 batch_loss: 4264.077148
+train Loss: 64.8643 batch_loss: 4757.869629
+train Loss: 71.0260 batch_loss: 4732.166504
+train Loss: 75.2277 batch_loss: 3226.884033
+train Loss: 80.0876 batch_loss: 3732.399170
+train Loss: 85.1872 batch_loss: 3916.523438
+train Loss: 87.7830 batch_loss: 1993.570068
+train Loss: 92.6133 batch_loss: 3709.679688
+train Loss: 96.7854 batch_loss: 3204.151855
+train Loss: 101.3302 batch_loss: 3490.390137
+train Loss: 105.0219 batch_loss: 2835.292236
+train Loss: 109.4502 batch_loss: 3400.925293
+train Loss: 113.0678 batch_loss: 2778.317871
+train Loss: 118.4631 batch_loss: 4143.544434
+train Loss: 123.6132 batch_loss: 3955.298828
+train Loss: 126.2548 batch_loss: 2028.773804
+train Loss: 133.0574 batch_loss: 5224.337402
+train Loss: 138.2427 batch_loss: 3982.358643
+train Loss: 142.1091 batch_loss: 2969.381348
+train Loss: 148.4780 batch_loss: 4891.348633
+train Loss: 152.9628 batch_loss: 3444.284424
+train Loss: 156.4156 batch_loss: 2651.754395
+train Loss: 162.1832 batch_loss: 4429.513184
+train Loss: 165.9575 batch_loss: 2898.682373
+train Loss: 171.8128 batch_loss: 4496.861328
+train Loss: 177.6269 batch_loss: 4465.208496
+train Loss: 181.2044 batch_loss: 2747.530029
+train Loss: 184.6716 batch_loss: 2662.802490
+train Loss: 190.6585 batch_loss: 4597.973633
+train Loss: 195.9048 batch_loss: 4029.160156
+train Loss: 200.0981 batch_loss: 3220.467041
+train Loss: 202.9328 batch_loss: 2177.012695
+train Loss: 208.0181 batch_loss: 3905.539551
+train Loss: 212.3677 batch_loss: 3340.489014
+train Loss: 216.2492 batch_loss: 2980.956055
+train Loss: 221.4560 batch_loss: 3998.801514
+train Loss: 226.2095 batch_loss: 3650.715332
+train Loss: 231.5377 batch_loss: 4092.059326
+train Loss: 236.9737 batch_loss: 4174.825684
+train Loss: 241.0498 batch_loss: 3130.439453
+train Loss: 245.5212 batch_loss: 3434.082031
+train Loss: 250.9168 batch_loss: 4143.815430
+train Loss: 254.6765 batch_loss: 2887.439941
+train Loss: 259.3921 batch_loss: 3621.600098
+train Loss: 263.8496 batch_loss: 3423.321533
+train Loss: 268.0617 batch_loss: 3234.930420
+train Loss: 272.1213 batch_loss: 3117.730957
+train Loss: 277.5147 batch_loss: 4142.120605
+train Loss: 281.2618 batch_loss: 2877.785156
+train Loss: 285.5970 batch_loss: 3329.440918
+train Loss: 289.6943 batch_loss: 3146.736084
+train Loss: 293.4373 batch_loss: 2874.630371
+train Loss: 297.2701 batch_loss: 2943.587891
+train Loss: 301.5045 batch_loss: 3252.050781
+train Loss: 307.3095 batch_loss: 4458.241211
+train Loss: 312.0042 batch_loss: 3605.469482
+train Loss: 315.1853 batch_loss: 2443.117676
+train Loss: 322.1165 batch_loss: 5323.155762
+train Loss: 325.9507 batch_loss: 2944.686523
+train Loss: 332.3878 batch_loss: 4943.674316
+train Loss: 335.3983 batch_loss: 2312.047363
+train Loss: 339.6755 batch_loss: 3284.923828
+train Loss: 344.7145 batch_loss: 3869.922607
+train Loss: 348.8637 batch_loss: 3186.584473
+train Loss: 352.0759 batch_loss: 2466.983643
+train Loss: 358.0354 batch_loss: 4576.870117
+train Loss: 363.6896 batch_loss: 4342.458496
+train Loss: 368.9222 batch_loss: 4018.612793
+train Loss: 373.7203 batch_loss: 3684.930420
+train Loss: 379.5924 batch_loss: 4509.833008
+train Loss: 383.3198 batch_loss: 2862.569824
+train Loss: 387.1056 batch_loss: 2907.542480
+train Loss: 390.6797 batch_loss: 2744.880859
+train Loss: 395.7310 batch_loss: 3879.386719
+train Loss: 400.0865 batch_loss: 3345.054688
+train Loss: 403.3145 batch_loss: 2479.112793
+train Loss: 408.7393 batch_loss: 4166.204590
+train Loss: 415.6351 batch_loss: 5296.028320
+train Loss: 419.4876 batch_loss: 2958.708252
+train Loss: 423.4698 batch_loss: 3058.295166
+train Loss: 428.1751 batch_loss: 3613.730957
+train Loss: 431.8039 batch_loss: 2786.905273
+train Loss: 438.7837 batch_loss: 5360.457520
+train Loss: 441.8281 batch_loss: 2338.066895
+train Loss: 445.6144 batch_loss: 2907.903809
+train Loss: 450.8896 batch_loss: 4051.333496
+train Loss: 453.8773 batch_loss: 2294.581543
+train Loss: 456.2522 batch_loss: 1823.909180
+train Loss: 459.9016 batch_loss: 2802.777344
+train Loss: 462.4146 batch_loss: 1929.955322
+train Loss: 468.3196 batch_loss: 4535.063477
+train Loss: 472.9904 batch_loss: 3587.154297
+train Loss: 479.2769 batch_loss: 4828.008301
+train Loss: 485.1924 batch_loss: 4543.109375
+train Loss: 489.7474 batch_loss: 3498.286377
+train Loss: 495.4154 batch_loss: 4352.969238
+train Loss: 502.1963 batch_loss: 5207.769531
+train Loss: 506.9101 batch_loss: 3620.199707
+train Loss: 511.9613 batch_loss: 3879.337158
+train Loss: 517.0229 batch_loss: 3887.253418
+train Loss: 519.6698 batch_loss: 2032.873291
+train Loss: 524.9460 batch_loss: 4052.104980
+train Loss: 527.4977 batch_loss: 1959.690186
+train Loss: 533.3083 batch_loss: 4462.535645
+train Loss: 538.9151 batch_loss: 4306.041992
+train Loss: 545.4564 batch_loss: 5023.692871
+train Loss: 551.8896 batch_loss: 4940.752441
+train Loss: 556.8516 batch_loss: 3810.789062
+train Loss: 561.9780 batch_loss: 3937.034424
+train Loss: 565.9690 batch_loss: 3065.093750
+train Loss: 572.7230 batch_loss: 5187.103516
+train Loss: 575.2716 batch_loss: 1957.342773
+train Loss: 578.9615 batch_loss: 2833.853027
+train Loss: 584.2507 batch_loss: 4062.057373
+train Loss: 586.9880 batch_loss: 2102.235840
+train Loss: 592.6967 batch_loss: 4384.314941
+train Loss: 597.1891 batch_loss: 3450.160889
+train Loss: 602.2274 batch_loss: 3869.397705
+train Loss: 605.8240 batch_loss: 2762.177246
+train Loss: 610.9195 batch_loss: 3913.354004
+train Loss: 615.0587 batch_loss: 3178.947266
+train Loss: 618.1190 batch_loss: 2350.296143
+train Loss: 623.5078 batch_loss: 4138.595215
+train Loss: 630.6969 batch_loss: 5521.208984
+train Loss: 633.2547 batch_loss: 1964.438232
+train Loss: 638.7725 batch_loss: 4237.667969
+train Loss: 642.8148 batch_loss: 3104.420898
+train Loss: 648.3247 batch_loss: 4231.637207
+train Loss: 652.6293 batch_loss: 3305.937500
+train Loss: 656.6515 batch_loss: 3089.013184
+train Loss: 664.4938 batch_loss: 6022.950684
+train Loss: 669.8066 batch_loss: 4080.230957
+train Loss: 674.4537 batch_loss: 3568.951660
+train Loss: 682.3204 batch_loss: 6041.636719
+train Loss: 686.7809 batch_loss: 3425.614746
+train Loss: 690.5657 batch_loss: 2906.729980
+train Loss: 695.1971 batch_loss: 3556.948486
+train Loss: 698.0378 batch_loss: 2181.649658
+train Loss: 702.5854 batch_loss: 3492.586426
+train Loss: 706.8803 batch_loss: 3298.443848
+train Loss: 710.5074 batch_loss: 2785.642090
+train Loss: 714.9960 batch_loss: 3447.247314
+train Loss: 719.1054 batch_loss: 3156.016113
+train Loss: 725.5209 batch_loss: 4927.040039
+train Loss: 731.2799 batch_loss: 4422.974121
+train Loss: 735.6745 batch_loss: 3375.061279
+train Loss: 738.4233 batch_loss: 2111.041260
+train Loss: 746.0433 batch_loss: 5852.135254
+train Loss: 751.4747 batch_loss: 4171.338867
+train Loss: 755.6772 batch_loss: 3227.535645
+train Loss: 760.2800 batch_loss: 3534.912598
+train Loss: 765.5132 batch_loss: 4019.115723
+train Loss: 769.3059 batch_loss: 2912.837158
+train Loss: 773.9473 batch_loss: 3564.567871
+train Loss: 778.8951 batch_loss: 3799.924316
+train Loss: 782.9065 batch_loss: 3080.745361
+train Loss: 787.2543 batch_loss: 3339.109375
+train Loss: 790.7177 batch_loss: 2659.889893
+train Loss: 794.2321 batch_loss: 2699.059082
+train Loss: 799.1295 batch_loss: 3761.220215
+train Loss: 804.2784 batch_loss: 3954.341064
+train Loss: 808.1363 batch_loss: 2962.834473
+train Loss: 813.1624 batch_loss: 3860.083496
+train Loss: 818.8073 batch_loss: 4335.282227
+train Loss: 825.3995 batch_loss: 5062.820801
+train Loss: 828.0474 batch_loss: 2033.560547
+train Loss: 835.3709 batch_loss: 5624.458008
+train Loss: 839.4010 batch_loss: 3095.085449
+train Loss: 844.8377 batch_loss: 4175.425781
+train Loss: 850.6442 batch_loss: 4459.341309
+train Loss: 853.4223 batch_loss: 2133.601074
+train Loss: 858.1290 batch_loss: 3614.776611
+train Loss: 863.1619 batch_loss: 3865.219482
+train Loss: 865.9918 batch_loss: 2173.411865
+train Loss: 872.9507 batch_loss: 5344.426270
+train Loss: 877.3746 batch_loss: 3397.509766
+train Loss: 880.7236 batch_loss: 2572.081055
+train Loss: 887.1611 batch_loss: 4944.020996
+train Loss: 892.0363 batch_loss: 3744.091797
+train Loss: 898.2929 batch_loss: 4805.071289
+train Loss: 902.8778 batch_loss: 3521.192871
+Loss on the test images: 930.16309 
+Epoch 7/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 4.3767 batch_loss: 3361.304688
+train Loss: 9.6720 batch_loss: 4066.770996
+train Loss: 15.0381 batch_loss: 4121.210449
+train Loss: 19.7264 batch_loss: 3600.563232
+train Loss: 22.3644 batch_loss: 2026.007812
+train Loss: 27.1797 batch_loss: 3698.139893
+train Loss: 33.1795 batch_loss: 4607.893066
+train Loss: 41.2440 batch_loss: 6193.476562
+train Loss: 44.9977 batch_loss: 2882.832764
+train Loss: 51.0579 batch_loss: 4654.288574
+train Loss: 55.4794 batch_loss: 3395.681641
+train Loss: 61.3902 batch_loss: 4539.517578
+train Loss: 67.3170 batch_loss: 4551.765625
+train Loss: 70.9729 batch_loss: 2807.731934
+train Loss: 75.4290 batch_loss: 3422.260498
+train Loss: 80.9900 batch_loss: 4270.880371
+train Loss: 87.2660 batch_loss: 4819.992188
+train Loss: 94.5109 batch_loss: 5564.030762
+train Loss: 100.2003 batch_loss: 4369.486816
+train Loss: 104.5836 batch_loss: 3366.382324
+train Loss: 110.3564 batch_loss: 4433.510742
+train Loss: 115.9164 batch_loss: 4270.044922
+train Loss: 118.6199 batch_loss: 2076.346680
+train Loss: 123.7040 batch_loss: 3904.588623
+train Loss: 126.8987 batch_loss: 2453.514648
+train Loss: 133.4364 batch_loss: 5020.940918
+train Loss: 137.2619 batch_loss: 2937.947021
+train Loss: 143.5328 batch_loss: 4816.100098
+train Loss: 146.9244 batch_loss: 2604.716309
+train Loss: 150.9618 batch_loss: 3100.718018
+train Loss: 157.1920 batch_loss: 4784.804199
+train Loss: 160.2587 batch_loss: 2355.242676
+train Loss: 164.5630 batch_loss: 3305.712402
+train Loss: 169.3442 batch_loss: 3671.925781
+train Loss: 173.7911 batch_loss: 3415.209473
+train Loss: 177.8448 batch_loss: 3113.295166
+train Loss: 182.7453 batch_loss: 3763.589844
+train Loss: 186.2310 batch_loss: 2676.960449
+train Loss: 191.9248 batch_loss: 4372.878418
+train Loss: 194.9265 batch_loss: 2305.290039
+train Loss: 201.3218 batch_loss: 4911.619629
+train Loss: 203.8101 batch_loss: 1910.948486
+train Loss: 207.2961 batch_loss: 2677.277588
+train Loss: 211.4015 batch_loss: 3152.957520
+train Loss: 214.6031 batch_loss: 2458.838135
+train Loss: 220.9104 batch_loss: 4843.999023
+train Loss: 224.7332 batch_loss: 2935.935791
+train Loss: 230.1826 batch_loss: 4185.123535
+train Loss: 235.5182 batch_loss: 4097.697754
+train Loss: 242.0939 batch_loss: 5050.161133
+train Loss: 246.2582 batch_loss: 3198.156982
+train Loss: 249.7445 batch_loss: 2677.473145
+train Loss: 255.0649 batch_loss: 4086.096191
+train Loss: 260.6027 batch_loss: 4253.020508
+train Loss: 263.0520 batch_loss: 1881.046875
+train Loss: 267.4974 batch_loss: 3414.130371
+train Loss: 271.6936 batch_loss: 3222.685059
+train Loss: 273.7562 batch_loss: 1584.044312
+train Loss: 277.7415 batch_loss: 3060.686035
+train Loss: 281.3944 batch_loss: 2805.435059
+train Loss: 284.0877 batch_loss: 2068.479248
+train Loss: 290.8029 batch_loss: 5157.297852
+train Loss: 294.5886 batch_loss: 2907.372803
+train Loss: 299.0130 batch_loss: 3397.971191
+train Loss: 304.8961 batch_loss: 4518.188477
+train Loss: 309.6131 batch_loss: 3622.634033
+train Loss: 312.6145 batch_loss: 2305.068848
+train Loss: 315.9297 batch_loss: 2546.089844
+train Loss: 319.9295 batch_loss: 3071.898193
+train Loss: 324.0833 batch_loss: 3190.078857
+train Loss: 329.7173 batch_loss: 4326.948242
+train Loss: 335.6009 batch_loss: 4518.555664
+train Loss: 342.1379 batch_loss: 5020.420898
+train Loss: 348.1840 batch_loss: 4643.389648
+train Loss: 353.2221 batch_loss: 3869.311035
+train Loss: 355.9553 batch_loss: 2099.076904
+train Loss: 363.5522 batch_loss: 5834.440430
+train Loss: 367.3646 batch_loss: 2927.910889
+train Loss: 372.5660 batch_loss: 3994.648438
+train Loss: 377.4173 batch_loss: 3725.812012
+train Loss: 380.7538 batch_loss: 2562.443604
+train Loss: 385.2235 batch_loss: 3432.723877
+train Loss: 388.5469 batch_loss: 2552.399170
+train Loss: 393.5309 batch_loss: 3827.690674
+train Loss: 400.1577 batch_loss: 5089.403320
+train Loss: 404.2175 batch_loss: 3117.878906
+train Loss: 409.0415 batch_loss: 3704.837891
+train Loss: 414.8257 batch_loss: 4442.265625
+train Loss: 419.9079 batch_loss: 3903.166504
+train Loss: 422.8616 batch_loss: 2268.446777
+train Loss: 428.2099 batch_loss: 4107.454102
+train Loss: 433.6030 batch_loss: 4141.947754
+train Loss: 438.6983 batch_loss: 3913.183594
+train Loss: 445.1796 batch_loss: 4977.606934
+train Loss: 450.6371 batch_loss: 4191.374023
+train Loss: 454.3654 batch_loss: 2863.322266
+train Loss: 459.5579 batch_loss: 3987.805908
+train Loss: 464.3476 batch_loss: 3678.531982
+train Loss: 469.5561 batch_loss: 4000.141357
+train Loss: 473.6840 batch_loss: 3170.188965
+train Loss: 478.5365 batch_loss: 3726.729004
+train Loss: 483.9149 batch_loss: 4130.633789
+train Loss: 490.0580 batch_loss: 4717.915039
+train Loss: 495.7265 batch_loss: 4353.389160
+train Loss: 499.4769 batch_loss: 2880.313477
+train Loss: 503.9052 batch_loss: 3400.893799
+train Loss: 508.2843 batch_loss: 3363.151611
+train Loss: 511.5402 batch_loss: 2500.539795
+train Loss: 516.5099 batch_loss: 3816.730469
+train Loss: 521.0263 batch_loss: 3468.615967
+train Loss: 526.3405 batch_loss: 4081.332031
+train Loss: 529.4426 batch_loss: 2382.403809
+train Loss: 536.7588 batch_loss: 5618.829590
+train Loss: 541.5522 batch_loss: 3681.332520
+train Loss: 545.0034 batch_loss: 2650.492676
+train Loss: 548.2802 batch_loss: 2516.634766
+train Loss: 551.0067 batch_loss: 2093.879395
+train Loss: 555.4199 batch_loss: 3389.391357
+train Loss: 563.1487 batch_loss: 5935.726562
+train Loss: 568.9169 batch_loss: 4429.923828
+train Loss: 572.5976 batch_loss: 2826.796875
+train Loss: 577.8220 batch_loss: 4012.312988
+train Loss: 584.9666 batch_loss: 5487.083496
+train Loss: 589.5905 batch_loss: 3551.158691
+train Loss: 593.8771 batch_loss: 3292.133545
+train Loss: 597.6459 batch_loss: 2894.382324
+train Loss: 601.4484 batch_loss: 2920.355225
+train Loss: 605.6644 batch_loss: 3237.861816
+train Loss: 610.2562 batch_loss: 3526.501953
+train Loss: 614.0364 batch_loss: 2903.210938
+train Loss: 619.2236 batch_loss: 3983.765625
+train Loss: 622.8658 batch_loss: 2797.183350
+train Loss: 625.7994 batch_loss: 2253.042969
+train Loss: 631.0181 batch_loss: 4007.926270
+train Loss: 635.0846 batch_loss: 3123.078613
+train Loss: 640.4235 batch_loss: 4100.299805
+train Loss: 644.5443 batch_loss: 3164.768799
+train Loss: 650.9023 batch_loss: 4882.963867
+train Loss: 656.7777 batch_loss: 4512.290039
+train Loss: 660.5696 batch_loss: 2912.198486
+train Loss: 665.6295 batch_loss: 3886.002441
+train Loss: 669.5327 batch_loss: 2997.637939
+train Loss: 674.8780 batch_loss: 4105.164551
+train Loss: 680.1844 batch_loss: 4075.348145
+train Loss: 685.3841 batch_loss: 3993.382080
+train Loss: 690.8893 batch_loss: 4228.007812
+train Loss: 695.2604 batch_loss: 3357.010498
+train Loss: 700.1278 batch_loss: 3738.096191
+train Loss: 705.1118 batch_loss: 3827.775391
+train Loss: 708.3883 batch_loss: 2516.307373
+train Loss: 712.1773 batch_loss: 2909.971191
+train Loss: 719.0581 batch_loss: 5284.473145
+train Loss: 723.0110 batch_loss: 3035.805176
+train Loss: 728.9305 batch_loss: 4546.201172
+train Loss: 733.9292 batch_loss: 3838.975342
+train Loss: 738.3795 batch_loss: 3417.864014
+train Loss: 741.7934 batch_loss: 2621.831299
+train Loss: 747.6289 batch_loss: 4481.695801
+train Loss: 750.1386 batch_loss: 1927.433960
+train Loss: 756.0973 batch_loss: 4576.274902
+train Loss: 761.4825 batch_loss: 4135.806152
+train Loss: 766.3324 batch_loss: 3724.715332
+train Loss: 770.5135 batch_loss: 3211.123535
+train Loss: 774.9934 batch_loss: 3440.524170
+train Loss: 780.0558 batch_loss: 3887.955566
+train Loss: 784.0130 batch_loss: 3039.132324
+train Loss: 788.0455 batch_loss: 3096.979736
+train Loss: 791.4459 batch_loss: 2611.475098
+train Loss: 795.7343 batch_loss: 3293.541748
+train Loss: 800.9754 batch_loss: 4025.137939
+train Loss: 806.3415 batch_loss: 4121.163086
+train Loss: 809.2305 batch_loss: 2218.744629
+train Loss: 811.6162 batch_loss: 1832.186157
+train Loss: 818.9254 batch_loss: 5613.503906
+train Loss: 823.4204 batch_loss: 3452.123535
+train Loss: 828.5986 batch_loss: 3976.874268
+train Loss: 832.3531 batch_loss: 2883.501465
+train Loss: 836.2505 batch_loss: 2993.190918
+train Loss: 842.8348 batch_loss: 5056.743652
+train Loss: 847.7035 batch_loss: 3739.166504
+train Loss: 851.5227 batch_loss: 2933.113770
+train Loss: 855.3008 batch_loss: 2901.605957
+train Loss: 858.3510 batch_loss: 2342.556152
+train Loss: 864.0254 batch_loss: 4357.900879
+train Loss: 869.6661 batch_loss: 4332.103516
+train Loss: 875.5207 batch_loss: 4496.331543
+train Loss: 878.9859 batch_loss: 2661.219971
+train Loss: 883.3983 batch_loss: 3388.734863
+train Loss: 887.8965 batch_loss: 3454.604248
+train Loss: 893.1299 batch_loss: 4019.242676
+train Loss: 897.9201 batch_loss: 3678.905518
+train Loss: 902.8461 batch_loss: 3783.168457
+Loss on the test images: 930.24963 
+Epoch 8/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 3.3986 batch_loss: 2610.120605
+train Loss: 8.7871 batch_loss: 4138.389648
+train Loss: 11.9479 batch_loss: 2427.511230
+train Loss: 17.0212 batch_loss: 3896.274170
+train Loss: 23.5574 batch_loss: 5019.799805
+train Loss: 27.6514 batch_loss: 3144.212402
+train Loss: 30.3221 batch_loss: 2051.063721
+train Loss: 34.9523 batch_loss: 3555.984863
+train Loss: 38.7961 batch_loss: 2952.026123
+train Loss: 43.4427 batch_loss: 3568.626465
+train Loss: 47.8843 batch_loss: 3411.166504
+train Loss: 51.9518 batch_loss: 3123.827393
+train Loss: 59.4411 batch_loss: 5751.754395
+train Loss: 65.2590 batch_loss: 4468.165039
+train Loss: 69.1817 batch_loss: 3012.593506
+train Loss: 73.9025 batch_loss: 3625.588379
+train Loss: 76.1769 batch_loss: 1746.783936
+train Loss: 78.7158 batch_loss: 1949.859741
+train Loss: 85.6355 batch_loss: 5314.280273
+train Loss: 90.3853 batch_loss: 3647.869873
+train Loss: 96.3081 batch_loss: 4548.739258
+train Loss: 102.6890 batch_loss: 4900.506836
+train Loss: 108.9864 batch_loss: 4836.405273
+train Loss: 112.8671 batch_loss: 2980.387939
+train Loss: 115.7760 batch_loss: 2234.000000
+train Loss: 120.0295 batch_loss: 3266.718262
+train Loss: 126.4991 batch_loss: 4968.649414
+train Loss: 132.4110 batch_loss: 4540.328125
+train Loss: 139.1747 batch_loss: 5194.527832
+train Loss: 144.9712 batch_loss: 4451.757812
+train Loss: 149.2684 batch_loss: 3300.205566
+train Loss: 153.1540 batch_loss: 2984.127441
+train Loss: 157.2414 batch_loss: 3139.162109
+train Loss: 161.0528 batch_loss: 2927.125732
+train Loss: 167.2252 batch_loss: 4740.435059
+train Loss: 170.7719 batch_loss: 2723.834473
+train Loss: 176.0306 batch_loss: 4038.698486
+train Loss: 180.4463 batch_loss: 3391.278076
+train Loss: 183.9135 batch_loss: 2662.770264
+train Loss: 189.7952 batch_loss: 4517.167480
+train Loss: 194.0680 batch_loss: 3281.463623
+train Loss: 198.0174 batch_loss: 3033.184082
+train Loss: 204.7219 batch_loss: 5149.055176
+train Loss: 210.7944 batch_loss: 4663.648438
+train Loss: 215.1076 batch_loss: 3312.542969
+train Loss: 218.2450 batch_loss: 2409.537354
+train Loss: 224.0015 batch_loss: 4420.990723
+train Loss: 229.2843 batch_loss: 4057.178467
+train Loss: 233.4650 batch_loss: 3210.778809
+train Loss: 240.2337 batch_loss: 5198.415527
+train Loss: 243.1212 batch_loss: 2217.530029
+train Loss: 247.8281 batch_loss: 3614.903809
+train Loss: 252.4179 batch_loss: 3524.964111
+train Loss: 257.8773 batch_loss: 4192.863281
+train Loss: 261.6540 batch_loss: 2900.520264
+train Loss: 266.4708 batch_loss: 3699.303955
+train Loss: 270.5864 batch_loss: 3160.739502
+train Loss: 276.4662 batch_loss: 4515.735840
+train Loss: 283.0922 batch_loss: 5088.700684
+train Loss: 288.1620 batch_loss: 3893.655029
+train Loss: 292.4430 batch_loss: 3287.813232
+train Loss: 298.1173 batch_loss: 4357.819336
+train Loss: 300.1324 batch_loss: 1547.604492
+train Loss: 303.5527 batch_loss: 2626.805664
+train Loss: 307.2823 batch_loss: 2864.341309
+train Loss: 312.6841 batch_loss: 4148.594238
+train Loss: 316.9114 batch_loss: 3246.551270
+train Loss: 322.4044 batch_loss: 4218.645508
+train Loss: 328.3010 batch_loss: 4528.572266
+train Loss: 331.2078 batch_loss: 2232.415527
+train Loss: 336.3124 batch_loss: 3920.291504
+train Loss: 340.1638 batch_loss: 2957.901123
+train Loss: 342.8307 batch_loss: 2048.216797
+train Loss: 348.0548 batch_loss: 4012.091309
+train Loss: 355.1306 batch_loss: 5434.196777
+train Loss: 359.2803 batch_loss: 3186.989258
+train Loss: 363.1721 batch_loss: 2988.865723
+train Loss: 367.5237 batch_loss: 3342.031738
+train Loss: 371.6249 batch_loss: 3149.723145
+train Loss: 376.8650 batch_loss: 4024.444092
+train Loss: 381.6832 batch_loss: 3700.316895
+train Loss: 386.9113 batch_loss: 4015.198486
+train Loss: 391.0578 batch_loss: 3184.552979
+train Loss: 395.8469 batch_loss: 3677.982910
+train Loss: 400.8416 batch_loss: 3835.941895
+train Loss: 409.0417 batch_loss: 6297.649414
+train Loss: 412.7509 batch_loss: 2848.668457
+train Loss: 420.0564 batch_loss: 5610.653320
+train Loss: 425.2020 batch_loss: 3951.845703
+train Loss: 428.3142 batch_loss: 2390.132080
+train Loss: 432.8197 batch_loss: 3460.258545
+train Loss: 438.2051 batch_loss: 4136.000977
+train Loss: 443.2374 batch_loss: 3864.808105
+train Loss: 448.9673 batch_loss: 4400.559570
+train Loss: 455.0450 batch_loss: 4667.604980
+train Loss: 459.4689 batch_loss: 3397.555420
+train Loss: 462.7548 batch_loss: 2523.596191
+train Loss: 466.9946 batch_loss: 3256.208008
+train Loss: 469.5384 batch_loss: 1953.598389
+train Loss: 473.8030 batch_loss: 3275.225586
+train Loss: 477.9675 batch_loss: 3198.342041
+train Loss: 486.2111 batch_loss: 6331.096680
+train Loss: 489.8157 batch_loss: 2768.284668
+train Loss: 492.4390 batch_loss: 2014.728516
+train Loss: 496.0442 batch_loss: 2768.795166
+train Loss: 500.3120 batch_loss: 3277.656250
+train Loss: 503.5514 batch_loss: 2487.835938
+train Loss: 507.4957 batch_loss: 3029.284424
+train Loss: 512.2034 batch_loss: 3615.490967
+train Loss: 516.6113 batch_loss: 3385.234375
+train Loss: 523.4133 batch_loss: 5223.993652
+train Loss: 527.5248 batch_loss: 3157.581787
+train Loss: 532.1577 batch_loss: 3558.109863
+train Loss: 537.0555 batch_loss: 3761.449219
+train Loss: 541.4344 batch_loss: 3363.005859
+train Loss: 545.2436 batch_loss: 2925.515137
+train Loss: 552.0377 batch_loss: 5217.822266
+train Loss: 558.3608 batch_loss: 4856.128906
+train Loss: 566.6165 batch_loss: 6340.424805
+train Loss: 569.5898 batch_loss: 2283.480225
+train Loss: 575.3541 batch_loss: 4426.993164
+train Loss: 580.5149 batch_loss: 3963.513672
+train Loss: 584.6420 batch_loss: 3169.550781
+train Loss: 588.8873 batch_loss: 3260.427246
+train Loss: 592.7345 batch_loss: 2954.604736
+train Loss: 596.7406 batch_loss: 3076.722168
+train Loss: 600.9575 batch_loss: 3238.604736
+train Loss: 606.4312 batch_loss: 4203.766602
+train Loss: 612.5789 batch_loss: 4721.449219
+train Loss: 615.2382 batch_loss: 2042.353149
+train Loss: 618.5071 batch_loss: 2510.535645
+train Loss: 621.9512 batch_loss: 2645.064697
+train Loss: 627.1379 batch_loss: 3983.387451
+train Loss: 632.6264 batch_loss: 4215.161621
+train Loss: 637.7015 batch_loss: 3897.677246
+train Loss: 644.4351 batch_loss: 5171.381836
+train Loss: 649.6500 batch_loss: 4005.065674
+train Loss: 654.5750 batch_loss: 3782.397705
+train Loss: 659.9352 batch_loss: 4116.616699
+train Loss: 664.1121 batch_loss: 3207.836426
+train Loss: 670.3478 batch_loss: 4789.032715
+train Loss: 676.2257 batch_loss: 4514.221680
+train Loss: 679.4883 batch_loss: 2505.647949
+train Loss: 683.8302 batch_loss: 3334.606934
+train Loss: 686.7188 batch_loss: 2218.481689
+train Loss: 692.1042 batch_loss: 4135.948730
+train Loss: 695.9264 batch_loss: 2935.461914
+train Loss: 699.4243 batch_loss: 2686.401855
+train Loss: 704.0904 batch_loss: 3583.546143
+train Loss: 710.0996 batch_loss: 4615.051758
+train Loss: 712.4829 batch_loss: 1830.349365
+train Loss: 715.7690 batch_loss: 2523.770752
+train Loss: 720.6967 batch_loss: 3784.500732
+train Loss: 725.9704 batch_loss: 4050.171875
+train Loss: 730.8220 batch_loss: 3726.024170
+train Loss: 737.1488 batch_loss: 4858.991211
+train Loss: 742.1307 batch_loss: 3826.089844
+train Loss: 746.1035 batch_loss: 3051.090332
+train Loss: 752.6957 batch_loss: 5062.796875
+train Loss: 756.7553 batch_loss: 3117.802246
+train Loss: 763.4354 batch_loss: 5130.304688
+train Loss: 768.0351 batch_loss: 3532.561768
+train Loss: 773.9743 batch_loss: 4561.351074
+train Loss: 778.1437 batch_loss: 3202.112061
+train Loss: 782.2974 batch_loss: 3189.999512
+train Loss: 787.3573 batch_loss: 3886.011230
+train Loss: 792.3008 batch_loss: 3796.637207
+train Loss: 796.2448 batch_loss: 3028.995850
+train Loss: 800.5687 batch_loss: 3320.706299
+train Loss: 805.7016 batch_loss: 3942.096436
+train Loss: 811.0113 batch_loss: 4077.871094
+train Loss: 815.8599 batch_loss: 3723.718018
+train Loss: 819.0757 batch_loss: 2469.674316
+train Loss: 821.4687 batch_loss: 1837.819946
+train Loss: 825.8403 batch_loss: 3357.455566
+train Loss: 829.6252 batch_loss: 2906.802002
+train Loss: 834.9976 batch_loss: 4126.010742
+train Loss: 839.6939 batch_loss: 3606.692139
+train Loss: 844.0485 batch_loss: 3344.346924
+train Loss: 847.0903 batch_loss: 2336.104004
+train Loss: 851.9465 batch_loss: 3729.581299
+train Loss: 857.2875 batch_loss: 4101.878906
+train Loss: 862.3687 batch_loss: 3902.384766
+train Loss: 866.0729 batch_loss: 2844.814697
+train Loss: 869.6351 batch_loss: 2735.795410
+train Loss: 874.8230 batch_loss: 3984.241455
+train Loss: 879.5698 batch_loss: 3645.585938
+train Loss: 883.5758 batch_loss: 3076.599121
+train Loss: 888.3137 batch_loss: 3638.680908
+train Loss: 892.6812 batch_loss: 3354.275879
+train Loss: 897.5583 batch_loss: 3745.622314
+train Loss: 902.8543 batch_loss: 4067.309326
+Loss on the test images: 930.18361 
+Epoch 9/9
+----------
+trainloader ready!
+testloader ready!
+train Loss: 5.6497 batch_loss: 4338.954590
+train Loss: 9.7462 batch_loss: 3146.130127
+train Loss: 13.0525 batch_loss: 2539.208496
+train Loss: 17.3796 batch_loss: 3323.220703
+train Loss: 21.2983 batch_loss: 3009.551025
+train Loss: 26.7612 batch_loss: 4195.563477
+train Loss: 30.6090 batch_loss: 2955.076660
+train Loss: 34.9873 batch_loss: 3362.548340
+train Loss: 41.1439 batch_loss: 4728.229980
+train Loss: 46.0116 batch_loss: 3738.396973
+train Loss: 51.2307 batch_loss: 4008.296875
+train Loss: 57.0829 batch_loss: 4494.499023
+train Loss: 61.5738 batch_loss: 3449.022217
+train Loss: 65.1384 batch_loss: 2737.623535
+train Loss: 69.3168 batch_loss: 3208.983887
+train Loss: 73.8948 batch_loss: 3515.908691
+train Loss: 78.2749 batch_loss: 3363.885986
+train Loss: 82.7799 batch_loss: 3459.860107
+train Loss: 88.1375 batch_loss: 4114.638672
+train Loss: 92.0950 batch_loss: 3039.386475
+train Loss: 97.3539 batch_loss: 4038.770996
+train Loss: 103.0082 batch_loss: 4342.568848
+train Loss: 108.4146 batch_loss: 4152.112305
+train Loss: 112.5455 batch_loss: 3172.481934
+train Loss: 117.1428 batch_loss: 3530.712891
+train Loss: 124.7652 batch_loss: 5854.026367
+train Loss: 129.7657 batch_loss: 3840.414062
+train Loss: 136.6383 batch_loss: 5278.157227
+train Loss: 140.6990 batch_loss: 3118.628418
+train Loss: 144.5338 batch_loss: 2945.118652
+train Loss: 148.8945 batch_loss: 3349.018311
+train Loss: 153.0293 batch_loss: 3175.532471
+train Loss: 157.8742 batch_loss: 3720.874512
+train Loss: 161.1087 batch_loss: 2484.067871
+train Loss: 164.2807 batch_loss: 2436.103516
+train Loss: 169.0351 batch_loss: 3651.410156
+train Loss: 175.6187 batch_loss: 5056.175781
+train Loss: 181.1819 batch_loss: 4272.563477
+train Loss: 184.9997 batch_loss: 2932.019775
+train Loss: 189.5613 batch_loss: 3503.299316
+train Loss: 194.4873 batch_loss: 3783.171387
+train Loss: 199.5813 batch_loss: 3912.245361
+train Loss: 203.0780 batch_loss: 2685.479492
+train Loss: 208.3612 batch_loss: 4057.445312
+train Loss: 214.6446 batch_loss: 4825.694336
+train Loss: 218.9580 batch_loss: 3312.676270
+train Loss: 226.6336 batch_loss: 5894.877930
+train Loss: 231.3355 batch_loss: 3611.040527
+train Loss: 238.0639 batch_loss: 5167.369629
+train Loss: 242.4095 batch_loss: 3337.473877
+train Loss: 246.1660 batch_loss: 2884.953125
+train Loss: 248.4108 batch_loss: 1724.021851
+train Loss: 255.1646 batch_loss: 5186.941895
+train Loss: 260.4570 batch_loss: 4064.515625
+train Loss: 265.9496 batch_loss: 4218.347656
+train Loss: 269.9647 batch_loss: 3083.566650
+train Loss: 272.8234 batch_loss: 2195.489502
+train Loss: 279.4366 batch_loss: 5078.967285
+train Loss: 282.4885 batch_loss: 2343.837402
+train Loss: 286.4185 batch_loss: 3018.220459
+train Loss: 290.6567 batch_loss: 3254.948975
+train Loss: 297.9671 batch_loss: 5614.420410
+train Loss: 301.6535 batch_loss: 2831.178223
+train Loss: 307.1734 batch_loss: 4239.219238
+train Loss: 309.8663 batch_loss: 2068.202393
+train Loss: 314.8336 batch_loss: 3814.866699
+train Loss: 318.9550 batch_loss: 3165.210205
+train Loss: 326.3476 batch_loss: 5677.558594
+train Loss: 332.5781 batch_loss: 4785.016602
+train Loss: 338.6677 batch_loss: 4676.769531
+train Loss: 341.9894 batch_loss: 2551.096191
+train Loss: 344.8856 batch_loss: 2224.256592
+train Loss: 348.1267 batch_loss: 2489.150879
+train Loss: 353.6649 batch_loss: 4253.377930
+train Loss: 359.2405 batch_loss: 4282.016113
+train Loss: 363.2733 batch_loss: 3097.218262
+train Loss: 365.8397 batch_loss: 1971.012451
+train Loss: 371.7235 batch_loss: 4518.759277
+train Loss: 377.1022 batch_loss: 4130.851074
+train Loss: 381.4865 batch_loss: 3367.091309
+train Loss: 386.4099 batch_loss: 3781.169922
+train Loss: 392.2657 batch_loss: 4497.293457
+train Loss: 395.7272 batch_loss: 2658.433838
+train Loss: 400.5371 batch_loss: 3693.969482
+train Loss: 405.7738 batch_loss: 4021.825684
+train Loss: 409.9040 batch_loss: 3172.013672
+train Loss: 415.4391 batch_loss: 4250.920898
+train Loss: 422.6787 batch_loss: 5560.035156
+train Loss: 428.0475 batch_loss: 4123.238770
+train Loss: 431.5809 batch_loss: 2713.595215
+train Loss: 434.6249 batch_loss: 2337.835205
+train Loss: 439.1025 batch_loss: 3438.802002
+train Loss: 443.7604 batch_loss: 3577.265625
+train Loss: 447.8455 batch_loss: 3137.340332
+train Loss: 452.5493 batch_loss: 3612.535156
+train Loss: 457.5485 batch_loss: 3839.378174
+train Loss: 464.6964 batch_loss: 5489.563477
+train Loss: 472.1093 batch_loss: 5693.089844
+train Loss: 476.2064 batch_loss: 3146.582520
+train Loss: 482.7088 batch_loss: 4993.883301
+train Loss: 489.4629 batch_loss: 5187.143555
+train Loss: 494.9379 batch_loss: 4204.801758
+train Loss: 499.0098 batch_loss: 3127.224609
+train Loss: 503.2953 batch_loss: 3291.276123
+train Loss: 507.0430 batch_loss: 2878.221436
+train Loss: 509.3794 batch_loss: 1794.322510
+train Loss: 513.3294 batch_loss: 3033.637451
+train Loss: 519.8620 batch_loss: 5017.022949
+train Loss: 526.5986 batch_loss: 5173.678223
+train Loss: 529.4761 batch_loss: 2209.929688
+train Loss: 533.8063 batch_loss: 3325.628418
+train Loss: 538.0754 batch_loss: 3278.651123
+train Loss: 540.3049 batch_loss: 1712.281494
+train Loss: 545.6404 batch_loss: 4097.665527
+train Loss: 549.8945 batch_loss: 3267.090332
+train Loss: 552.7287 batch_loss: 2176.699219
+train Loss: 556.0924 batch_loss: 2583.354736
+train Loss: 560.5785 batch_loss: 3445.283936
+train Loss: 565.8241 batch_loss: 4028.651855
+train Loss: 569.7105 batch_loss: 2984.699707
+train Loss: 574.1119 batch_loss: 3380.299561
+train Loss: 577.8869 batch_loss: 2899.173096
+train Loss: 581.9078 batch_loss: 3088.047852
+train Loss: 584.4968 batch_loss: 1988.401733
+train Loss: 588.5020 batch_loss: 3075.972900
+train Loss: 591.8179 batch_loss: 2546.606689
+train Loss: 596.9048 batch_loss: 3906.750732
+train Loss: 601.7947 batch_loss: 3755.417236
+train Loss: 607.5593 batch_loss: 4427.274414
+train Loss: 614.8895 batch_loss: 5629.535156
+train Loss: 619.1459 batch_loss: 3268.968994
+train Loss: 624.2710 batch_loss: 3936.044434
+train Loss: 630.1521 batch_loss: 4516.696289
+train Loss: 635.0725 batch_loss: 3778.862549
+train Loss: 639.6653 batch_loss: 3527.277344
+train Loss: 645.1009 batch_loss: 4174.561523
+train Loss: 651.8408 batch_loss: 5176.244629
+train Loss: 656.5264 batch_loss: 3598.466309
+train Loss: 660.5293 batch_loss: 3074.260010
+train Loss: 665.4792 batch_loss: 3801.501465
+train Loss: 669.9909 batch_loss: 3465.038574
+train Loss: 675.1640 batch_loss: 3972.895264
+train Loss: 680.6299 batch_loss: 4197.834473
+train Loss: 686.3517 batch_loss: 4394.369141
+train Loss: 690.2421 batch_loss: 2987.812988
+train Loss: 694.7735 batch_loss: 3480.114014
+train Loss: 699.2927 batch_loss: 3470.714111
+train Loss: 702.8674 batch_loss: 2745.390137
+train Loss: 707.8018 batch_loss: 3789.636719
+train Loss: 711.1281 batch_loss: 2554.599121
+train Loss: 717.9744 batch_loss: 5257.959961
+train Loss: 720.7227 batch_loss: 2110.706543
+train Loss: 726.1486 batch_loss: 4167.065430
+train Loss: 731.6399 batch_loss: 4217.316406
+train Loss: 733.4861 batch_loss: 1417.895996
+train Loss: 738.2574 batch_loss: 3664.321533
+train Loss: 741.2391 batch_loss: 2289.991699
+train Loss: 747.0757 batch_loss: 4482.479004
+train Loss: 750.4085 batch_loss: 2559.550049
+train Loss: 753.1221 batch_loss: 2084.105469
+train Loss: 760.2999 batch_loss: 5512.509277
+train Loss: 766.0638 batch_loss: 4426.694336
+train Loss: 770.8929 batch_loss: 3708.737061
+train Loss: 774.9443 batch_loss: 3111.514160
+train Loss: 781.1402 batch_loss: 4758.413086
+train Loss: 786.0353 batch_loss: 3759.485107
+train Loss: 789.4169 batch_loss: 2597.039551
+train Loss: 792.8201 batch_loss: 2613.640137
+train Loss: 797.1755 batch_loss: 3344.955811
+train Loss: 802.6401 batch_loss: 4196.801758
+train Loss: 807.0252 batch_loss: 3367.747559
+train Loss: 812.5486 batch_loss: 4241.960938
+train Loss: 815.1841 batch_loss: 2024.105225
+train Loss: 818.3881 batch_loss: 2460.692871
+train Loss: 824.5480 batch_loss: 4730.759277
+train Loss: 831.0744 batch_loss: 5012.315430
+train Loss: 834.5257 batch_loss: 2650.546143
+train Loss: 837.7802 batch_loss: 2499.476807
+train Loss: 840.3532 batch_loss: 1976.053467
+train Loss: 845.5652 batch_loss: 4002.813721
+train Loss: 849.0644 batch_loss: 2687.405762
+train Loss: 853.7899 batch_loss: 3629.198730
+train Loss: 859.2357 batch_loss: 4182.355469
+train Loss: 864.4826 batch_loss: 4029.612549
+train Loss: 867.2712 batch_loss: 2141.645020
+train Loss: 871.4343 batch_loss: 3197.284668
+train Loss: 876.7790 batch_loss: 4104.728516
+train Loss: 880.6114 batch_loss: 2943.244629
+train Loss: 885.5145 batch_loss: 3765.624268
+train Loss: 891.0205 batch_loss: 4228.549316
+train Loss: 896.9541 batch_loss: 4557.007324
+train Loss: 902.8606 batch_loss: 4536.248047
+Loss on the test images: 930.22848 
+Training complete in 24m 9s
+Best val Acc: 0.000000
+Traceback (most recent call last):
+  File "train.py", line 191, in <module>
+    model = train_model(model, criterion, optimizer_ft, exp_lr_scheduler, batch_size = 4, step_size = 20, num_epochs=10)
+  File "train.py", line 161, in train_model
+    return encoder, decoder
+NameError: global name 'encoder' is not defined
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ CUDA_VISIBLE_DEVICES=1,2,3 python train.py[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit pull[Kclean -fxdreset --hard origin/master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansim/ls[Kcd github/ls[Ktopnvidia-smils[Kcd ansimls[Kcd ..[3Plscd datals[Kcd ..[3Plscd github/ls[Kcd ..[3Plscd..[2Plscd ~[2Plstopnvidia-smils[Ktopnvidia-smijupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansim/ls[Kgit clone git@github.com:ruoshiliu/ansim.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd github/ls[Kcd github/ls[Kgit clone git@github.com:ruoshiliu/ansim.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansim/[K[rliu@dm ansim]$ cd ansim/[K[rliu@dm ansim]$ cd ansim/ls[Kjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnvidia-smi[Ktop[K[1Plsnvidia-smitop[K[1Plscd ~[2Plscd..[2Plscd ..[3Plscd github/ls[Kcd ..[3Plscd datals[Kcd ..[3Plscd ansimls[Knvidia-smitop[K[1Plscd github/ls[Kcd ansim/ls[Kgit reset --hard origin/master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Pclean -fxd[6Ppulljupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Ppython train.py[27@CUDA_VISIBLE_DEVICES=1,2,3 [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K;s[K[Kls
+ansim_dataset.py   ConvLSTM.py          dataset.ipynb     LICENSE      README.md  train.ipynb
+ansim_dataset.pyc  ConvLSTM.pyc         img_list.csv      [0m[01;34mlog[0m          test.csv   train.py
+ConvLSTM.ipynb     convolution_lstm.py  indiecoder.ipynb  [01;34m__pycache__[0m  train.csv  Untitled1.ipynb
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ i[Kcd ..
+krliu@dm:~/github\[rliu@dm github]$ ls
+[0m[01;34mansim[0m  [01;34mdefect_classifier[0m
+krliu@dm:~/github\[rliu@dm github]$ cd [K[K[Kls
+[0m[01;34mansim[0m  [01;34mdefect_classifier[0m
+krliu@dm:~/github\[rliu@dm github]$ cd ansim/
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ ls
+ansim_dataset.py   ConvLSTM.py          dataset.ipynb     LICENSE      README.md  train.ipynb
+ansim_dataset.pyc  ConvLSTM.pyc         img_list.csv      [0m[01;34mlog[0m          test.csv   train.py
+ConvLSTM.ipynb     convolution_lstm.py  indiecoder.ipynb  [01;34m__pycache__[0m  train.csv  Untitled1.ipynb
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ vim train.
+[?1049h[?1h=[1;32r[34l[34h[?25h[23m[24m[0m[H[J[?25l[32;1H"train." [New File][2;1H[1m[34m~                                                                                                                         [3;1H~                                                                                                                         [4;1H~                                                                                                                         [5;1H~                                                                                                                         [6;1H~                                                                                                                         [7;1H~                                                                                                                         [8;1H~                                                                                                                         [9;1H~                                                                                                                         [10;1H~                                                                                                                         [11;1H~                                                                                                                         [12;1H~                                                                                                                         [13;1H~                                                                                                                         [14;1H~                                                                                                                         [15;1H~                                                                                                                         [16;1H~                                                                                                                         [17;1H~                                                                                                                         [18;1H~                                                                                                                         [19;1H~                                                                                                                         [20;1H~                                                                                                                         [21;1H~                                                                                                                         [22;1H~                                                                                                                         [23;1H~                                                                                                                         [24;1H~                                                                                                                         [25;1H~                                                                                                                         [26;1H~                                                                                                                         [27;1H~                                                                                                                         [28;1H~                                                                                                                         [29;1H~                                                                                                                         [30;1H~                                                                                                                         [31;1H~                                                                                                                         [0m[32;105H0,0-1[9CAll[1;1H[34h[?25h[32;1H[32;1H[K[32;1H[?1l>[?1049lkrliu@dm:~/github/ansim\[rliu@dm ansim]$ ls
+ansim_dataset.py   ConvLSTM.py          dataset.ipynb     LICENSE      README.md  train.ipynb
+ansim_dataset.pyc  ConvLSTM.pyc         img_list.csv      [0m[01;34mlog[0m          test.csv   train.py
+ConvLSTM.ipynb     convolution_lstm.py  indiecoder.ipynb  [01;34m__pycache__[0m  train.csv  Untitled1.ipynb
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ vim train..[Kpy 
+[?1049h[?1h=[1;32r[34l[34h[?25h[23m[24m[0m[H[J[?25l[32;1H"train.py" 192L, 7748C[1;1H[35mimport[0m pandas [33mas[0m pd
+[35mimport[0m numpy [33mas[0m np
+[35mfrom[0m PIL [35mimport[0m Image
+[35mfrom[0m PIL [35mimport[0m ImageOps
+[35mimport[0m PIL
+[35mimport[0m torch, torchvision
+[35mfrom[0m torch.utils.data [35mimport[0m Dataset, DataLoader
+[35mimport[0m matplotlib.pyplot [33mas[0m plt
+[35mfrom[0m ansim_dataset [35mimport[0m ansimDataset, create_circular_mask
+[34m# from convolution_lstm import encoderConvLSTM, decoderConvLSTM[0m
+[35mfrom[0m ConvLSTM [35mimport[0m ConvLSTM
+[35mimport[0m random
+[35mimport[0m math
+[35mimport[0m torch.nn [33mas[0m nn
+[35mimport[0m torch.optim [33mas[0m optim
+[35mfrom[0m torch.optim [35mimport[0m lr_scheduler
+[35mfrom[0m torch.autograd [35mimport[0m Variable
+[35mfrom[0m torchvision [35mimport[0m datasets, models, transforms
+[35mimport[0m time
+[35mimport[0m os
+
+img_path = [31m'/home/rliu/ansim/data/data/JPEGImages/'[0m
+img_list_csv = [31m'/home/rliu/github/ansim/img_list.csv'[0m
+train_csv = [31m'/home/rliu/github/ansim/train.csv'[0m
+test_csv = [31m'/home/rliu/github/ansim/test.csv'[0m
+output_path = [31m'/home/rliu/ansim/models/very_first.pt'[0m
+
+mask = create_circular_mask([31m128[0m,[31m128[0m)
+trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=[31m20[0m, random_rotate = [36mTrr[30;1Hue[0m, mask = mask, transform=[36mNone[0m)
+trainloader = torch.utils.data.DataLoader(trainset,[32;105H21,0-1[8CTop[21;1H[34h[?25h[?25l[32;106H2,1  [22;1H[34h[?25h[?25l[32;106H3[23;1H[34h[?25h[?25l[32;106H4[24;1H[34h[?25h[?25l[32;106H5[25;1H[34h[?25h[?25l[32;106H6[26;1H[34h[?25h[?25l[32;106H7,0-1[27;1H[34h[?25h[?25l[32;106H8,1  [28;1H[34h[?25h[?25l[32;106H9[29;1H[34h[?25h[?25l[32;105H30[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;46Hbatch_size=[31m8[0m, shuffle=[36mTrue[0m,[32;1H[K[32;105H31,1[11C0%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;46Hnum_workers=[31m4[0m)[32;105H[K[32;105H32,1[11C1%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H33,0-1[9C1%[31;1H[34h[?25h[?25l[1;31r[1;1H[2M[1;32r[30;1Htestset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=[31m20[0m, random_rotate = [36mTruee[0m[31;1H, mask = mask, transform=[36mNone[0m)[32;105H[K[32;105H34,1[11C3%[30;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Htestloader = torch.utils.data.DataLoader(testset,[32;105H[K[32;105H35,1[11C3%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;46Hbatch_size=[31m8[0m, shuffle=[36mTrue[0m,[32;105H[K[32;105H36,1[11C4%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;46Hnum_workers=[31m4[0m)[32;105H[K[32;105H37,1[11C4%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H38,0-1[9C5%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Huse_gpu = torch.cuda.is_available()[32;105H[K[32;105H39,1[11C6%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[33mif[0m use_gpu:[32;105H[K[32;105H40,1[11C6%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[36mprint[0m([31m"GPU in use"[0m)[32;105H[K[32;105H41,1[11C7%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H42,0-1[9C7%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hdevice = torch.device([31m"cuda:0"[0m [33mif[0m torch.cuda.is_available() [33melse[0m [31m"cpu"[0m)[32;105H[K[32;105H43,1[11C8%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H44,0-1[9C9%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[33mdef[0m [36mtrain_model[0m(model, criterion, optimizer, scheduler, num_epochs=[31m25[0m, batch_size = [31m4[0m, step_size = [31m20[0m):[32;105H[K[32;105H45,1[11C9%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hsince = time.time()[32;105H[K[32;105H46,1[10C10%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H47,0-1[8C11%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hbest_model_wts = model.state_dict()[32;105H[K[32;105H48,1[10C11%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hbest_acc = [31m0.0[0m[32;105H[K[32;105H49,1[10C12%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H50,0-1[8C12%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[33mfor[0m epoch [33min[0m [36mrange[0m(num_epochs):[32;105H[K[32;105H51,1[10C13%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[36mprint[0m([31m'Epoch {}/{}'[0m.[36mformat[0m(epoch, num_epochs - [31m1[0m))[32;105H[K[32;105H52,1[10C14%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[36mprint[0m([31m'-'[0m * [31m10[0m)[32;105H[K[32;105H53,1[10C14%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H54,0-1[8C15%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[34m# Each epoch has a training phase[0m[32;105H[K[32;105H55,1[10C15%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9Hscheduler.step()[32;105H[K[32;105H56,1[10C16%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9Hmodel.train([36mTrue[0m)  [34m# Set model to training mode[0m[32;105H[K[32;105H57,1[10C17%[31;1H[34h[?25h[?25l[1;31r[1;1H[2M[1;32r[30;9Hrunning_loss = [31m0.0[0m[31;9Hrunning_corrects = [31m0[0m[32;105H[K[32;105H58,1[10C17%[30;1H[34h[?25h[?25l[32;106H9[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H60,1[10C18%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H61,0-1[8C19%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[34m# Iterate over data.[0m[32;105H[K[32;105H62,1[10C19%[31;1H[34h[?25h[?25l[1;31r[1;1H[3M[1;32r[29;9Htrainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, rann[30;1Hdom_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[31;9Htrainloader = torch.utils.data.DataLoader(trainset,[32;105H[K[32;105H63,1[10C20%[29;1H[34h[?25h[?25l[32;106H4[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[32;105H[K[32;105H65,1[10C21%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;54Hnum_workers=[31m4[0m)[32;105H[K[32;105H66,1[10C22%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H67,0-1[8C22%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[36mprint[0m([31m"trainloader ready!"[0m)[32;105H[K[32;105H68,1[10C23%[31;1H[34h[?25h[?25l[1;31r[1;1H[2M[1;32r[30;9Htestset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, randoo[31;1Hm_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[32;105H[K[32;105H69,1[10C24%[30;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9Htestloader = torch.utils.data.DataLoader(testset,[32;105H[K[32;105H70,1[10C25%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[32;105H[K[32;105H71,1[10C25%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;54Hnum_workers=[31m4[0m)[32;105H[K[32;105H72,1[10C26%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[36mprint[0m([31m"testloader ready!"[0m)[32;105H[K[32;105H73,1[10C26%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H74,1[10C27%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[33mfor[0m data [33min[0m trainloader:[32;105H[K[32;105H75,1[10C28%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[34m# get the inputs[0m[32;105H[K[32;105H76,1[10C28%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[32;105H[K[32;105H77,1[10C29%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hinputs = data_split[[31m0[0m][32;105H[K[32;105H78,1[10C30%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Htarget = data_split[[31m1[0m][32;105H[K[32;105H79,1[10C30%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#            print(inputs)[0m[32;105H[K[32;105H80,1[10C31%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[34m# wrap them in Variable[0m[32;105H[K[32;105H81,1[10C31%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[33mif[0m use_gpu:[32;105H[K[32;105H82,1[10C32%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hinputs, target = inputs.to(device), target.to(device)[32;105H[K[32;105H83,1[10C33%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[33melse[0m:[32;105H[K[32;105H84,1[10C33%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hinputs, target = Variable(inputs), Variable(target)[32;105H[K[32;105H85,1[10C34%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H86,0-1[8C34%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[34m# zero the parameter gradients[0m[32;105H[K[32;105H87,1[10C35%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hoptimizer.zero_grad()[32;105H[K[32;105H88,1[10C36%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H89,1[10C36%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             output, h, c, states = encoder(inputs)[0m[32;105H[K[32;105H90,1[10C37%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             output_last = output[0][0].double()[0m[32;105H[K[32;105H91,1[10C38%[31;1H[34h[?25h[?25l[1;31r[1;1H[2M[1;32r[30;1H[34m#             h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
+#             c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1][0m[32;105H[K[32;105H92,1[10C38%[30;1H[34h[?25h[?25l[32;106H3[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)[0m[32;105H[K[32;105H94,1[10C39%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             x = decoder.activateConv(states_cat)[0m[32;105H[K[32;105H95,1[10C40%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             input_d = [x, states][0m[32;105H[K[32;105H96,1[10C40%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             output_d, h_d, c_d, states_d = decoder(input_d)[0m[32;105H[K[32;105H97,1[10C41%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#             predicted = torch.cat(output_d, dim=0, out=None).double()[0m[32;105H[K[32;105H98,1[10C41%[31;1H[34h[?25h[?25l[1;31r[1;1H[2M[1;32r[31;13H_, _, predicted = model(inputs)[32;105H[K[32;105H99,1[10C42%[30;1H[34h[?25h[?25l[32;105H100,1[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H101,1[9C43%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hloss = criterion(predicted, target)[32;105H[K[32;105H102,1[9C44%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[34m# forward[0m[32;105H[K[32;105H103,1[9C44%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#            outputs = model(inputs)[0m[32;105H[K[32;105H104,1[9C45%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#            _, preds = torch.max(outputs.data, 1)[0m[32;105H[K[32;105H105,1[9C45%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#            loss = criterion(outputs, labels)[0m[32;105H[K[32;105H106,1[9C46%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H107,0-1[7C47%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hloss.backward()[32;105H[K[32;105H108,1[9C47%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hoptimizer.step()[32;105H[K[32;105H109,1[9C48%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H110,0-1[7C49%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[34m# statistics[0m[32;105H[K[32;105H111,1[9C49%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hiter_loss = loss.item()[32;105H[K[32;105H112,1[9C50%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hrunning_loss += loss.item()[32;105H[K[32;105H113,1[9C50%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hepoch_loss = running_loss / [36mlen[0m(trainset)[32;105H[K[32;105H114,1[9C51%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H115,1[9C52%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[36mprint[0m([31m'{} Loss: {:.4f} batch_loss: {:f}'[0m.[36mformat[0m([32;105H[K[32;105H116,1[9C52%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17H[31m"train"[0m, epoch_loss, iter_loss))[32;105H[K[32;105H117,1[9C53%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H118,1[9C54%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[33mwith[0m torch.no_grad():[32;105H[K[32;105H119,1[9C54%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hrunning_loss_test = [31m0.0[0m[32;105H[K[32;105H120,1[9C55%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13H[33mfor[0m data [33min[0m testloader:[32;105H[K[32;105H121,1[9C55%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[32;105H[K[32;105H122,1[9C56%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hinputs = data_split[[31m0[0m][32;105H[K[32;105H123,1[9C57%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Htarget = data_split[[31m1[0m][32;105H[K[32;105H124,1[9C57%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H125,1[9C58%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H126,1[9C59%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17H[33mif[0m use_gpu:[32;105H[K[32;105H127,1[9C59%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;21Hinputs, target = inputs.to(device), target.to(device)[32;105H[K[32;105H128,1[9C60%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17H[33melse[0m:[32;105H[K[32;105H129,1[9C60%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;21Hinputs, target = Variable(inputs), Variable(target)[32;105H[K[32;105H130,1[9C61%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H131,0-1[7C62%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H132,1[9C62%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 output, h, c, states = encoder(inputs)[0m[32;105H[K[32;105H133,1[9C63%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 output_last = output[0][0].double()[0m[32;105H[K[32;105H134,1[9C63%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0][0m[32;105H[K[32;105H135,1[9C64%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1][0m[32;105H[K[32;105H136,1[9C65%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)[0m[32;105H[K[32;105H137,1[9C65%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 x = decoder.activateConv(states_cat)[0m[32;105H[K[32;105H138,1[9C66%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 input_d = [x, states][0m[32;105H[K[32;105H139,1[9C67%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 output_d, h_d, c_d, states_d = decoder(input_d)[0m[32;105H[K[32;105H140,1[9C67%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#                 predicted = torch.cat(output_d, dim=0, out=None).double()[0m[32;105H[K[32;105H141,1[9C68%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H142,0-1[7C68%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17H_, _, predicted = model(inputs)[32;105H[K[32;105H143,1[9C69%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H144,1[9C70%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hloss_test = criterion(predicted, target)[32;105H[K[32;105H145,1[9C70%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hiter_loss_test = loss_test.item()[32;105H[K[32;105H146,1[9C71%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hrunning_loss_test += loss_test.item()[32;105H[K[32;105H147,1[9C72%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[32;105H[K[32;105H148,1[9C72%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H149,0-1[7C73%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([32;105H[K[32;105H150,1[9C73%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;13Hepoch_loss_test))[32;105H[K[32;105H151,1[9C74%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H152,1[9C75%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H153,0-1[7C75%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Htime_elapsed = time.time() - since[32;105H[K[32;105H154,1[9C76%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([32;105H[K[32;105H155,1[9C77%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))[32;105H[K[32;105H156,1[9C77%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[32;105H[K[32;105H157,1[9C78%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H158,0-1[7C78%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[34m# load best model weights[0m[32;105H[K[32;105H159,1[9C79%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hmodel.load_state_dict(best_model_wts)[32;105H[K[32;105H160,1[9C80%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5H[33mreturn[0m encoder, decoder[32;105H[K[32;105H161,1[9C80%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H162,0-1[7C81%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# transfer learning resnet18[0m[32;105H[K[32;105H163,1[9C81%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hstep_size = [31m20[0m[32;105H[K[32;105H164,1[9C82%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hmodel = ConvLSTM(input_size=([31m128[0m,[31m128[0m),[32;105H[K[32;105H165,1[9C83%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hinput_dim=[31m1[0m,[32;105H[K[32;105H166,1[9C83%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hhidden_dim=[[31m64[0m, [31m64[0m, [31m128[0m],[32;105H[K[32;105H167,1[9C84%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hkernel_size=([31m3[0m, [31m3[0m),[32;105H[K[32;105H168,1[9C85%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hnum_layers=[31m3[0m,[32;105H[K[32;105H169,1[9C85%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hpredict_steps=[36mint[0m(step_size/[31m2[0m),[32;105H[K[32;105H170,1[9C86%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hbatch_first=[36mTrue[0m,[32;105H[K[32;105H171,1[9C86%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hbias=[36mTrue[0m,[32;105H[K[32;105H172,1[9C87%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;18Hreturn_all_layers=[36mTrue[0m).cuda()[32;105H[K[32;105H173,1[9C88%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H174,0-1[7C88%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[33mif[0m use_gpu:[32;105H[K[32;105H175,1[9C89%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#     encoder = torch.nn.DataParallel(encoder)[0m[32;105H[K[32;105H176,1[9C90%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#     decoder = torch.nn.DataParallel(decoder)[0m[32;105H[K[32;105H177,1[9C90%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hmodel = torch.nn.DataParallel(model)[32;105H[K[32;105H178,1[9C91%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;5Hmodel.to(device)[32;105H[K[32;105H179,1[9C91%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H180,0-1[7C92%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hcriterion = nn.MSELoss()[32;105H[K[32;105H181,1[9C93%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#criterion = nn.CrossEntropyLoss()[0m[32;105H[K[32;105H182,1[9C93%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H183,0-1[7C94%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# Observe that all parameters are being optimized[0m[32;105H[K[32;105H184,1[9C95%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hoptimizer_ft = optim.Adam(model.parameters(), lr=[31m0.001[0m, betas=([31m0.9[0m, [31m0.999[0m), eps=[31m1e-08[0m, weight_decay=[31m0[0m, amsgrad=[36mFalse[0m)[32;105H[K[32;105H185,1[9C95%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H186,0-1[7C96%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# Decay LR by a factor of 0.1 every 7 epochs[0m[32;105H[K[32;105H187,1[9C96%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hexp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=[31m1[0m, gamma=[31m0.1[0m)[32;105H[K[32;105H188,1[9C97%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H189,0-1[7C98%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# train model[0m[32;105H[K[32;105H190,1[9C98%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hmodel = train_model(model, criterion, optimizer_ft, exp_lr_scheduler, batch_size = [31m4[0m, step_size = [31m20[0m, num_epochs=[31m10[0m)[32;105H[K[32;105H191,1[9C99%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Htorch.save(model, output_path)[32;105H[K[32;105H192,1[9CBot[31;1H[34h[?25h[?25l[32;107H1[30;1H[34h[?25h[?25l[32;107H0[29;1H[34h[?25h[?25l[32;106H89,0-1[28;1H[34h[?25h[?25l[32;107H8,1  [27;1H[34h[?25h[?25l[32;107H7[26;1H[34h[?25h[?25l[32;107H6,0-1[25;1H[34h[?25h[?25l[32;107H5,1  [24;1H[34h[?25h[?25l[32;107H4[23;1H[34h[?25h[?25l[32;107H3,0-1[22;1H[34h[?25h[?25l[32;107H2,1  [21;1H[34h[?25h[?25l[32;107H1[20;1H[34h[?25h[?25l[32;107H0,0-1[19;1H[34h[?25h[?25l[32;106H79,1  [18;1H[34h[?25h[?25l[32;107H8[17;1H[34h[?25h[?25l[32;107H7[16;1H[34h[?25h[?25l[32;107H6[15;1H[34h[?25h[?25l[32;107H5[14;1H[34h[?25h[?25l[32;107H4,0-1[13;1H[34h[?25h[?25l[32;107H3,1  [12;1H[34h[?25h[?25l[32;107H2[11;1H[34h[?25h[?25l[32;107H1[10;1H[34h[?25h[?25l[32;107H0[9;1H[34h[?25h[?25l[32;106H69[8;1H[34h[?25h[?25l[32;107H8[7;1H[34h[?25h[?25l[32;107H7[6;1H[34h[?25h[?25l[32;107H6[5;1H[34h[?25h[?25l[32;107H5[4;1H[34h[?25h[?25l[32;107H4[3;1H[34h[?25h[?25l[32;107H3[2;1H[34h[?25h[?25l[32;107H2,0-1[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[33mreturn[0m encoder, decoder[32;105H[K[32;105H161,1[9C99%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5Hmodel.load_state_dict(best_model_wts)[32;105H[K[32;105H160,1[9C98%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[34m# load best model weights[0m[32;105H[K[32;105H159,1[9C98%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H158,0-1[7C97%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[32;105H[K[32;105H157,1[9C96%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))[32;105H[K[32;105H156,1[9C96%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([32;105H[K[32;105H155,1[9C95%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5Htime_elapsed = time.time() - since[32;105H[K[32;105H154,1[9C95%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H153,0-1[7C94%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H152,1[9C93%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;13Hepoch_loss_test))[32;105H[K[32;105H151,1[9C93%[1;1H[34h[?25h[?25l[32;107H2[2;1H[34h[?25h[?25l[32;107H3,0-1[3;1H[34h[?25h[?25l[32;107H4,1  [4;1H[34h[?25h[?25l[32;107H5[5;1H[34h[?25h[?25l[32;107H6[6;1H[34h[?25h[?25l[32;107H7[7;1H[34h[?25h[?25l[32;107H8,0-1[8;1H[34h[?25h[?25l[32;107H9,1  [9;1H[34h[?25h[?25l[32;106H60[10;1H[34h[?25h[?25l[32;107H1[11;1H[34h[?25h[?25l[32;107H2,0-1[12;1H[34h[?25h[?25l[32;107H3,1  [13;1H[34h[?25h[?25l[32;107H4[14;1H[34h[?25h[?25l[32;107H5[15;1H[34h[?25h[?25l[32;107H6[16;1H[34h[?25h[?25l[32;107H7[17;1H[34h[?25h[?25l[32;107H8[18;1H[34h[?25h[?25l[32;107H9[19;1H[34h[?25h[?25l[32;106H70[20;1H[34h[?25h[?25l[32;107H1[21;1H[34h[?25h[?25l[32;107H2[22;1H[34h[?25h[?25l[32;107H3[23;1H[34h[?25h[?25l[32;107H4,0-1[24;1H[34h[?25h[?25l[32;107H5,1  [25;1H[34h[?25h[?25l[32;107H6[26;1H[34h[?25h[?25l[32;107H7[27;1H[34h[?25h[?25l[32;107H8[28;1H[34h[?25h[?25l[32;107H9[29;1H[34h[?25h[?25l[32;106H80,0-1[30;1H[34h[?25h[?25l[32;107H1,1  [31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m#criterion = nn.CrossEntropyLoss()[0m[32;105H[K[32;105H182,1[9C93%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H183,0-1[7C94%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# Observe that all parameters are being optimized[0m[32;105H[K[32;105H184,1[9C95%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hoptimizer_ft = optim.Adam(model.parameters(), lr=[31m0.001[0m, betas=([31m0.9[0m, [31m0.999[0m), eps=[31m1e-08[0m, weight_decay=[31m0[0m, amsgrad=[36mFalse[0m)[32;105H[K[32;105H185,1[9C95%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H186,0-1[7C96%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# Decay LR by a factor of 0.1 every 7 epochs[0m[32;105H[K[32;105H187,1[9C96%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hexp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=[31m1[0m, gamma=[31m0.1[0m)[32;105H[K[32;105H188,1[9C97%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[32;105H[K[32;105H189,0-1[7C98%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1H[34m# train model[0m[32;105H[K[32;105H190,1[9C98%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Hmodel = train_model(model, criterion, optimizer_ft, exp_lr_scheduler, batch_size = [31m4[0m, step_size = [31m20[0m, num_epochs=[31m10[0m)[32;105H[K[32;105H191,1[9C99%[31;1H[34h[?25h[?25l[1;31r[31;1H
+[1;32r[31;1Htorch.save(model, output_path)[32;105H[K[32;105H192,1[9CBot[31;1H[34h[?25h[?25l[32;107H1[30;1H[34h[?25h[?25l[32;107H0[29;1H[34h[?25h[?25l[32;106H89,0-1[28;1H[34h[?25h[?25l[32;107H8,1  [27;1H[34h[?25h[?25l[32;107H7[26;1H[34h[?25h[?25l[32;107H6,0-1[25;1H[34h[?25h[?25l[32;107H5,1  [24;1H[34h[?25h[?25l[32;107H4[23;1H[34h[?25h[?25l[32;107H3,0-1[22;1H[34h[?25h[?25l[32;107H2,1  [21;1H[34h[?25h[?25l[32;107H1[20;1H[34h[?25h[?25l[32;107H0,0-1[19;1H[34h[?25h[?25l[32;106H79,1  [18;1H[34h[?25h[?25l[32;107H8[17;1H[34h[?25h[?25l[32;107H7[16;1H[34h[?25h[?25l[32;107H6[15;1H[34h[?25h[?25l[32;107H5[14;1H[34h[?25h[?25l[32;107H4,0-1[13;1H[34h[?25h[?25l[32;107H3,1  [12;1H[34h[?25h[?25l[32;107H2[11;1H[34h[?25h[?25l[32;107H1[10;1H[34h[?25h[?25l[32;107H0[9;1H[34h[?25h[?25l[32;106H69[8;1H[34h[?25h[?25l[32;107H8[7;1H[34h[?25h[?25l[32;107H7[6;1H[34h[?25h[?25l[32;107H6[5;1H[34h[?25h[?25l[32;107H5[4;1H[34h[?25h[?25l[32;107H4[3;1H[34h[?25h[?25l[32;107H3[2;1H[34h[?25h[?25l[32;107H2,0-1[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[33mreturn[0m encoder, decoder[32;105H[K[32;105H161,1[9C99%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5Hmodel.load_state_dict(best_model_wts)[32;105H[K[32;105H160,1[9C98%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[34m# load best model weights[0m[32;105H[K[32;105H159,1[9C98%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H158,0-1[7C97%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[32;105H[K[32;105H157,1[9C96%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))[32;105H[K[32;105H156,1[9C96%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5H[36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([32;105H[K[32;105H155,1[9C95%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;5Htime_elapsed = time.time() - since[32;105H[K[32;105H154,1[9C95%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H153,0-1[7C94%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H152,1[9C93%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;13Hepoch_loss_test))[32;105H[K[32;105H151,1[9C93%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([32;105H[K[32;105H150,1[9C92%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H149,0-1[7C91%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[32;105H[K[32;105H148,1[9C91%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;17Hrunning_loss_test += loss_test.item()[32;105H[K[32;105H147,1[9C90%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;17Hiter_loss_test = loss_test.item()[32;105H[K[32;105H146,1[9C90%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;17Hloss_test = criterion(predicted, target)[32;105H[K[32;105H145,1[9C89%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[32;105H[K[32;105H144,1[9C88%[1;1H[34h[?25h[?25l[1;31r[1;1H[L[1;32r[1;17H_, _, predicted = model(inputs)[32;105H[K[32;105H143,1[9C88%[1;1H[34h[?25h[23m[24m[0m[H[J[?25l[1;17H_, _, predicted = model(inputs)[3;17Hloss_test = criterion(predicted, target)[4;17Hiter_loss_test = loss_test.item()[5;17Hrunning_loss_test += loss_test.item()[6;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[8;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([9;13Hepoch_loss_test))[12;5Htime_elapsed = time.time() - since
+    [36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([14;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))
+    [36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[17;5H[34m# load best model weights[0m
+    model.load_state_dict(best_model_wts)
+    [33mreturn[0m encoder, decoder
+
+[34m# transfer learning resnet18[0m
+step_size = [31m20[0m
+model = ConvLSTM(input_size=([31m128[0m,[31m128[0m),[24;18Hinput_dim=[31m1[0m,[25;18Hhidden_dim=[[31m64[0m, [31m64[0m, [31m128[0m],[26;18Hkernel_size=([31m3[0m, [31m3[0m),[27;18Hnum_layers=[31m3[0m,[28;18Hpredict_steps=[36mint[0m(step_size/[31m2[0m),[29;18Hbatch_first=[36mTrue[0m,[30;18Hbias=[36mTrue[0m,[31;18Hreturn_all_layers=[36mTrue[0m).cuda()[33;105H143,1[9C88%[1;1H[34h[?25h[23m[24m[0m[H[J[?25l[1;17H_, _, predicted = model(inputs)[3;17Hloss_test = criterion(predicted, target)[4;17Hiter_loss_test = loss_test.item()[5;17Hrunning_loss_test += loss_test.item()[6;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[8;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([9;13Hepoch_loss_test))[12;5Htime_elapsed = time.time() - since
+    [36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([14;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))
+    [36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[17;5H[34m# load best model weights[0m
+    model.load_state_dict(best_model_wts)
+    [33mreturn[0m encoder, decoder
+
+[34m# transfer learning resnet18[0m
+step_size = [31m20[0m
+model = ConvLSTM(input_size=([31m128[0m,[31m128[0m),[24;18Hinput_dim=[31m1[0m,[25;18Hhidden_dim=[[31m64[0m, [31m64[0m, [31m128[0m],[26;18Hkernel_size=([31m3[0m, [31m3[0m),[27;18Hnum_layers=[31m3[0m,[28;18Hpredict_steps=[36mint[0m(step_size/[31m2[0m),[29;18Hbatch_first=[36mTrue[0m,[30;18Hbias=[36mTrue[0m,[31;18Hreturn_all_layers=[36mTrue[0m).cuda()
+
+[33mif[0m use_gpu:
+[34m#     encoder = torch.nn.DataParallel(encoder)
+#     decoder = torch.nn.DataParallel(decoder)[0m
+    model = torch.nn.DataParallel(model)
+    model.to(device)[38;105H143,1[9C91%[1;1H[34h[?25h[?25l[38;107H4[2;1H[34h[?25h[?25l[38;107H5[3;1H[34h[?25h[?25l[38;107H6[4;1H[34h[?25h[?25l[38;107H7[5;1H[34h[?25h[?25l[38;107H8[6;1H[34h[?25h[?25l[38;107H9,0-1[7;1H[34h[?25h[?25l[38;106H50,1  [8;1H[34h[?25h[?25l[38;107H1[9;1H[34h[?25h[?25l[38;107H2[10;1H[34h[?25h[?25l[38;107H3,0-1[11;1H[34h[?25h[?25l[38;107H4,1  [12;1H[34h[?25h[?25l[38;107H5[13;1H[34h[?25h[?25l[38;107H6[14;1H[34h[?25h[?25l[38;107H7[15;1H[34h[?25h[?25l[38;107H8,0-1[16;1H[34h[?25h[?25l[38;107H9,1  [17;1H[34h[?25h[?25l[38;106H60[18;1H[34h[?25h[?25l[38;107H1[19;1H[34h[?25h[?25l[38;107H2,0-1[20;1H[34h[?25h[?25l[38;107H3,1  [21;1H[34h[?25h[?25l[38;107H4[22;1H[34h[?25h[?25l[38;107H5[23;1H[34h[?25h[?25l[38;107H6[24;1H[34h[?25h[?25l[38;107H7[25;1H[34h[?25h[?25l[38;107H8[26;1H[34h[?25h[?25l[38;107H9[27;1H[34h[?25h[?25l[38;106H70[28;1H[34h[?25h[?25l[38;107H1[29;1H[34h[?25h[?25l[38;107H2[30;1H[34h[?25h[?25l[38;107H3[31;1H[34h[?25h[?25l[38;107H4,0-1[32;1H[34h[?25h[?25l[38;107H5,1  [33;1H[34h[?25h[?25l[38;107H6[34;1H[34h[?25h[?25l[38;107H7[35;1H[34h[?25h[?25l[38;107H8[36;1H[34h[?25h[?25l[38;107H9[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;105H[K[38;105H180,0-1[7C92%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hcriterion = nn.MSELoss()[38;105H[K[38;105H181,1[9C92%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1H[34m#criterion = nn.CrossEntropyLoss()[0m[38;105H[K[38;105H182,1[9C93%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;105H[K[38;105H183,0-1[7C94%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1H[34m# Observe that all parameters are being optimized[0m[38;105H[K[38;105H184,1[9C94%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hoptimizer_ft = optim.Adam(model.parameters(), lr=[31m0.001[0m, betas=([31m0.9[0m, [31m0.999[0m), eps=[31m1e-08[0m, weight_decay=[31m0[0m, amsgrad=[36mFalse[0m)[38;105H[K[38;105H185,1[9C95%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;105H[K[38;105H186,0-1[7C96%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1H[34m# Decay LR by a factor of 0.1 every 7 epochs[0m[38;105H[K[38;105H187,1[9C96%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hexp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=[31m1[0m, gamma=[31m0.1[0m)[38;105H[K[38;105H188,1[9C97%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[38;105H[K[38;105H189,0-1[7C98%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1H[34m# train model[0m[38;105H[K[38;105H190,1[9C98%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Hmodel = train_model(model, criterion, optimizer_ft, exp_lr_scheduler, batch_size = [31m4[0m, step_size = [31m20[0m, num_epochs=[31m10[0m)[38;105H[K[38;105H191,1[9C99%[37;1H[34h[?25h[?25l[1;37r[37;1H
+[1;38r[37;1Htorch.save(model, output_path)[38;105H[K[38;105H192,1[9CBot[37;1H[34h[?25h[?25l[38;107H1[36;1H[34h[?25h[?25l[38;107H0[35;1H[34h[?25h[?25l[38;106H89,0-1[34;1H[34h[?25h[?25l[38;107H8,1  [33;1H[34h[?25h[?25l[38;107H7[32;1H[34h[?25h[?25l[38;107H6,0-1[31;1H[34h[?25h[?25l[38;107H5,1  [30;1H[34h[?25h[?25l[38;107H4[29;1H[34h[?25h[?25l[38;107H3,0-1[28;1H[34h[?25h[?25l[38;107H2,1  [27;1H[34h[?25h[?25l[38;107H1[26;1H[34h[?25h[?25l[38;107H0,0-1[25;1H[34h[?25h[?25l[38;106H79,1  [24;1H[34h[?25h[?25l[38;107H8[23;1H[34h[?25h[?25l[38;107H7[22;1H[34h[?25h[?25l[38;107H6[21;1H[34h[?25h[?25l[38;107H5[20;1H[34h[?25h[?25l[38;107H4,0-1[19;1H[34h[?25h[?25l[38;107H3,1  [18;1H[34h[?25h[?25l[38;107H2[17;1H[34h[?25h[?25l[38;107H1[16;1H[34h[?25h[?25l[38;107H0[15;1H[34h[?25h[?25l[38;106H69[14;1H[34h[?25h[?25l[38;107H8[13;1H[34h[?25h[?25l[38;107H7[12;1H[34h[?25h[?25l[38;107H6[11;1H[34h[?25h[?25l[38;107H5[10;1H[34h[?25h[?25l[38;107H4[9;1H[34h[?25h[?25l[38;107H3[8;1H[34h[?25h[?25l[38;107H2,0-1[7;1H[34h[?25h[?25l[38;107H1,1  [6;1H[34h[?25h[?25l[38;107H0[5;1H[34h[?25h[?25l[38;106H59[4;1H[34h[?25h[?25l[38;107H8,0-1[3;1H[34h[?25h[?25l[38;107H7,1  [2;1H[34h[?25h[?25l[38;107H6[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5H[36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([38;105H[K[38;105H155,1[9C99%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5Htime_elapsed = time.time() - since[38;105H[K[38;105H154,1[9C98%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H153,0-1[7C98%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H152,1[9C97%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hepoch_loss_test))[38;105H[K[38;105H151,1[9C96%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([38;105H[K[38;105H150,1[9C96%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H149,0-1[7C95%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[38;105H[K[38;105H148,1[9C94%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hrunning_loss_test += loss_test.item()[38;105H[K[38;105H147,1[9C94%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hiter_loss_test = loss_test.item()[38;105H[K[38;105H146,1[9C93%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hloss_test = criterion(predicted, target)[38;105H[K[38;105H145,1[9C92%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H144,1[9C92%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17H_, _, predicted = model(inputs)[38;105H[K[38;105H143,1[9C91%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H142,0-1[7C90%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 predicted = torch.cat(output_d, dim=0, out=None).double()[0m[38;105H[K[38;105H141,1[9C90%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 output_d, h_d, c_d, states_d = decoder(input_d)[0m[38;105H[K[38;105H140,1[9C89%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 input_d = [x, states][0m[38;105H[K[38;105H139,1[9C89%[1;1H[34h[?25h[?25l[38;106H40[2;1H[34h[?25h[?25l[38;107H1[3;1H[34h[?25h[?25l[38;107H2,0-1[4;1H[34h[?25h[?25l[38;107H3,1  [5;1H[34h[?25h[?25l[38;107H4[6;1H[34h[?25h[?25l[38;107H5[7;1H[34h[?25h[?25l[38;107H6[8;1H[34h[?25h[?25l[38;107H7[9;1H[34h[?25h[?25l[38;107H8[10;1H[34h[?25h[?25l[38;107H9,0-1[11;1H[34h[?25h[?25l[38;106H50,1  [12;1H[34h[?25h[?25l[38;107H1[13;1H[34h[?25h[?25l[38;107H2[14;1H[34h[?25h[?25l[38;107H3,0-1[15;1H[34h[?25h[?25l[38;107H4,1  [16;1H[34h[?25h[?25l[38;107H5[17;1H[34h[?25h[?25l[38;107H6[18;1H[34h[?25h[?25l[38;107H7[19;1H[34h[?25h[?25l[38;107H8,0-1[20;1H[34h[?25h[?25l[38;107H9,1  [21;1H[34h[?25h[?25l[38;106H60[22;1H[34h[?25h[?25l[38;107H1[23;1H[34h[?25h[?25l[38;109H2[23;2H[34h[?25h[?25l[38;109H3[23;3H[34h[?25h[?25l[38;109H4[23;4H[34h[?25h[?25l[38;109H5[23;5H[34h[?25h[?25l[38;109H6[23;6H[34h[?25h[?25l[38;109H7[23;7H[34h[?25h[?25l[38;109H8[23;8H[34h[?25h[?25l[38;109H9[23;9H[34h[?25h[?25l[38;109H10[23;10H[34h[?25h[?25l[38;110H1[23;11H[34h[?25h[?25l[38;110H2[23;12H[34h[?25h[?25l[38;110H3[23;13H[34h[?25h[?25l[38;110H4[23;14H[34h[?25h[?25l[38;110H5[23;15H[34h[?25h[?25l[38;110H6[23;16H[34h[?25h[?25l[38;110H7[23;17H[34h[?25h[?25l[38;110H8[23;18H[34h[?25h[?25l[38;1H[1m-- INSERT --[0m[38;105H[K[38;105H161,18[8C89%[23;18H[34h[?25h[?25l[38;110H9[23;19H[34h[?25h[?25l, decoder[23;27H[K[38;110H8[23;18H[34h[?25h[?25l, decoder[23;26H[K[38;110H7[23;17H[34h[?25h[?25l, decoder[23;25H[K[38;110H6[23;16H[34h[?25h[?25l, decoder[23;24H[K[38;110H5[23;15H[34h[?25h[?25l, decoder[23;23H[K[38;110H4[23;14H[34h[?25h[?25l, decoder[23;22H[K[38;110H3[23;13H[34h[?25h[?25l, decoder[23;21H[K[38;110H2[23;12H[34h[?25h[?25lm, decoder[38;110H3[23;13H[34h[?25h[?25lo, decoder[38;110H4[23;14H[34h[?25h[?25ld, decoder[38;110H5[23;15H[34h[?25h[?25le, decoder[38;110H6[23;16H[34h[?25h[?25lr, decoder[38;110H7[23;17H[34h[?25h[?25l, decoder[23;25H[K[38;110H6[23;16H[34h[?25h[?25ll, decoder[38;110H7[23;17H[34h[?25h[?25l[38;110H8[23;18H[34h[?25h[?25l[38;110H9[23;19H[34h[?25h[?25l[38;109H20[23;20H[34h[?25h[?25l[38;110H1[23;21H[34h[?25h[?25l[38;110H2[23;22H[34h[?25h[?25l[38;110H3[23;23H[34h[?25h[?25l[38;110H4[23;24H[34h[?25h[?25l[38;110H5[23;25H[34h[?25h[?25l[38;110H6[23;26H[34h[?25h[?25l[23;25H[K[38;110H5[23;25H[34h[?25h[?25l[23;24H[K[38;110H4[23;24H[34h[?25h[?25l[23;23H[K[38;110H3[23;23H[34h[?25h[?25l[23;22H[K[38;110H2[23;22H[34h[?25h[?25l[23;21H[K[38;110H1[23;21H[34h[?25h[?25l[23;20H[K[38;110H0[23;20H[34h[?25h[?25l[23;19H[K[38;109H19[23;19H[34h[?25h[?25l[38;110H8[23;18H[34h[?25h[?25l[23;17H[K[38;110H7[23;17H[34h[?25h[?25l[38;107H0[22;17H[34h[?25h[?25l[38;106H59[21;17H[34h[?25h[?25l[38;107H8,1 [20;1H[34h[?25h[?25l[38;107H7,17[19;17H[34h[?25h[?25l[38;107H6[18;17H[34h[?25h[?25l[38;107H5[17;17H[34h[?25h[?25l[38;107H4[16;17H[34h[?25h[?25l[38;107H3,1 [15;1H[34h[?25h[?25l[38;107H2,9[14;9H[34h[?25h[?25l[38;107H1,17[13;17H[34h[?25h[?25l[38;107H0[12;17H[34h[?25h[?25l[38;106H49,1 [11;1H[34h[?25h[?25l[38;107H8,17[10;17H[34h[?25h[?25l[38;107H7[9;17H[34h[?25h[?25l[38;107H6[8;17H[34h[?25h[?25l[38;107H5[7;17H[34h[?25h[?25l[38;107H4[6;17H[34h[?25h[?25l[38;107H3[5;17H[34h[?25h[?25l[38;107H2,1 [4;1H[34h[?25h[?25l[38;107H1,17[3;17H[34h[?25h[?25l[38;107H0[2;17H[34h[?25h[?25l[38;106H39[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 x = decoder.activateConv(states_cat)[0m[38;105H[K[38;105H138,17[8C88%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)[0m[38;105H[K[38;105H137,17[8C87%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1][0m[38;105H[K[38;105H136,17[8C87%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0][0m[38;105H[K[38;105H135,17[8C86%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 output_last = output[0][0].double()[0m[38;105H[K[38;105H134,17[8C85%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#                 output, h, c, states = encoder(inputs)[0m[38;105H[K[38;105H133,17[8C85%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H132,17[8C84%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H131,1[9C83%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;21Hinputs, target = Variable(inputs), Variable(target)[38;105H[K[38;105H130,17[8C83%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17H[33melse[0m:[38;105H[K[38;105H129,17[8C82%[1;17H[1;37r[1;1H[L[1;38r[1;21Hinputs, target = inputs.to(device), target.to(device)[38;105H[K[38;105H128,17[8C81%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17H[33mif[0m use_gpu:[38;105H[K[38;105H127,17[8C81%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H126,17[8C80%[1;17H[34h[?25h[?25l[1;37r[1;1H[5L[1;38r[1;13H[33mfor[0m data [33min[0m testloader:[2;17Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[3;17Hinputs = data_split[[31m0[0m][4;17Htarget = data_split[[31m1[0m][38;105H[K[38;105H121,17[8C77%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hrunning_loss_test = [31m0.0[0m[38;105H[K[38;105H120,17[8C76%[1;17H[1;37r[1;1H[L[1;38r[1;9H[33mwith[0m torch.no_grad():[38;105H[K[38;105H119,17[8C76%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H118,9[9C75%[1;9H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17H[31m"train"[0m, epoch_loss, iter_loss))[38;105H[K[38;105H117,17[8C74%[1;17H[1;37r[1;1H[L[1;38r[1;13H[36mprint[0m([31m'{} Loss: {:.4f} batch_loss: {:f}'[0m.[36mformat[0m([38;105H[K[38;105H116,17[8C74%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H115,13[8C73%[1;13H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hepoch_loss = running_loss / [36mlen[0m(trainset)[38;105H[K[38;105H114,17[8C72%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hrunning_loss += loss.item()[38;105H[K[38;105H113,17[8C72%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hiter_loss = loss.item()[38;105H[K[38;105H112,17[8C71%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[34m# statistics[0m[38;105H[K[38;105H111,17[8C70%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H110,1[9C70%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hoptimizer.step()[38;105H[K[38;105H109,17[8C69%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hloss.backward()[38;105H[K[38;105H108,17[8C69%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H107,1[9C68%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#            loss = criterion(outputs, labels)[0m[38;105H[K[38;105H106,17[8C67%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#            _, preds = torch.max(outputs.data, 1)[0m[38;105H[K[38;105H105,17[8C67%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#            outputs = model(inputs)[0m[38;105H[K[38;105H104,17[8C66%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[34m# forward[0m[38;105H[K[38;105H103,17[8C65%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hloss = criterion(predicted, target)[38;105H[K[38;105H102,17[8C65%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H101,13[8C64%[1;13H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H_, _, predicted = model(inputs)[38;105H[K[38;105H100,17[8C63%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H99,13[9C63%[1;13H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             predicted = torch.cat(output_d, dim=0, out=None).double()[0m[38;105H[K[38;105H98,17[9C62%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             output_d, h_d, c_d, states_d = decoder(input_d)[0m[38;105H[K[38;105H97,17[9C61%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             input_d = [x, states][0m[38;105H[K[38;105H96,17[9C61%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             x = decoder.activateConv(states_cat)[0m[38;105H[K[38;105H95,17[9C60%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)[0m[38;105H[K[38;105H94,17[9C60%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1][0m[38;105H[K[38;105H93,17[9C59%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0][0m[38;105H[K[38;105H92,17[9C58%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#             output_last = output[0][0].double()[0m[38;105H[K[38;105H91,17[9C58%[1;17H[34h[?25h[?25l[1;37r[1;1H[2L[1;38r[2;1H[34m#             output, h, c, states = encoder(inputs)[0m[38;105H[K[38;105H89,13[9C56%[1;13H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hoptimizer.zero_grad()[38;105H[K[38;105H88,17[9C56%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[34m# zero the parameter gradients[0m[38;105H[K[38;105H87,17[9C55%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H86,1[10C54%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hinputs, target = Variable(inputs), Variable(target)[38;105H[K[38;105H85,17[9C54%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[33melse[0m:[38;105H[K[38;105H84,17[9C53%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;17Hinputs, target = inputs.to(device), target.to(device)[38;105H[K[38;105H83,17[9C52%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[33mif[0m use_gpu:[38;105H[K[38;105H82,17[9C52%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[34m# wrap them in Variable[0m[38;105H[K[38;105H81,17[9C51%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m#            print(inputs)[0m[38;105H[K[38;105H80,17[9C50%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Htarget = data_split[[31m1[0m][38;105H[K[38;105H79,17[9C50%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hinputs = data_split[[31m0[0m][38;105H[K[38;105H78,17[9C49%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[38;105H[K[38;105H77,17[9C49%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;13H[34m# get the inputs[0m[38;105H[K[38;105H76,17[9C48%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[33mfor[0m data [33min[0m trainloader:[38;105H[K[38;105H75,17[9C47%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H74,9[10C47%[1;9H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[36mprint[0m([31m"testloader ready!"[0m)[38;105H[K[38;105H73,17[9C46%[1;17H[34h[?25h[?25l[1;37r[1;1H[2L[1;38r[1;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[2;54Hnum_workers=[31m4[0m)[38;105H[K[38;105H71,17[9C45%[1;17H[34h[?25h[?25l[1;37r[1;1H[3L[1;38r[1;9Htestset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, randoo[2;1Hm_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[3;9Htestloader = torch.utils.data.DataLoader(testset,[38;105H[K[38;105H69,17[9C43%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[36mprint[0m([31m"trainloader ready!"[0m)[38;105H[K[38;105H68,17[9C42%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H67,1[10C42%[1;1H[1;37r[1;1H[L[1;38r[1;54Hnum_workers=[31m4[0m)[38;105H[K[38;105H66,17[9C41%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[38;105H[K[38;105H65,17[9C41%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9Htrainloader = torch.utils.data.DataLoader(trainset,[38;105H[K[38;105H64,17[9C40%[1;17H[34h[?25h[?25l[1;37r[1;1H[2L[1;38r[1;9Htrainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, rann[2;1Hdom_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[38;105H[K[38;105H63,17[9C39%[1;17H[1;37r[1;1H[L[1;38r[1;9H[34m# Iterate over data.[0m[38;105H[K[38;105H62,17[9C38%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H61,1[10C38%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H60,9[10C37%[1;9H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9Hrunning_corrects = [31m0[0m[38;105H[K[38;105H59,17[9C36%[1;17H[1;37r[1;1H[L[1;38r[1;9Hrunning_loss = [31m0.0[0m[38;105H[K[38;105H58,17[9C36%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9Hmodel.train([36mTrue[0m)  [34m# Set model to training mode[0m[38;105H[K[38;105H57,17[9C35%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9Hscheduler.step()[38;105H[K[38;105H56,17[9C35%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[34m# Each epoch has a training phase[0m[38;105H[K[38;105H55,17[9C34%[1;17H[1;37r[1;1H[L[1;38r[38;105H[K[38;105H54,1[10C33%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;9H[36mprint[0m([31m'-'[0m * [31m10[0m)[38;105H[K[38;105H53,17[9C33%[1;17H[1;37r[1;1H[L[1;38r[1;9H[36mprint[0m([31m'Epoch {}/{}'[0m.[36mformat[0m(epoch, num_epochs - [31m1[0m))[38;105H[K[38;105H52,17[9C32%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5H[33mfor[0m epoch [33min[0m [36mrange[0m(num_epochs):[38;105H[K[38;105H51,17[9C31%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H50,1[10C31%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5Hbest_acc = [31m0.0[0m[38;105H[K[38;105H49,17[9C30%[1;17H[1;37r[1;1H[L[1;38r[1;5Hbest_model_wts = model.state_dict()[38;105H[K[38;105H48,17[9C29%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H47,1[10C29%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5Hsince = time.time()[38;105H[K[38;105H46,17[9C28%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[33mdef[0m [36mtrain_model[0m(model, criterion, optimizer, scheduler, num_epochs=[31m25[0m, batch_size = [31m4[0m, step_size = [31m20[0m):[38;105H[K[38;105H45,17[9C28%[1;16H[46m([85C)[1;17H[1;37r[0m[1;1H[2L[1;38r[1;1Hdevice = torch.device([31m"cuda:0"[0m [33mif[0m torch.cuda.is_available() [33melse[0m [31m"cpu"[0m)[38;105H[K[38;105H43,17[9C26%[3;16H([85C)[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H42,1[10C26%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;5H[36mprint[0m([31m"GPU in use"[0m)[38;105H[K[38;105H41,17[9C25%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[33mif[0m use_gpu:[38;105H[K[38;105H40,12[9C24%[1;12H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Huse_gpu = torch.cuda.is_available()[38;105H[K[38;105H39,17[9C24%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H38,1[10C23%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;46Hnum_workers=[31m4[0m)[38;105H[K[38;105H37,17[9C22%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;46Hbatch_size=[31m8[0m, shuffle=[36mTrue[0m,[38;105H[K[38;105H36,17[9C22%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Htestloader = torch.utils.data.DataLoader(testset,[38;105H[K[38;105H35,17[9C21%[1;17H[1;37r[1;1H[2L[1;38r[1;1Htestset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=[31m20[0m, random_rotate = [36mTruee[0m[2;1H, mask = mask, transform=[36mNone[0m)[38;105H[K[38;105H34,17[9C21%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H33,1[10C20%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;46Hnum_workers=[31m4[0m)[38;105H[K[38;105H32,17[9C19%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;46Hbatch_size=[31m8[0m, shuffle=[36mTrue[0m,[38;105H[K[38;105H31,17[9C19%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Htrainloader = torch.utils.data.DataLoader(trainset,[38;105H[K[38;105H30,17[9C18%[1;17H[34h[?25h[?25l[1;37r[1;1H[2L[1;38r[1;1Htrainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=[31m20[0m, random_rotate = [36mTrr[2;1Hue[0m, mask = mask, transform=[36mNone[0m)[37;1H[1m[34m@                                                                                                                         [0m[38;105H[K[38;105H29,17[9C17%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Hmask = create_circular_mask([31m128[0m,[31m128[0m)[38;105H[K[38;105H28,17[9C17%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H27,1[10C16%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Houtput_path = [31m'/home/rliu/ansim/models/very_first.pt'[0m[38;105H[K[38;105H26,17[9C15%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Htest_csv = [31m'/home/rliu/github/ansim/test.csv'[0m[38;105H[K[38;105H25,17[9C15%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Htrain_csv = [31m'/home/rliu/github/ansim/train.csv'[0m[38;105H[K[38;105H24,17[9C14%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Himg_list_csv = [31m'/home/rliu/github/ansim/img_list.csv'[0m[38;105H[K[38;105H23,17[9C14%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1Himg_path = [31m'/home/rliu/ansim/data/data/JPEGImages/'[0m[38;105H[K[38;105H22,17[9C13%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[38;105H[K[38;105H21,1[10C12%[1;1H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m os[38;105H[K[38;105H20,10[9C12%[1;10H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m time[38;105H[K[38;105H19,12[9C11%[1;12H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m torchvision [35mimport[0m datasets, models, transforms[38;105H[K[38;105H18,17[9C10%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m torch.autograd [35mimport[0m Variable[38;105H[K[38;105H17,17[9C10%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m torch.optim [35mimport[0m lr_scheduler[38;105H[K[38;105H16,17[10C9%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m torch.optim [33mas[0m optim[38;105H[K[38;105H15,17[10C8%[1;17H[34h[?25h[?25l[1;37r[1;1H[2L[1;38r[1;1H[35mimport[0m math
+[35mimport[0m torch.nn [33mas[0m nn[38;105H[K[38;105H13,12[10C7%[1;12H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m random[38;105H[K[38;105H12,14[10C7%[1;14H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m ConvLSTM [35mimport[0m ConvLSTM[38;105H[K[38;105H11,17[10C6%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[34m# from convolution_lstm import encoderConvLSTM, decoderConvLSTM[0m[38;105H[K[38;105H10,17[10C5%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m ansim_dataset [35mimport[0m ansimDataset, create_circular_mask[38;105H[K[38;105H9,17[11C5%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m matplotlib.pyplot [33mas[0m plt[38;105H[K[38;105H8,17[11C4%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m torch.utils.data [35mimport[0m Dataset, DataLoader[38;105H[K[38;105H7,17[11C3%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m torch, torchvision[38;105H[K[38;105H6,17[11C3%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m PIL[38;105H[K[38;105H5,11[11C2%[1;11H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m PIL [35mimport[0m ImageOps[38;105H[K[38;105H4,17[11C1%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mfrom[0m PIL [35mimport[0m Image[38;105H[K[38;105H3,17[11C1%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m numpy [33mas[0m np[38;105H[K[38;105H2,17[11C0%[1;17H[34h[?25h[?25l[1;37r[1;1H[L[1;38r[1;1H[35mimport[0m pandas [33mas[0m pd[38;105H[K[38;105H1,17[10CTop[1;17H[34h[?25h[?25l[38;105H2[2;17H[34h[?25h[?25l[38;105H5,11[5;11H[34h[?25h[?25l[38;105H9,17[9;17H[34h[?25h[?25l[38;105H16,17[16;17H[34h[?25h[?25l[38;105H2[26;17H[34h[?25h[?25l[1;37r[1;1H[9M[1;38r[29;46Hbatch_size=[31m8[0m, shuffle=[36mTrue[0m,[30;46Hnum_workers=[31m4[0m)
+
+use_gpu = torch.cuda.is_available()
+[33mif[0m use_gpu:
+    [36mprint[0m([31m"GPU in use"[0m)
+
+device = torch.device([31m"cuda:0"[0m [33mif[0m torch.cuda.is_available() [33melse[0m [31m"cpu"[0m)[38;105H[K[38;105H44,1[11C5%[37;1H[34h[?25h[?25l[1;37r[1;1H[17M[1;38r[21;1H[33mdef[0m [36mtrain_model[0m(model, criterion, optimizer, scheduler, num_epochs=[31m25[0m, batch_size = [31m4[0m, step_size = [31m20[0m):
+    since = time.time()[24;5Hbest_model_wts = model.state_dict()
+    best_acc = [31m0.0[0m[27;5H[33mfor[0m epoch [33min[0m [36mrange[0m(num_epochs):[28;9H[36mprint[0m([31m'Epoch {}/{}'[0m.[36mformat[0m(epoch, num_epochs - [31m1[0m))[29;9H[36mprint[0m([31m'-'[0m * [31m10[0m)[31;9H[34m# Each epoch has a training phase[0m[32;9Hscheduler.step()[33;9Hmodel.train([36mTrue[0m)  [34m# Set model to training mode[0m[34;9Hrunning_loss = [31m0.0[0m[35;9Hrunning_corrects = [31m0[0m[38;105H[K[38;105H61,1[10C16%[37;1H[34h[?25h[?25l[1;37r[1;1H[16M[1;38r[22;9H[34m# Iterate over data.[0m[23;9Htrainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, rann[24;1Hdom_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[25;9Htrainloader = torch.utils.data.DataLoader(trainset,[26;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[27;54Hnum_workers=[31m4[0m)[29;9H[36mprint[0m([31m"trainloader ready!"[0m)[30;9Htestset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, randoo[31;1Hm_rotate = [36mTrue[0m, mask = mask, transform=[36mNone[0m)[32;9Htestloader = torch.utils.data.DataLoader(testset,[33;54Hbatch_size=batch_size, shuffle=[36mTrue[0m,[34;54Hnum_workers=[31m4[0m)[35;9H[36mprint[0m([31m"testloader ready!"[0m)[37;9H[33mfor[0m data [33min[0m trainloader:[38;105H[K[38;105H75,17[9C25%[37;17H[34h[?25h[?25l[1;37r[1;1H[14M[1;38r[24;13H[34m# get the inputs[0m[25;13Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[26;13Hinputs = data_split[[31m0[0m][27;13Htarget = data_split[[31m1[0m]
+[34m#            print(inputs)[29;13H# wrap them in Variable[0m[30;13H[33mif[0m use_gpu:[31;17Hinputs, target = inputs.to(device), target.to(device)[32;13H[33melse[0m:[33;17Hinputs, target = Variable(inputs), Variable(target)[35;13H[34m# zero the parameter gradients[0m[36;13Hoptimizer.zero_grad()[38;105H[K[38;105H89,13[9C34%[37;13H[34h[?25h[?25l[1;37r[1;1H[12M[1;38r[26;1H[34m#             output, h, c, states = encoder(inputs)
+#             output_last = output[0][0].double()
+#             h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
+#             c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1]
+#             states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)
+#             x = decoder.activateConv(states_cat)
+#             input_d = [x, states]
+#             output_d, h_d, c_d, states_d = decoder(input_d)
+#             predicted = torch.cat(output_d, dim=0, out=None).double()[0m[36;13H_, _, predicted = model(inputs)[38;105H[K[38;105H101,13[8C41%[37;13H[34h[?25h[?25l[1;37r[1;1H[12M[1;38r[26;13Hloss = criterion(predicted, target)[27;13H[34m# forward
+#            outputs = model(inputs)
+#            _, preds = torch.max(outputs.data, 1)
+#            loss = criterion(outputs, labels)[0m[32;13Hloss.backward()[33;13Hoptimizer.step()[35;13H[34m# statistics[0m[36;13Hiter_loss = loss.item()[37;13Hrunning_loss += loss.item()[38;105H[K[38;105H113,17[8C49%[37;17H[34h[?25h[?25l[1;37r[1;1H[10M[1;38r[28;13Hepoch_loss = running_loss / [36mlen[0m(trainset)[30;13H[36mprint[0m([31m'{} Loss: {:.4f} batch_loss: {:f}'[0m.[36mformat[0m([31;17H[31m"train"[0m, epoch_loss, iter_loss))[33;9H[33mwith[0m torch.no_grad():[34;13Hrunning_loss_test = [31m0.0[0m[35;13H[33mfor[0m data [33min[0m testloader:[36;17Hdata_split = torch.split(data, [36mint[0m(data.shape[[31m1[0m]/[31m2[0m), dim=[31m1[0m)[37;17Hinputs = data_split[[31m0[0m][38;105H[K[38;105H123,17[8C55%[37;17H[34h[?25h[?25l[1;37r[1;1H[10M[1;38r[28;17Htarget = data_split[[31m1[0m][31;17H[33mif[0m use_gpu:[32;21Hinputs, target = inputs.to(device), target.to(device)[33;17H[33melse[0m:[34;21Hinputs, target = Variable(inputs), Variable(target)
+
+
+[34m#                 output, h, c, states = encoder(inputs)[0m[38;105H[K[38;105H133,17[8C61%[37;17H[34h[?25h[?25l[1;37r[1;1H[10M[1;38r[28;1H[34m#                 output_last = output[0][0].double()
+#                 h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
+#                 c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1]
+#                 states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)
+#                 x = decoder.activateConv(states_cat)
+#                 input_d = [x, states]
+#                 output_d, h_d, c_d, states_d = decoder(input_d)
+#                 predicted = torch.cat(output_d, dim=0, out=None).double()[0m[37;17H_, _, predicted = model(inputs)[38;105H[K[38;105H143,17[8C68%[37;17H[34h[?25h[?25l[1;37r[1;1H[10M[1;38r[29;17Hloss_test = criterion(predicted, target)[30;17Hiter_loss_test = loss_test.item()[31;17Hrunning_loss_test += loss_test.item()[32;17Hepoch_loss_test = running_loss_test / [36mlen[0m(testset)[34;9H[36mprint[0m([31m'Loss on the test images: %.5f '[0m % ([35;13Hepoch_loss_test))[38;105H[K[38;105H153,1[9C74%[37;1H[34h[?25h[?25l[1;37r[1;1H[9M[1;38r[29;5Htime_elapsed = time.time() - since
+    [36mprint[0m([31m'Training complete in {:.0f}m {:.0f}s'[0m.[36mformat[0m([31;9Htime_elapsed // [31m60[0m, time_elapsed % [31m60[0m))
+    [36mprint[0m([31m'Best val Acc: {:4f}'[0m.[36mformat[0m(best_acc))[34;5H[34m# load best model weights[0m
+    model.load_state_dict(best_model_wts)
+    [33mreturn[0m model[38;105H[K[38;105H162,1[9C80%[37;1H[34h[?25h[?25l[1;37r[1;1H[9M[1;38r[29;1H[34m# transfer learning resnet18[0m
+step_size = [31m20[0m
+model = ConvLSTM(input_size=([31m128[0m,[31m128[0m),[32;18Hinput_dim=[31m1[0m,[33;18Hhidden_dim=[[31m64[0m, [31m64[0m, [31m128[0m],[34;18Hkernel_size=([31m3[0m, [31m3[0m),[35;18Hnum_layers=[31m3[0m,[36;18Hpredict_steps=[36mint[0m(step_size/[31m2[0m),[37;18Hbatch_first=[36mTrue[0m,[38;105H[K[38;105H171,17[8C86%[37;17H[34h[?25h[?25l[1;37r[1;1H[8M[1;38r[30;18Hbias=[36mTrue[0m,[31;18Hreturn_all_layers=[36mTrue[0m).cuda()
+
+[33mif[0m use_gpu:
+[34m#     encoder = torch.nn.DataParallel(encoder)
+#     decoder = torch.nn.DataParallel(decoder)[0m
+    model = torch.nn.DataParallel(model)
+    model.to(device)[38;105H[K[38;105H179,17[8C91%[37;17H[34h[?25h[?25l[1;37r[1;1H[8M[1;38r[31;1Hcriterion = nn.MSELoss()
+[34m#criterion = nn.CrossEntropyLoss()
+
+# Observe that all parameters are being optimized[0m
+optimizer_ft = optim.Adam(model.parameters(), lr=[31m0.001[0m, betas=([31m0.9[0m, [31m0.999[0m), eps=[31m1e-08[0m, weight_decay=[31m0[0m, amsgrad=[36mFalse[0m)
+
+[34m# Decay LR by a factor of 0.1 every 7 epochs[0m[38;105H[K[38;105H187,17[8C96%[37;17H[34h[?25h[?25l[1;37r[1;1H[5M[1;38r[33;1Hexp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=[31m1[0m, gamma=[31m0.1[0m)
+
+[34m# train model[0m
+model = train_model(model, criterion, optimizer_ft, exp_lr_scheduler, batch_size = [31m4[0m, step_size = [31m20[0m, num_epochs=[31m10[0m)
+torch.save(model, output_path)[38;105H[K[38;105H192,17[8CBot[37;17H[34h[?25h[38;1H[K[37;16H[?25l[38;105H192,16[8CBot[37;16H[34h[?25h[?25l
+"train.py"[38;105H[K[38;12H192L, 7737C written
+[?1l>[34h[?25h[?1049lkrliu@dm:~/github/ansim\[rliu@dm ansim]$ ls
+ansim_dataset.py   ConvLSTM.py          dataset.ipynb     LICENSE      README.md  train.ipynb
+ansim_dataset.pyc  ConvLSTM.pyc         img_list.csv      [0m[01;34mlog[0m          test.csv   train.py
+ConvLSTM.ipynb     convolution_lstm.py  indiecoder.ipynb  [01;34m__pycache__[0m  train.csv  Untitled1.ipynb
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ lsvim train.py ls[Kvim train.ls[Kcd ansim/ls[Kcd ..[3PlsCUDA_VISIBLE_DEVICES=1,2,3 python train.py[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[27P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgit pull[Kclean -fxdreset --hard origin/master[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansim/ls[Kcd github/ls[Ktopnvidia-smils[Kcd ansimls[Kcd ..[3Plscd datals[Kcd ..[3Plscd github/ls[Kcd ..[3Plscd..[2Plscd ~[2Plstopnvidia-smils[Ktopnvidia-smijupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ansim/ls[Kgit clone git@github.com:ruoshiliu/ansim.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd github/ls[Knvidia-smi[2Pgit pushcommit -am "modified encoder decoder network archetecture"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd -A[Kls[Kcd ansim/ls[Kcd github/ls[Knvidia-smils[Knvidia-smils[Ktopnvidia-smi[6Pexit[2Plsmkdir yolo2-numbers[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kpwdowdrm yolo2-numbers.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm -r yolo2-numbers[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[K[2Plscd ..[2Ppwd[1Plscd cfg[4Plscd datals[Kcd yolo2-numbersls[Kunzip yolo2-numbers.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Knvidia-smils[Knvidia-smils[Knvidia-smils[Kpython Object_detection_video.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd object_detection[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd research/ls[Kcd models/ls[Kcd tensorflow1ls[Klsunzip tensorflow1.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kconda install tensorflow-gpu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython3.6[Kls[Kconda install -c anaconda tensorflow-gpu[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Knvidia-smi[6Pexitnvidia-smipip3.6 install -U -r requirements.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cython3.6[Kls[Kpython3.67ls[Kpython3.6ip3 install -U -r requirements.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd yolov3/ls[Kcd ..[3Plscd ..[3Plscd datals[Kcd pytorch-yolo2/ls[Kcd ..python3.6 train.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[3Plscd cocols[Kpython3.6 train.py [3P[C[C[C[C[C[C[C[C[C[Cls[Kcd yolov3/ls[Kcd ..[3Plscd ..[3Plscd ..[3Plscd ..vim COCO_train2014_000000292055.txt [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd train2014/ls[Kcd labelsls[Kcd ..[3Plscd ..[3Plscd train2014/ls[Kcd imagesls[Kcd cocols[Kcd ..[3Plscd datals[K[Kdata/get_coco_dataset.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..vim get_coco_dataset.sh [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@make[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kpython3.6 train.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kpip3.6 install opencv-python --user[K[3Pcv2 --user[Kython3.6 train.py [K75 train.py[1P train.pyls[Kcd ..[3Plscd data[K[4Plspip install -U -r requirements.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3@3.5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[3Plscd weightsls[Kcd ..[3Plscd datals[Kcd yolov3/ls[Kgit clone git@github.com:ultralytics/yolov3.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kgit clone git@github.com:marvis/pytorch-yolo2.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Ktopnvidia-smils[Kcd yolov3/[Kls[Kmkdir yolov3ls[Kpython3.6 convolution.py [3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Knvidia-smils[Kcd ..[3Plscd celeba/[K[3Plsmv img_align_celeba/ celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmkdir celebals[Kacd datals[Kcd ..[3Plsmv celeba/ img_align_celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[3Plspwd[1Plscd celeba/ls[Kcd data[4Ppwd[1Plscd ..[3Plscd ..[3Plscd celeba/ls[Kcd datals[Kcd ..[3Plscd ..[3Plscd celeba/ls[Kmv img_align_celeba/ celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kmv img_align_celeba data/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmv -r img_align_celeba data/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmkdir datals[Kcd datals[Kunzip img_align_celeba.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm -r datawget https://googledrive.com/host/LARGEPUBLICFOLDERID/index4phlat.tar.gz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm data.zip [Kls[Kcd ..[3Plscd ..[3Plscd namesls[Kcd datals[Kunzip data.zip ls[Kwget https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm -r data/datals[Kcd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://pytorch.org/tutorials/_downloads/e9c8374ecc202120dc94db26bf08a00f/dcgan_faces_tutorial.ipynb M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K[1Pqnvidia-smitop[Knvidia-smitop[K[1Plsvim English.txt ls[K[1Pscd namesls[Kcd datals[Kunzip datals[Kwget https://download.pytorch.org/tutorial/data.zip[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://pytorch.org/tutorials/_downloads/a35c00bb5afae3962e1e7869c66872fa/char_rnn_generation_tutoriaal.ipynbM[C[C[C[C[C[C[C[C[Cls[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd rliuls[Kcd ..[3Plscd ~[2Plsclear[2Pqlstopnvidia-smijupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[24Pvim classifier.pypython classifier.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd classifier/ls[K;scd defect_classifier/[Kls[K,slsnvidia-smils[Ktop    the device_ids argument to DataParallel, or by setting the CUDA_VISIBLE_DEVICES[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Phas less than 75% of the memory or cores of GPU 1. You can do so by setting[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CThere is an imbalance between your GPUs. You may want to exclude GPU 0 which[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/parallel/data_parallel.py:24: UserWarning:[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C   31 detection[K0 conv     45  1 x 1 / 1    13 x  13 x1024   ->    13 x  13 x  45[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C29 conv   1024  3 x 3 / 1    13 x  13 x1280   ->    13 x  13 x1024[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C8 route  27 24[K7 reorg              / 2    26 x  26 x  64   ->    13 x  13 x 256[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C8 route  27 24[K9 conv   1024  3 x 3 / 1    13 x  13 x1280   ->    13 x  13 x1024[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C30 conv     45  1 x 1 / 1    13 x  13 x1024   ->    13 x  13 x  45[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C1 detection[K/home/rliu/anaconda2/lib/python2.7/site-packages/torch/nn/parallel/data_parallel.py:24: UserWarning:[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20P    There is an imbalance between your GPUs. You may want to exclude GPU 0 which[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Phas less than 75% of the memory or cores of GPU 1. You can do so by setting[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cthe device_ids argument to DataParallel, or by setting the CUDA_VISIBLE_DEVICES[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctop[K[1Plsnvidia-smils[K,slscd defect_classifier/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl;s[K[1Pscd classifier/ls[Kpython classifier.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pvim classifier.pyjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cnvidia-smi[Ktop[Kqlsclear[3Plscd ~[2Plscd ..[3Plscd rliuls[Kcd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://pytorch.org/tutorials/_downloads/a35c00bb5afae3962e1e7869c66872fa/char_rnn_generation_tutoriaal.ipynbM[C[C[C[C[C[C[C[C[Cls[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clw[Kscd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://download.pytorch.org/tutorial/data.zip[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kunzip datals[Kcd datals[Kcd namess[Klsvim English.txt ls[Ktopnvidia-smitop[Knvidia-smiq[Klscd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://pytorch.org/tutorials/_downloads/e9c8374ecc202120dc94db26bf08a00f/dcgan_faces_tutorial.ipynb M[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[K
+[KM[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd pytorch_tutorial/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Krm -r /data[1Pdatals[Kwget https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kwget https://drive.google.com/drive/folders/0B7EVK8r0v71pTUZsaXdaSnZBZzg[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kunzip data.zip ls[Kcd datals[Kcd namesls[Kcd ..[3Plscd ..[3Plsrm data.zip wget https://googledrive.com/host/LARGEPUBLICFOLDERID/index4phlat.tar.gz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -r data[Kls[Kunzip img_align_celeba.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kmkdir datals[Kmv -r img_align_celeba data/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmv img_align_celeba data/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kmv img_align_celeba/ celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd celeba/ls[Kcd ..[3Plscd ..[3Plscd datals[Kcd celeba/ls[Kcd ..[3Plscd ..[3Plspwdcd datals[Kcd celeba/ls[Kpwd[1Plscd ..[3Plsmv celeba/ img_align_celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd ..[3Plscd datala[Ksmkdir celebals[Kmv img_align_celeba/ celeba/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd celeba/ls[Kcd ..[3Plsnvidia-smils[Kjupyter notebook --no-browser --port=8080[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kpython convolution.py [3@3.6[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmkdir yolov3ls[Kcd yolov3/ls[Knvidia-smitop[K[1Plsgit clone git@github.com:marvis/pytorch-yolo2.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kgit clone git@github.com:ultralytics/yolov3.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd yolov3/ls[Kcd datals[Kcd ..[3Plscd weightsls[Kcd ..[3Plspip3 install -U -r requirements.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@.5[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kcd ..[3Plspython train.py3 train.py.5[K76 train.py [1Pip3.6 install cv2 --useropencv-python --user[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kpython3.6 train.py [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kcd datals[Kmake get_coco_dataset.sh [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pvim[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ..[K[3Plsdata/get_coco_dataset.sh[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cl[Kscd datals[Kcd ..[3Plscd cocols[Kcd imagesls[Kcd train2014/ls[Kcd ..[3Plscd ..[3Plscd labelsls[Kcd train2014/ls[Kvim COCO_train2014_000000292055.txt [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ..[K[3Pls[K[Kexit
+exit
+
+Script done on Tue 16 Apr 2019 12:29:49 AM EDT
