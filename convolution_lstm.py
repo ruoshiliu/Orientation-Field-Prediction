@@ -104,7 +104,7 @@ class encoderConvLSTM(nn.Module):
         self._all_layers = []
         for i in range(self.num_layers):
             name = 'cell{}'.format(i)
-            cell = ConvLSTMCell(self.input_channels[i], self.hidden_channels[i], self.kernel_size, self.bias)
+            cell = ConvLSTMCell(self.input_channels[i], self.hidden_channels[i], self.kernel_size[i], self.bias)
             setattr(self, name, cell)
             self._all_layers.append(cell)
 

@@ -23,7 +23,7 @@ img_path = '/home/rliu/ansim/data/data/JPEGImages/'
 img_list_csv = '/home/rliu/github/ansim/img_list.csv'
 train_csv = '/home/rliu/github/ansim/train.csv'
 test_csv = '/home/rliu/github/ansim/test.csv'
-output_path = '/home/rliu/ansim/models/4-16/second_and_stronger.weights'
+output_path = '/home/rliu/ansim/models/4-17-deep-af/second_and_stronger.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
@@ -70,7 +70,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         print("trainloader ready!")
         testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, transform=None, image_size = image_size)
         testloader = torch.utils.data.DataLoader(testset,
-                                                     batch_size=1, shuffle=False,
+                                                     batch_size=batch_size, shuffle=False,
                                                      num_workers=num_workers)
         print("testloader ready!")
         
@@ -162,7 +162,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             epoch_loss_test))
         if epoch_num % 5 == 0:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/4-16/%0.4d.weights" % (epoch_num)
+            output_path = "/home/rliu/ansim/models/4-17-deep-af/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -179,13 +179,19 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 step_size = 20
 model = ConvLSTM(input_size=(128,128),
                  input_dim=1,
-                 hidden_dim=[32,32,64,128,256],
-                 kernel_size=(5, 5),
-                 num_layers=5,
+                 hidden_dim=[16,16,16,16,16,16,32,32,32,32,32,64,64,64,128],
+                 kernel_size=(3,3),
+                 num_layers=15,
                  predict_steps=int(step_size/2),
                  batch_first=True,
                  bias=True,
                  return_all_layers=True)
+
+
+count_param = sum(p.numel() for p in model.parameters() if p.requires_grad)
+print("Model parameter: %d" % count_param)
+
+    
 
 if use_gpu:
 #     encoder = torch.nn.DataParallel(encoder)
@@ -202,14 +208,14 @@ criterion = nn.MSELoss()
 optimizer_ft = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-5, amsgrad=False)
 
 # Decay LR by a factor of 0.1 every 7 epochs
-exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=30, gamma=0.5)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=20, gamma=0.6)
 
 # train model
 model = train_model(model, criterion, optimizer_ft, 
             exp_lr_scheduler,
             batch_size = 3,
             step_size = 20,
-            num_epochs = 300,
+            num_epochs = 200,
             num_workers = 1,
             image_size = 128)
 torch.save(model, output_path)

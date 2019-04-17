@@ -2059,4 +2059,187 @@ train Loss: 33.4493 batch_loss: 301.649200
 train Loss: 33.7777 batch_loss: 252.210892
 train Loss: 34.2423 batch_loss: 356.848297
 train Loss: 34.7256 batch_loss: 371.156311
-trai
+train Loss: 34.9794 batch_loss: 194.935074
+train Loss: 35.5176 batch_loss: 413.349091
+train Loss: 35.7103 batch_loss: 147.991013
+train Loss: 36.1097 batch_loss: 306.744659
+train Loss: 36.4122 batch_loss: 232.290726
+train Loss: 36.8372 batch_loss: 326.370148
+train Loss: 37.2717 batch_loss: 333.732422
+train Loss: 37.5520 batch_loss: 215.266174
+train Loss: 37.8554 batch_loss: 233.026367
+train Loss: 38.3693 batch_loss: 394.641785
+train Loss: 38.8549 batch_loss: 372.943542
+train Loss: 39.2443 batch_loss: 299.086273
+train Loss: 39.7877 batch_loss: 417.288269
+train Loss: 40.1759 batch_loss: 298.178436
+train Loss: 40.6447 batch_loss: 360.030731
+train Loss: 40.9224 batch_loss: 213.294662
+train Loss: 41.4183 batch_loss: 380.862579
+train Loss: 42.0025 batch_loss: 448.607574
+train Loss: 42.3295 batch_loss: 251.130768
+train Loss: 42.7600 batch_loss: 330.671234
+train Loss: 43.0141 batch_loss: 195.097168
+train Loss: 43.3415 batch_loss: 251.444962
+train Loss: 43.8388 batch_loss: 381.921417
+train Loss: 44.2819 batch_loss: 340.337891
+train Loss: 44.5098 batch_loss: 175.031342
+train Loss: 44.9243 batch_loss: 318.347534
+train Loss: 45.3816 batch_loss: 351.174103
+train Loss: 45.7892 batch_loss: 313.090942
+train Loss: 46.1472 batch_loss: 274.939117
+train Loss: 46.5342 batch_loss: 297.220490
+train Loss: 46.9726 batch_loss: 336.666992
+train Loss: 47.2794 batch_loss: 235.588211
+train Loss: 47.7888 batch_loss: 391.230927
+train Loss: 48.1308 batch_loss: 262.702728
+train Loss: 48.4796 batch_loss: 267.829712
+train Loss: 48.8042 batch_loss: 249.266571
+train Loss: 49.1172 batch_loss: 240.393555
+train Loss: 49.4019 batch_loss: 218.704453
+train Loss: 49.7814 batch_loss: 291.450531
+train Loss: 50.2808 batch_loss: 383.532227
+train Loss: 50.5301 batch_loss: 191.462296
+train Loss: 50.9074 batch_loss: 289.750458
+train Loss: 51.2646 batch_loss: 274.312561
+train Loss: 51.5526 batch_loss: 221.212997
+train Loss: 51.9058 batch_loss: 271.243805
+train Loss: 52.0964 batch_loss: 146.409378
+train Loss: 52.2002 batch_loss: 79.716537
+train Loss: 52.7114 batch_loss: 392.571350
+train Loss: 52.8697 batch_loss: 121.581512
+train Loss: 53.2679 batch_loss: 305.815491
+train Loss: 53.5635 batch_loss: 227.053574
+train Loss: 53.8858 batch_loss: 247.521423
+train Loss: 54.3036 batch_loss: 320.840302
+train Loss: 54.6826 batch_loss: 291.063110
+train Loss: 55.2384 batch_loss: 426.896820
+train Loss: 55.5898 batch_loss: 269.842194
+train Loss: 55.9211 batch_loss: 254.456757
+train Loss: 56.3812 batch_loss: 353.367889
+train Loss: 56.6840 batch_loss: 232.495621
+train Loss: 57.0478 batch_loss: 279.433777
+train Loss: 57.2754 batch_loss: 174.773514
+train Loss: 57.7177 batch_loss: 339.685089
+train Loss: 58.1640 batch_loss: 342.813995
+train Loss: 58.5703 batch_loss: 311.975037
+train Loss: 58.9756 batch_loss: 311.271606
+train Loss: 59.2997 batch_loss: 248.915619
+train Loss: 59.6652 batch_loss: 280.723724
+train Loss: 60.0718 batch_loss: 312.278137
+train Loss: 60.3550 batch_loss: 217.509750
+train Loss: 60.8130 batch_loss: 351.744720
+train Loss: 61.1073 batch_loss: 226.007462
+train Loss: 61.3493 batch_loss: 185.870148
+train Loss: 61.7860 batch_loss: 335.384918
+train Loss: 62.0448 batch_loss: 198.741608
+train Loss: 62.2205 batch_loss: 134.946472
+train Loss: 62.5164 batch_loss: 227.205475
+train Loss: 63.0206 batch_loss: 387.222015
+train Loss: 63.2774 batch_loss: 197.270737
+train Loss: 63.4397 batch_loss: 124.610008
+train Loss: 63.9630 batch_loss: 401.936737
+train Loss: 64.2863 batch_loss: 248.259933
+train Loss: 64.7770 batch_loss: 376.871216
+train Loss: 65.0561 batch_loss: 214.343719
+train Loss: 65.3537 batch_loss: 228.553543
+train Loss: 65.6148 batch_loss: 200.538559
+train Loss: 65.8900 batch_loss: 211.386139
+train Loss: 66.2693 batch_loss: 291.245392
+train Loss: 66.8256 batch_loss: 427.255920
+train Loss: 67.1270 batch_loss: 231.514618
+train Loss: 67.5853 batch_loss: 351.929413
+train Loss: 67.7638 batch_loss: 137.098114
+train Loss: 68.2036 batch_loss: 337.732544
+train Loss: 68.3926 batch_loss: 145.187408
+train Loss: 68.8020 batch_loss: 314.444489
+train Loss: 69.1319 batch_loss: 253.345566
+train Loss: 69.4970 batch_loss: 280.370148
+train Loss: 69.9160 batch_loss: 321.820038
+train Loss: 70.5050 batch_loss: 452.316986
+train Loss: 70.7787 batch_loss: 210.261307
+train Loss: 71.1600 batch_loss: 292.788239
+train Loss: 71.4581 batch_loss: 228.941071
+train Loss: 71.5740 batch_loss: 89.000221
+train Loss: 71.8414 batch_loss: 205.363007
+train Loss: 72.3817 batch_loss: 414.946136
+train Loss: 72.7465 batch_loss: 280.208923
+train Loss: 73.1750 batch_loss: 329.112183
+train Loss: 73.5446 batch_loss: 283.790375
+train Loss: 74.0802 batch_loss: 411.331970
+train Loss: 74.3658 batch_loss: 219.391922
+train Loss: 74.8213 batch_loss: 349.775238
+train Loss: 75.2046 batch_loss: 294.399689
+train Loss: 75.6887 batch_loss: 371.795624
+train Loss: 76.0173 batch_loss: 252.338120
+train Loss: 76.5168 batch_loss: 383.607819
+train Loss: 76.8794 batch_loss: 278.521942
+train Loss: 77.1636 batch_loss: 218.289276
+train Loss: 77.5170 batch_loss: 271.371826
+train Loss: 77.7565 batch_loss: 183.912781
+train Loss: 78.2919 batch_loss: 411.192963
+train Loss: 78.7246 batch_loss: 332.308929
+train Loss: 79.2610 batch_loss: 412.014496
+train Loss: 79.5634 batch_loss: 232.241837
+train Loss: 79.8529 batch_loss: 222.328873
+train Loss: 80.3210 batch_loss: 359.452728
+train Loss: 80.5670 batch_loss: 188.943024
+train Loss: 80.9701 batch_loss: 309.585510
+train Loss: 81.3845 batch_loss: 318.297028
+train Loss: 81.8274 batch_loss: 340.075836
+train Loss: 82.5171 batch_loss: 529.719055
+train Loss: 82.8728 batch_loss: 273.187164
+train Loss: 83.1520 batch_loss: 214.454941
+train Loss: 83.6269 batch_loss: 364.703766
+train Loss: 83.8983 batch_loss: 208.426239
+train Loss: 84.3947 batch_loss: 381.218750
+train Loss: 84.7854 batch_loss: 300.057098
+train Loss: 85.1421 batch_loss: 273.984711
+train Loss: 85.5913 batch_loss: 344.940704
+train Loss: 85.8885 batch_loss: 228.288498
+train Loss: 86.1926 batch_loss: 233.530411
+train Loss: 86.3932 batch_loss: 154.038284
+train Loss: 86.7223 batch_loss: 252.735214
+train Loss: 86.9540 batch_loss: 178.016418
+train Loss: 87.3901 batch_loss: 334.879761
+train Loss: 87.7994 batch_loss: 314.386536
+train Loss: 88.0584 batch_loss: 198.878937
+train Loss: 88.4376 batch_loss: 291.186523
+train Loss: 88.5289 batch_loss: 70.169014
+train Loss: 88.8994 batch_loss: 284.536255
+train Loss: 89.3904 batch_loss: 377.118958
+train Loss: 89.7765 batch_loss: 296.515503
+train Loss: 90.1793 batch_loss: 309.359985
+train Loss: 90.3973 batch_loss: 167.423172
+train Loss: 90.9377 batch_loss: 414.971741
+train Loss: 91.3285 batch_loss: 300.132996
+train Loss: 91.8239 batch_loss: 380.500061
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[Atrain Loss: 92.0522 batch_loss: 175.291946
+train Loss: 92.2211 batch_loss: 129.742981
+train Loss: 92.4841 batch_loss: 201.994675
+train Loss: 92.9807 batch_loss: 381.365295
+train Loss: 93.3198 batch_loss: 260.449402
+^CTraceback (most recent call last):
+  File "train.py", line 214, in <module>
+    image_size = 200)
+  File "train.py", line 114, in train_model
+    loss.backward()
+  File "/home/rliu/.local/lib/python3.6/site-packages/torch/tensor.py", line 102, in backward
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/multiprocessing/queues.py", line 240, in _feed
+    send_bytes(obj)
+    torch.autograd.backward(self, gradient, retain_graph, create_graph)
+  File "/usr/local/lib/python3.6/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/home/rliu/.local/lib/python3.6/site-packages/torch/autograd/__init__.py", line 90, in backward
+  File "/usr/local/lib/python3.6/multiprocessing/connection.py", line 404, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/lib/python3.6/multiprocessing/connection.py", line 368, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+    allow_unreachable=True)  # allow_unreachable flag
+KeyboardInterrupt
+krliu@dm:~/github/ansim\[rliu@dm ansim]$ exit
+exit
+
+Script done on Tue 16 Apr 2019 09:51:07 PM EDT
