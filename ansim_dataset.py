@@ -30,7 +30,7 @@ mask = create_circular_mask(128,128)
 class ansimDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, mask = mask, transform=None):
+    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, transform=None, image_size=100):
         """
         Args:
             image_csv (string): Path to the csv file with image path.
@@ -46,20 +46,22 @@ class ansimDataset(Dataset):
         self.step = step
         self.random_rotate = random_rotate
         self.mask = mask
+        self.image_size = image_size
+        self.mask = create_circular_mask(image_size,image_size)
 
     def __len__(self):
         return len(self.seq_list)
 
     def __getitem__(self, idx):
         seq_head = self.seq_list.iloc[idx,0]
-        seq = torch.empty(self.step, 1, 128,128, dtype=torch.float)
+        seq = torch.empty(self.step, 1, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
             img_idx = seq_head + i
             img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx, 0])
             image = Image.open(img_name)
             image = image.convert('L')
-            image_resized = torchvision.transforms.functional.resize(image, (128,128), interpolation=2)
+            image_resized = torchvision.transforms.functional.resize(image, (self.image_size,self.image_size), interpolation=2)
             if self.random_rotate:
                 image_resized = torchvision.transforms.functional.rotate(image_resized, angle, resample=False, expand=False, center=None)
             image_resized = image_resized * self.mask

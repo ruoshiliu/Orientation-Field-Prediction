@@ -23,15 +23,15 @@ img_path = '/home/rliu/ansim/data/data/JPEGImages/'
 img_list_csv = '/home/rliu/github/ansim/img_list.csv'
 train_csv = '/home/rliu/github/ansim/train.csv'
 test_csv = '/home/rliu/github/ansim/test.csv'
-output_path = '/home/rliu/ansim/models/very_first.pt'
+output_path = '/home/rliu/ansim/models/4-16/second_and_stronger.weights'
 
 mask = create_circular_mask(128,128)
-trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, mask = mask, transform=None)
+trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
 trainloader = torch.utils.data.DataLoader(trainset,
                                              batch_size=8, shuffle=True,
                                              num_workers=2)
 
-testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=20, random_rotate = True, mask = mask, transform=None)
+testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
 testloader = torch.utils.data.DataLoader(testset,
                                              batch_size=8, shuffle=True,
                                              num_workers=2)
@@ -42,7 +42,7 @@ if use_gpu:
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_epochs=25, batch_size = 4, step_size = 20):
+def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_epochs=25, batch_size = 4, step_size = 20, image_size = 100):
     since = time.time()
 
     best_model_wts = model.state_dict()
@@ -51,7 +51,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
     epoch_num = 0
     for epoch in range(num_epochs):
         epoch_num += 1
-	print('Epoch {}/{}'.format(epoch, num_epochs - 1))
+        print('Epoch {}/{}'.format(epoch, num_epochs - 1))
         print('-' * 10)
 
         # Each epoch has a training phase
@@ -62,15 +62,15 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         
 
         # Iterate over data.
-        trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, mask = mask, transform=None)
+        trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, transform=None, image_size = image_size)
         trainloader = torch.utils.data.DataLoader(trainset,
                                                      batch_size=batch_size, shuffle=True,
                                                      num_workers=num_workers)
 
         print("trainloader ready!")
-        testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, mask = mask, transform=None)
+        testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, transform=None, image_size = image_size)
         testloader = torch.utils.data.DataLoader(testset,
-                                                     batch_size=batch_size, shuffle=False,
+                                                     batch_size=1, shuffle=False,
                                                      num_workers=num_workers)
         print("testloader ready!")
         
@@ -104,7 +104,8 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 	    #for t in range(predicted.shape[1]):
 	    #	loss += criterion(predicted[:,t,:,:,:].long(), target[:,t,:,:,:].long())
             #pred_dim = predicted.permute(0,2,1,3,4)
-	    loss = criterion(predicted, target)
+#             m = nn.Sigmoid()
+            loss = criterion(predicted, target)
             # forward
 #            outputs = model(inputs)
 #            _, preds = torch.max(outputs.data, 1)
@@ -150,18 +151,19 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             	#for t in range(predicted.shape[1]):
                 #	loss_test += criterion(predicted[:,t,:,:,:].long(), target[:,t,:,:,:].long()) 
                 #pred_dim = predicted.permute(0,2,1,3,4)
-		
-		loss_test = criterion(predicted, target)
+                
+#                 m = nn.Sigmoid()
+                loss_test = criterion(predicted, target)
                 iter_loss_test = loss_test.item()
                 running_loss_test += loss_test.item()    
                 epoch_loss_test = running_loss_test / len(testset)
 
         print('Loss on the test images: %.5f ' % (
             epoch_loss_test))
-        if 5 % (epoch_num) == 0:
-        	print('saving wiehgts...')
-        	output_path = "/home/rliu/ansim/models/%0.4d.weights" % (epoch_num)
-        	torch.save(model, output_path)
+        if epoch_num % 5 == 0:
+            print('saving wiehgts...')
+            output_path = "/home/rliu/ansim/models/4-16/%0.4d.weights" % (epoch_num)
+            torch.save(model, output_path)
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
@@ -177,13 +179,13 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 step_size = 20
 model = ConvLSTM(input_size=(128,128),
                  input_dim=1,
-                 hidden_dim=[32, 32, 64, 64, 128],
-                 kernel_size=(3, 3),
+                 hidden_dim=[32,32,64,128,256],
+                 kernel_size=(5, 5),
                  num_layers=5,
                  predict_steps=int(step_size/2),
                  batch_first=True,
                  bias=True,
-                 return_all_layers=True).cuda()
+                 return_all_layers=True)
 
 if use_gpu:
 #     encoder = torch.nn.DataParallel(encoder)
@@ -197,16 +199,17 @@ criterion = nn.MSELoss()
 #criterion = nn.CrossEntropyLoss()
 
 # Observe that all parameters are being optimized
-optimizer_ft = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=0, amsgrad=False)
+optimizer_ft = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-5, amsgrad=False)
 
 # Decay LR by a factor of 0.1 every 7 epochs
-exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=20, gamma=0.5)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=30, gamma=0.5)
 
 # train model
 model = train_model(model, criterion, optimizer_ft, 
-			exp_lr_scheduler,
-			batch_size = 3,
-			step_size = 20,
-			num_epochs = 200,
-			num_workers = 4)
+            exp_lr_scheduler,
+            batch_size = 3,
+            step_size = 20,
+            num_epochs = 300,
+            num_workers = 1,
+            image_size = 128)
 torch.save(model, output_path)
