@@ -30,7 +30,7 @@ mask = create_circular_mask(128,128)
 class ansimDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, transform=None, image_size=100):
+    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, transform=None, image_size=128):
         """
         Args:
             image_csv (string): Path to the csv file with image path.

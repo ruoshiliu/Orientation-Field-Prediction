@@ -23,7 +23,7 @@ img_path = '/home/rliu/ansim/data/data/JPEGImages/'
 img_list_csv = '/home/rliu/github/ansim/img_list.csv'
 train_csv = '/home/rliu/github/ansim/train.csv'
 test_csv = '/home/rliu/github/ansim/test.csv'
-output_path = '/home/rliu/ansim/models/4-17-deep-af/second_and_stronger.weights'
+output_path = '/home/rliu/ansim/models/4-17_64-128-256-128-64/second_and_stronger.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
@@ -162,7 +162,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             epoch_loss_test))
         if epoch_num % 5 == 0:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/4-17-deep-af/%0.4d.weights" % (epoch_num)
+            output_path = "/home/rliu/ansim/models/4-17_64-128-256-128-64/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -179,9 +179,9 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 step_size = 20
 model = ConvLSTM(input_size=(128,128),
                  input_dim=1,
-                 hidden_dim=[16,16,16,16,16,16,32,32,32,32,32,64,64,64,128],
-                 kernel_size=(3,3),
-                 num_layers=15,
+                 hidden_dim=[128,128,256],
+                 kernel_size=[(5,5),(5,5),(5,5)],
+                 num_layers=3,
                  predict_steps=int(step_size/2),
                  batch_first=True,
                  bias=True,
@@ -208,7 +208,7 @@ criterion = nn.MSELoss()
 optimizer_ft = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=1e-5, amsgrad=False)
 
 # Decay LR by a factor of 0.1 every 7 epochs
-exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=20, gamma=0.6)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=25, gamma=0.5)
 
 # train model
 model = train_model(model, criterion, optimizer_ft, 
