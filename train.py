@@ -23,7 +23,7 @@ img_path = '/home/rliu/ansim/data/data/JPEGImages/'
 img_list_csv = '/home/rliu/github/ansim/img_list.csv'
 train_csv = '/home/rliu/github/ansim/train.csv'
 test_csv = '/home/rliu/github/ansim/test.csv'
-output_path = '/home/rliu/ansim/models/4-18_4-3-2-5x5/second_and_stronger.weights'
+output_path = '/home/rliu/ansim/models/4-22_22-3x3/final.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
@@ -79,7 +79,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             data_split = torch.split(data, int(data.shape[1]/2), dim=1)
             inputs = data_split[0]
             target = data_split[1]
-#            print(inputs)
+
             # wrap them in Variable
             if use_gpu:
                 inputs, target = inputs.to(device), target.to(device)
@@ -89,27 +89,9 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             # zero the parameter gradients
             optimizer.zero_grad()
             
-#             output, h, c, states = encoder(inputs)
-#             output_last = output[0][0].double()
-#             h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
-#             c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1]
-#             states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)
-#             x = decoder.activateConv(states_cat)
-#             input_d = [x, states]
-#             output_d, h_d, c_d, states_d = decoder(input_d)
-#             predicted = torch.cat(output_d, dim=0, out=None).double()
-            
             _, _, predicted = model(inputs)
-            #loss = 0.0
-	    #for t in range(predicted.shape[1]):
-	    #	loss += criterion(predicted[:,t,:,:,:].long(), target[:,t,:,:,:].long())
-            #pred_dim = predicted.permute(0,2,1,3,4)
-#             m = nn.Sigmoid()
+
             loss = criterion(predicted, target)
-            # forward
-#            outputs = model(inputs)
-#            _, preds = torch.max(outputs.data, 1)
-#            loss = criterion(outputs, labels)
 
             loss.backward()
             optimizer.step()
@@ -124,7 +106,10 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         
         with torch.no_grad():
             running_loss_test = 0.0
+            loss_by_class = 0.0
+            test_iter = 0
             for data in testloader:
+                test_iter += 1
                 data_split = torch.split(data, int(data.shape[1]/2), dim=1)
                 inputs = data_split[0]
                 target = data_split[1]
@@ -135,34 +120,34 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 else:
                     inputs, target = Variable(inputs), Variable(target)
 
-                    
-#                 output, h, c, states = encoder(inputs)
-#                 output_last = output[0][0].double()
-#                 h1,h2,h3,h4,h5 = states[0][0],states[1][0],states[2][0],states[3][0],states[4][0]
-#                 c1,c2,c3,c4,c5 = states[0][1],states[1][1],states[2][1],states[3][1],states[4][1]
-#                 states_cat = torch.cat((h1,h2,h3,h4,h5,c1,c2,c3,c4,c5), dim=1, out=None)
-#                 x = decoder.activateConv(states_cat)
-#                 input_d = [x, states]
-#                 output_d, h_d, c_d, states_d = decoder(input_d)
-#                 predicted = torch.cat(output_d, dim=0, out=None).double()
 
                 _, _, predicted = model(inputs)
-                #loss_test = 0.0
-            	#for t in range(predicted.shape[1]):
-                #	loss_test += criterion(predicted[:,t,:,:,:].long(), target[:,t,:,:,:].long()) 
-                #pred_dim = predicted.permute(0,2,1,3,4)
+
                 
-#                 m = nn.Sigmoid()
                 loss_test = criterion(predicted, target)
                 iter_loss_test = loss_test.item()
                 running_loss_test += loss_test.item()    
+                epoch_loss_test = running_loss_test / len(testset)
+                loss_by_class += loss_test.item()
+                if test_iter == 37:
+                    print('Loss on the 1-37: %.5f ' % (loss_by_class/37.0))
+                    loss_by_class = 0.0
+                elif test_iter == 117:
+                    print('Loss on the 38-117: %.5f ' % (loss_by_class/80.0))
+                    loss_by_class = 0.0
+                elif test_iter == 150:
+                    print('Loss on the 118-150: %.5f ' % (loss_by_class/33.0))
+                    loss_by_class = 0.0
+                elif test_iter == 215:
+                    print('Loss on the 151-215: %.5f ' % (loss_by_class/65.0))
+                    loss_by_class = 0.0
                 epoch_loss_test = running_loss_test / len(testset)
 
         print('Loss on the test images: %.5f ' % (
             epoch_loss_test))
         if epoch_num % 5 == 0:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/4-18_4-3-2-5x5/%0.4d.weights" % (epoch_num)
+            output_path = "/home/rliu/ansim/models/4-22_22-3x3/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -179,9 +164,9 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 step_size = 20
 model = ConvLSTM(input_size=(128,128),
                  input_dim=1,
-                 hidden_dim=[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],
-                 kernel_size=[(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)],
-                 num_layers=18,
+                 hidden_dim=[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],
+                 kernel_size=[(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)],
+                 num_layers=20,
                  predict_steps=int(step_size/2),
                  batch_first=True,
                  bias=True,
@@ -213,7 +198,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=25, gamma=0.5)
 # train model
 model = train_model(model, criterion, optimizer_ft, 
             exp_lr_scheduler,
-            batch_size = 4,
+            batch_size = 2,
             step_size = 20,
             num_epochs = 200,
             num_workers = 1,
