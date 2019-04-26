@@ -7,7 +7,7 @@ import torch, torchvision
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
 from ansim_dataset200 import ansimDataset, create_circular_mask
-from ConvLSTM200 import MtConvLSTM
+from ConvLSTM import ConvLSTM
 import random
 import math
 import torch.nn as nn
@@ -22,7 +22,7 @@ img_path = '/home/rliu/ansim/data/data/JPEGImages/'
 img_list_csv = '/home/rliu/github/ansim/img_list.csv'
 train_csv = '/home/rliu/github/ansim/train.csv'
 test_csv = '/home/rliu/github/ansim/test.csv'
-output_path = '/home/rliu/ansim/models/dataset2/4-25_mt-paper/final.weights'
+output_path = '/home/rliu/ansim/models/dataset2/4-25_single-20x32/final.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
@@ -88,7 +88,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             # zero the parameter gradients
             optimizer.zero_grad()
             
-            _, _, _, predicted = model(inputs)
+            _, _, predicted = model(inputs)
 
             loss = criterion(predicted, target)
 
@@ -120,7 +120,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                     inputs, target = Variable(inputs), Variable(target)
 
 
-                _, _, _, predicted = model(inputs)
+                _, _, predicted = model(inputs)
 
                 
                 loss_test = criterion(predicted, target)
@@ -140,13 +140,13 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 elif test_iter == 258:
                     print('Loss on the 112-259: %.5f ' % (loss_by_class/148.0))
                     loss_by_class = 0.0
-                epoch_loss_test = running_loss_test / len(testset)
+                epoch_loss_test = running_loss_test / len(testset
 
         print('Loss on the test images: %.5f ' % (
             epoch_loss_test))
         if epoch_num % 5 == 0:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/dataset2/4-25_mt-paper/%0.4d.weights" % (epoch_num)
+            output_path = "/home/rliu/ansim/models/dataset2/4-25_single-20x32/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -162,26 +162,26 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 # transfer learning resnet18
 step_size = 20
 
-model = MtConvLSTM(input_size=(128,128),
-                 input_dim=1,
-                 hidden_dim=[[16,32,64],[16,32,64],[32,64,128],[32,64,128,128]],
-                 kernel_size=[[3,3,3],[5,3,3],[5,5,5],[7,5,5,5]],
-                 num_layers=[3,3,3,4],
-                 predict_steps=10,
-                 batch_first=True,
-                 num_scale=4,
-                 bias=True,
-                 return_all_layers=True)
-
-# model = ConvLSTM(input_size=(128,128),
+# model = MtConvLSTM(input_size=(128,128),
 #                  input_dim=1,
-#                  hidden_dim=[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],
-#                  kernel_size=[(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)],
-#                  num_layers=20,
-#                  predict_steps=int(step_size/2),
+#                  hidden_dim=[[16,32,64],[16,32,64],[32,64,128],[32,64,128,128]],
+#                  kernel_size=[[3,3,3],[5,3,3],[5,5,5],[7,5,5,5]],
+#                  num_layers=[3,3,3,4],
+#                  predict_steps=10,
 #                  batch_first=True,
+#                  num_scale=4,
 #                  bias=True,
 #                  return_all_layers=True)
+
+model = ConvLSTM(input_size=(128,128),
+                 input_dim=1,
+                 hidden_dim=[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],
+                 kernel_size=[(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)],
+                 num_layers=20,
+                 predict_steps=int(step_size/2),
+                 batch_first=True,
+                 bias=True,
+                 return_all_layers=True)
 
 
 count_param = sum(p.numel() for p in model.parameters() if p.requires_grad)

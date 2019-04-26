@@ -31,7 +31,7 @@ mask = create_circular_mask(128,128)
 class ansimDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, transform=None, image_size=128, rand_range=5):
+    def __init__(self,img_list_csv, seq_csv, root_dir, step=20, random_rotate = True, transform=None, image_size=128, rand_range=20):
         """
         Args:
             image_csv (string): Path to the csv file with image path.
@@ -56,7 +56,7 @@ class ansimDataset(Dataset):
 
     def __getitem__(self, idx):
         seq_head = self.seq_list.iloc[idx,0]
-        seq_head = seq_head + random.randint(0,rand_range)
+        seq_head = seq_head + random.randint(0,self.rand_range)
         seq = torch.empty(self.step, 1, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
