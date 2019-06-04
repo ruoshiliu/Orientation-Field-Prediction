@@ -40,8 +40,8 @@ class ansimDataset(Dataset):
             transform (callable, optional): Optional transform to be applied
                 on a sample.
         """
-        self.img_list = pd.read_csv(img_list_csv)
-        self.seq_list = pd.read_csv(seq_csv)
+        self.img_list = pd.read_csv(img_list_csv, header=None)
+        self.seq_list = pd.read_csv(seq_csv, header=None)
         self.root_dir = root_dir
         self.transform = transform
         self.step = step
@@ -61,7 +61,7 @@ class ansimDataset(Dataset):
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
             img_idx = seq_head + i
-            img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx, 0])
+            img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx,0])
             image = Image.open(img_name)
             image = image.convert('L')
             image_resized = torchvision.transforms.functional.resize(image, (self.image_size,self.image_size), interpolation=2)
