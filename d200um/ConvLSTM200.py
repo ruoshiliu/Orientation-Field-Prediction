@@ -104,7 +104,7 @@ class MtConvLSTM(nn.Module):
         self.batch_first = batch_first
         self.bias = bias
         self.return_all_layers = return_all_layers
-        self.predict_steps = predict_steps
+        self.predict_steps = predict_steps #  predict_steps
         self.num_scale = num_scale # list of scale
 
         cell_list = []
@@ -283,10 +283,57 @@ class MtConvLSTM(nn.Module):
             #----------------------------------------#           
         pred_image_list = torch.stack(pred_image_list,dim=1)
         #----------------------------------------#
-
-        
         return layer_output_list, last_state_list, pred_output, pred_image_list
+    
+    def forecast(self, layer_output_list, last_state_list, pred_output, pred_image_list, predict_steps):
+        last_pred = pred_image_list[:,9,:,:,:] # [b, c, input_size, input_size]
+        pred_output = []
+        pred_image_list = []
+        #----------------------------------------#                                     
+        for step in range(predict_steps): # loop each prediction
+            pred_output_step = []
+            #----------------------------------------#                                 
+            for i_scale in range(self.num_scale): # loop each scale
+                hidden_states_scale = []
+                input_size_scale = int(self.input_size / (np.power(2 , self.num_scale-1-i_scale)))
+                cur_scale_input = torch.nn.functional.interpolate(last_pred, size=input_size_scale, mode='bilinear') 
+                if i_scale == 0: # if first scale, then append empty tensor to input tensor
+                    pred_last_scale = torch.zeros(cur_scale_input.size()).cuda()
+                else: # else upsample last layer prediction and append to cur_scale_input
+                    pred_last_scale = torch.nn.functional.interpolate(pred_last_scale, size=input_size_scale, mode='bilinear').cuda()
 
+                cur_scale_input = torch.cat((cur_scale_input,pred_last_scale),1)
+                cur_layer_input = cur_scale_input  
+                #----------------------------------------#                                 
+                for layer_idx in range(self.num_layers[i_scale]): # loop each layer in a scale
+                    h, c = last_state_list[i_scale][layer_idx]
+                    h, c = self.cell_list[i_scale][layer_idx](input_tensor=cur_layer_input, cur_state=[h, c])
+                    last_state_list[i_scale][layer_idx] = [h, c]
+                    hidden_states_scale.append(h)
+                    cur_layer_input = h
+                #----------------------------------------#                                 
+                activ_idx = self.num_layers[i_scale]
+                # activate prediction for this scale
+                pred_output_scale = self.cell_list[i_scale][activ_idx](torch.cat(hidden_states_scale, dim=1))
+                pred_output_step.append(pred_output_scale)                             
+                pred_last_scale = pred_output_scale
+                #----------------------------------------#
+            pred_image = torch.zeros(last_pred.size()).cuda()
+            #----------------------------------------#                
+            for i_scale in range(self.num_scale):   
+                pred_scale = pred_output_step[i_scale]
+                pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode='bilinear')
+                pred_image += pred_scale
+            last_pred = pred_image
+            pred_image_list.append(pred_image)
+            pred_output.append(pred_output_step)
+            #----------------------------------------#           
+        pred_image_list = torch.stack(pred_image_list,dim=1)
+        #----------------------------------------#
+        return layer_output_list, last_state_list, pred_output, pred_image_list
+    
+    
+    
     def _init_hidden(self, batch_size):
         init_states = []
         for i_scale in range(0, self.num_scale):
