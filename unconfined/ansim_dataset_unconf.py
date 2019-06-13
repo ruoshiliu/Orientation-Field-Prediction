@@ -57,13 +57,11 @@ class ansimDataset(Dataset):
     def __getitem__(self, idx):
         seq_head = self.seq_list.iloc[idx,0]
         seq_head = seq_head + random.randint(0,self.rand_range)
-        print(seq_head)
         seq = torch.empty(self.step, 1, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
             img_idx = seq_head + i - 1
             img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx,0])
-            print(img_name)
             image = Image.open(img_name)
             image = image.convert('L')
             image_resized = torchvision.transforms.functional.resize(image, (self.image_size,self.image_size), interpolation=2)

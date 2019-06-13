@@ -6,8 +6,8 @@ import PIL
 import torch, torchvision
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
-from ansim_dataset200 import ansimDataset, create_circular_mask
-from ConvLSTM200 import MtConvLSTM
+from ansim_dataset_unconf import ansimDataset, create_circular_mask
+from ConvLSTM_unconf import MtConvLSTM
 import random
 import math
 import torch.nn as nn
@@ -18,11 +18,11 @@ from torchvision import datasets, models, transforms
 import time
 import os
 
-img_path = '/home/rliu/ansim/data/data/JPEGImages/'
-img_list_csv = '/home/rliu/github/ansim/img_list.csv'
-train_csv = '/home/rliu/github/ansim/d200um/train200.csv'
-test_csv = '/home/rliu/github/ansim/d200um/test200.csv'
-output_path = '/home/rliu/ansim/models/dataset2/4-28_mt-paper/final.weights'
+img_path = '/home/rliu/ansim/data/unconfined_cropped/'
+img_list_csv = '/home/rliu/github/ansim/unconfined/img_list.csv'
+train_csv = '/home/rliu/github/ansim/unconfined/train_unconf.csv'
+test_csv = '/home/rliu/github/ansim/unconfined/test_unconf.csv'
+output_path = '/home/rliu/ansim/models/dataset3/6-12_mt_paper/final.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=20, random_rotate = True, transform=None)
@@ -61,7 +61,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         
 
         # Iterate over data.
-        trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, transform=None, image_size = image_size, rand_range=20)
+        trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, transform=None, image_size = image_size, rand_range=10)
         trainloader = torch.utils.data.DataLoader(trainset,
                                                      batch_size=batch_size, shuffle=True,
                                                      num_workers=num_workers)
@@ -125,28 +125,14 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 
                 loss_test = criterion(predicted, target)
                 iter_loss_test = loss_test.item()
-                running_loss_test += loss_test.item()    
-                epoch_loss_test = running_loss_test / len(testset)
-                loss_by_class += loss_test.item()
-                if test_iter == 21:
-                    print('Loss on the 1-21: %.5f ' % (loss_by_class/21.0))
-                    loss_by_class = 0.0
-                elif test_iter == 31:
-                    print('Loss on the 22-31: %.5f ' % (loss_by_class/10.0))
-                    loss_by_class = 0.0
-                elif test_iter == 111:
-                    print('Loss on the 32-111: %.5f ' % (loss_by_class/80.0))
-                    loss_by_class = 0.0
-                elif test_iter == 257:
-                    print('Loss on the 112-257: %.5f ' % (loss_by_class/146.0))
-                    loss_by_class = 0.0
-                epoch_loss_test = running_loss_test / len(testset)
-            
+                running_loss_test += loss_test.item()
+                
+            epoch_loss_test = running_loss_test / len(testset)
             print('Loss on the test images: %.5f ' % (epoch_loss_test))
         
-        if epoch_num % 20 == 0:
+        if epoch_num % 10 == 0 or epoch_num == 1:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/dataset2/4-28_mt-paper/%0.4d.weights" % (epoch_num)
+            output_path = "/home/rliu/ansim/models/dataset3/6-12_mt_paper/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -160,14 +146,14 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 #	output_path = sprintf("/home/rliu/ansim/models/%0.4d.weights" % epoc
     return model
 # transfer learning resnet18
-step_size = 20
+step_size = 10
 
 model = MtConvLSTM(input_size=(128,128),
                  input_dim=1,
                  hidden_dim=[[16,32,64],[16,32,64],[32,64,128],[32,64,128,128]],
                  kernel_size=[[3,3,3],[5,3,3],[5,5,5],[7,5,5,5]],
                  num_layers=[3,3,3,4],
-                 predict_steps=10,
+                 predict_steps=5,
                  batch_first=True,
                  num_scale=4,
                  bias=True,
@@ -200,14 +186,14 @@ criterion = nn.MSELoss()
 optimizer_ft = optim.Adam(model.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-08, weight_decay=5e-5, amsgrad=False)
 
 # Decay LR by a factor of 0.1 every 7 epochs
-exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=40, gamma=0.5)
+exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=30, gamma=0.5)
 
 # train model
 model = train_model(model, criterion, optimizer_ft, 
             exp_lr_scheduler,
-            batch_size = 1,
-            step_size = 20,
-            num_epochs = 280,
+            batch_size = 6,
+            step_size = 10,
+            num_epochs = 240,
             num_workers = 1,
             image_size = 128)
 torch.save(model, output_path)
