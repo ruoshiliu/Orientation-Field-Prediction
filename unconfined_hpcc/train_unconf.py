@@ -18,11 +18,11 @@ from torchvision import datasets, models, transforms
 import time
 import os
 
-img_path = '/home/rliu/ansim/data/unconfined_steph/cropped'
-img_list_csv = '/home/rliu/github/ansim/unconfined/img_list.csv'
-train_csv = '/home/rliu/github/ansim/unconfined/train_unconf.csv'
-test_csv = '/home/rliu/github/ansim/unconfined/test_unconf.csv'
-output_path = '/home/rliu/ansim/models/dataset3/6-13_mt_paper_steph/final.weights'
+img_path = '/home/ruoshiliu/ansim/data/unconfined_steph/cropped'
+img_list_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/img_list.csv'
+train_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/train_unconf.csv'
+test_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/test_unconf.csv'
+output_path = '/home/ruoshiliu/ansim/models/dataset3/6-13_mt_paper_steph/final.weights'
 
 mask = create_circular_mask(128,128)
 trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=10, random_rotate = True, transform=None)
@@ -149,7 +149,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         
         if epoch_num % 10 == 0 or epoch_num == 1:
             print('saving wiehgts...')
-            output_path = "/home/rliu/ansim/models/dataset3/6-13_mt_paper_steph/%0.4d.weights" % (epoch_num)
+            output_path = "/home/ruoshiliu/ansim/models/dataset3/6-13_mt_paper_steph/%0.4d.weights" % (epoch_num)
             torch.save(model, output_path)
 
     time_elapsed = time.time() - since
@@ -160,7 +160,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
     # load best model weights
     model.load_state_dict(best_model_wts)
 #	print('saving wiehgts.../n')
-#	output_path = sprintf("/home/rliu/ansim/models/%0.4d.weights" % epoc
+#	output_path = sprintf("/home/ruoshiliu/ansim/models/%0.4d.weights" % epoc
     return model
 # transfer learning resnet18
 step_size = 10
