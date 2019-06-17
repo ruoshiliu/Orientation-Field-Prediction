@@ -18,7 +18,7 @@ from torchvision import datasets, models, transforms
 import time
 import os
 
-img_path = '/work1/ruoshiliu/ansim/data/unconfined_steph/cropped_orientation/'
+img_path = '/work/ruoshiliu/ansim/data/unconfined_steph/cropped_orientation/'
 img_list_csv = '/home/ruoshiliu/github/ansim/unconfined_orientation/img_list.csv'
 train_csv = '/home/ruoshiliu/github/ansim/unconfined_orientation/train_unconf.csv'
 test_csv = '/home/ruoshiliu/github/ansim/unconfined_orientation/test_unconf.csv'
