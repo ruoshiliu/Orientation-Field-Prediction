@@ -113,7 +113,7 @@ class MtConvLSTM(nn.Module):
             input_size_scale = int(self.input_size / (np.power(2 , self.num_scale-1-i_scale)))
             for i in range(0, self.num_layers[i_scale]):
                 
-                cur_input_dim = self.input_dim+1 if i == 0 else self.hidden_dim[i_scale][i-1]
+                cur_input_dim = self.input_dim+self.input_dim if i == 0 else self.hidden_dim[i_scale][i-1]
 
                 cell_list_scale.append(ConvLSTMCell(input_size=(input_size_scale, input_size_scale),
                                               input_dim=cur_input_dim, # last layer output will be added to input tensor
@@ -177,7 +177,7 @@ class MtConvLSTM(nn.Module):
 
             seq_len = input_tensor.size(1)
             # downsample input tensor                              
-            cur_scale_input = self._interpolate(input_tensor, size=input_size_scale, mode='bilinear').cuda() 
+            cur_scale_input = self._interpolate(input_tensor, size=input_size_scale, mode='bilinear').cuda()
             if i_scale == 0:
                 pred_last_scale = torch.zeros(cur_scale_input.size()).cuda()
             else:
@@ -221,7 +221,7 @@ class MtConvLSTM(nn.Module):
         #----------------------------------------#
         
         # combine prediction from each scale to get first prediction
-        first_pred = torch.zeros(batch_size,1,self.input_size, self.input_size).cuda()                                     
+        first_pred = torch.zeros(batch_size,self.input_dim,self.input_size, self.input_size).cuda()                                     
         for i_scale in range(self.num_scale):
             pred_scale = pred_output[i_scale][:,seq_len-1,:,:,:]
             pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode='bilinear')

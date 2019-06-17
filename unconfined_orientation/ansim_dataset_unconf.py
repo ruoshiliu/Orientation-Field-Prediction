@@ -103,7 +103,7 @@ class ansimDataset_orientation(Dataset):
     def __getitem__(self, idx):
         seq_head = self.seq_list.iloc[idx,0]
         seq_head = seq_head + random.randint(0,self.rand_range)
-        seq = torch.empty(self.step, 1, self.image_size, self.image_size, dtype=torch.float)
+        seq = torch.empty(self.step, 2, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
             img_idx = seq_head + i - 1
@@ -114,8 +114,12 @@ class ansimDataset_orientation(Dataset):
             if self.random_rotate:
                 image_resized = torchvision.transforms.functional.rotate(image_resized, angle, resample=False, expand=False, center=None)
             image_resized = image_resized * self.mask
-            image_tensor = torch.from_numpy(image_resized)
-            seq[i][0] = image_tensor
+            image_qxx = np.power(np.cos(image_resized),2) - 1/2
+            image_qxy = np.cos(image_resized) * np.sin(image_resized)
+            image_tensor_qxx = torch.from_numpy(image_qxx)
+            image_tensor_qxy = torch.from_numpy(image_qxy)
+            seq[i][0] = image_tensor_qxx
+            seq[i][1] = image_tensor_qxy
         if self.transform:
             seq = self.transform(seq)
         return seq
