@@ -69,7 +69,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         print("trainloader ready!")
         testset = ansimDataset_orientation(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, transform=None, image_size = image_size, rand_range=0)
         testloader = torch.utils.data.DataLoader(testset,
-                                                     batch_size=1, shuffle=False,
+                                                     batch_size=10, shuffle=False,
                                                      num_workers=num_workers)
         print("testloader ready!")
         
@@ -128,19 +128,19 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 running_loss_test += loss_test.item()    
                 epoch_loss_test = running_loss_test / len(testset)
                 loss_by_class += loss_test.item()
-                if test_iter == 199:
+                if test_iter == 20:
                     print('Loss on the 1-200: %.5f ' % (loss_by_class/200.0))
                     loss_by_class = 0.0
-                elif test_iter == 399:
+                elif test_iter == 40:
                     print('Loss on the 201-400: %.5f ' % (loss_by_class/200.0))
                     loss_by_class = 0.0
-                elif test_iter == 499:
+                elif test_iter == 50:
                     print('Loss on the 401-500: %.5f ' % (loss_by_class/100.0))
                     loss_by_class = 0.0
-                elif test_iter == 699:
+                elif test_iter == 70:
                     print('Loss on the 501-700: %.5f ' % (loss_by_class/200.0))
                     loss_by_class = 0.0
-                elif test_iter == 799:
+                elif test_iter == 80:
                     print('Loss on the 701-800: %.5f ' % (loss_by_class/100.0))
                     loss_by_class = 0.0
                 epoch_loss_test = running_loss_test / len(testset)
