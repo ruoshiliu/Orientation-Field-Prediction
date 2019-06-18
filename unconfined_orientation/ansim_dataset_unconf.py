@@ -114,6 +114,7 @@ class ansimDataset_orientation(Dataset):
             if self.random_rotate:
                 image_resized = torchvision.transforms.functional.rotate(image_resized, angle, resample=False, expand=False, center=None)
             image_resized = image_resized * self.mask
+            image_resized = image_resized / 255 * math.pi
             image_qxx = np.power(np.cos(image_resized),2) - 1/2
             image_qxy = np.cos(image_resized) * np.sin(image_resized)
             image_tensor_qxx = torch.from_numpy(image_qxx)
