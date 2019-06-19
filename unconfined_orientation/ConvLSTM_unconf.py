@@ -68,7 +68,7 @@ class ConvLSTMCell(nn.Module):
 class MtConvLSTM(nn.Module):
     
     def __init__(self, input_size, input_dim, hidden_dim, kernel_size, num_layers, predict_steps, num_scale,
-                 batch_first=False, bias=True, return_all_layers=False):
+                 batch_first=False, bias=True, return_all_layers=False, interpolation = 0):
         super(MtConvLSTM, self).__init__()
         
         """
@@ -106,6 +106,9 @@ class MtConvLSTM(nn.Module):
         self.return_all_layers = return_all_layers
         self.predict_steps = predict_steps #  predict_steps
         self.num_scale = num_scale # list of scale
+        
+        interpolation_list = ['nearest', 'linear', 'bilinear']
+        self.interpolation = interpolation_list[interpolation]
 
         cell_list = []
         for i_scale in range(self.num_scale):
@@ -177,12 +180,12 @@ class MtConvLSTM(nn.Module):
 
             seq_len = input_tensor.size(1)
             # downsample input tensor                              
-            cur_scale_input = self._interpolate(input_tensor, size=input_size_scale, mode='bilinear').cuda()
+            cur_scale_input = self._interpolate(input_tensor, size=input_size_scale, mode=self.interpolation).cuda()
             if i_scale == 0:
                 pred_last_scale = torch.zeros(cur_scale_input.size()).cuda()
             else:
                 # upsample previous prediction
-                pred_last_scale = self._interpolate(pred_last_scale, size=input_size_scale, mode='bilinear').cuda()
+                pred_last_scale = self._interpolate(pred_last_scale, size=input_size_scale, mode=self.interpolation).cuda()
             cur_scale_input = torch.cat((cur_scale_input, pred_last_scale), 2) # concatenate cur and last as input
             cur_layer_input = cur_scale_input
             #----------------------------------------#
@@ -224,7 +227,7 @@ class MtConvLSTM(nn.Module):
         first_pred = torch.zeros(batch_size,self.input_dim,self.input_size, self.input_size).cuda()                                     
         for i_scale in range(self.num_scale):
             pred_scale = pred_output[i_scale][:,seq_len-1,:,:,:]
-            pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode='bilinear')
+            pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode=self.interpolation)
             first_pred += pred_scale                                 
                                       
         pred_image_list.append(first_pred)
@@ -249,11 +252,11 @@ class MtConvLSTM(nn.Module):
             for i_scale in range(self.num_scale): # loop each scale
                 hidden_states_scale = []
                 input_size_scale = int(self.input_size / (np.power(2 , self.num_scale-1-i_scale)))
-                cur_scale_input = torch.nn.functional.interpolate(last_pred, size=input_size_scale, mode='bilinear') 
+                cur_scale_input = torch.nn.functional.interpolate(last_pred, size=input_size_scale, mode=self.interpolation) 
                 if i_scale == 0: # if first scale, then append empty tensor to input tensor
                     pred_last_scale = torch.zeros(cur_scale_input.size()).cuda()
                 else: # else upsample last layer prediction and append to cur_scale_input
-                    pred_last_scale = torch.nn.functional.interpolate(pred_last_scale, size=input_size_scale, mode='bilinear').cuda()
+                    pred_last_scale = torch.nn.functional.interpolate(pred_last_scale, size=input_size_scale, mode=self.interpolation).cuda()
 
                 cur_scale_input = torch.cat((cur_scale_input,pred_last_scale),1)
                 cur_layer_input = cur_scale_input  
@@ -275,7 +278,7 @@ class MtConvLSTM(nn.Module):
             #----------------------------------------#                
             for i_scale in range(self.num_scale):   
                 pred_scale = pred_output_step[i_scale]
-                pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode='bilinear')
+                pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode=self.interpolation)
                 pred_image += pred_scale
             last_pred = pred_image
             pred_image_list.append(pred_image)
@@ -286,7 +289,7 @@ class MtConvLSTM(nn.Module):
         return layer_output_list, last_state_list, pred_output, pred_image_list
     
     def forecast(self, layer_output_list, last_state_list, pred_output, pred_image_list, predict_steps):
-        last_pred = pred_image_list[:,9,:,:,:] # [b, c, input_size, input_size]
+        last_pred = pred_image_list[:,pred_image_list.shape[1]-1,:,:,:] # [b, c, input_size, input_size]
         pred_output = []
         pred_image_list = []
         #----------------------------------------#                                     
@@ -296,11 +299,11 @@ class MtConvLSTM(nn.Module):
             for i_scale in range(self.num_scale): # loop each scale
                 hidden_states_scale = []
                 input_size_scale = int(self.input_size / (np.power(2 , self.num_scale-1-i_scale)))
-                cur_scale_input = torch.nn.functional.interpolate(last_pred, size=input_size_scale, mode='bilinear') 
+                cur_scale_input = torch.nn.functional.interpolate(last_pred, size=input_size_scale, mode=self.interpolation) 
                 if i_scale == 0: # if first scale, then append empty tensor to input tensor
                     pred_last_scale = torch.zeros(cur_scale_input.size()).cuda()
                 else: # else upsample last layer prediction and append to cur_scale_input
-                    pred_last_scale = torch.nn.functional.interpolate(pred_last_scale, size=input_size_scale, mode='bilinear').cuda()
+                    pred_last_scale = torch.nn.functional.interpolate(pred_last_scale, size=input_size_scale, mode=self.interpolation).cuda()
 
                 cur_scale_input = torch.cat((cur_scale_input,pred_last_scale),1)
                 cur_layer_input = cur_scale_input  
@@ -322,7 +325,7 @@ class MtConvLSTM(nn.Module):
             #----------------------------------------#                
             for i_scale in range(self.num_scale):   
                 pred_scale = pred_output_step[i_scale]
-                pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode='bilinear')
+                pred_scale = torch.nn.functional.interpolate(pred_scale, size=self.input_size, mode=self.interpolation)
                 pred_image += pred_scale
             last_pred = pred_image
             pred_image_list.append(pred_image)

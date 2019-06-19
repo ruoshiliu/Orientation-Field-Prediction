@@ -110,7 +110,7 @@ class ansimDataset_orientation(Dataset):
             img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx,0])
             image = Image.open(img_name)
             image = image.convert('L')
-            image_resized = torchvision.transforms.functional.resize(image, (self.image_size,self.image_size), interpolation=2)
+            image_resized = torchvision.transforms.functional.resize(image, (self.image_size,self.image_size), interpolation=0)
             if self.random_rotate:
                 image_resized = torchvision.transforms.functional.rotate(image_resized, angle, resample=False, expand=False, center=None)
             image_resized = image_resized * self.mask

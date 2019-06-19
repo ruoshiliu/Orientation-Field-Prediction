@@ -174,7 +174,8 @@ model = MtConvLSTM(input_size=(128,128),
                  batch_first=True,
                  num_scale=4,
                  bias=True,
-                 return_all_layers=True)
+                 return_all_layers=True,
+                 interpolation = 0)
 print(model)
 # model = ConvLSTM(input_size=(128,128),
 #                  input_dim=1,
@@ -211,6 +212,6 @@ model = train_model(model, criterion, optimizer_ft,
             batch_size = 16,
             step_size = 10,
             num_epochs = 240,
-            num_workers = 2,
+            num_workers = 1,
             image_size = 128)
 torch.save(model, output_path)
