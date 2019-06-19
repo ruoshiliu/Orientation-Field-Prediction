@@ -90,13 +90,13 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             
             _, _, _, predicted = model(inputs)
 
-            loss = criterion(predicted, target)*1000
+            loss = criterion(predicted, target)
 
             loss.backward()
             optimizer.step()
 
             # statistics
-            iter_loss = loss.item()
+            iter_loss = loss.item()*1000
             running_loss += loss.item()    
             epoch_loss = running_loss / len(trainset)
             
@@ -123,9 +123,9 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 _, _, _, predicted = model(inputs)
 
                 
-                loss_test = criterion(predicted, target)*1000
+                loss_test = criterion(predicted, target)
                 iter_loss_test = loss_test.item()
-                running_loss_test += loss_test.item()    
+                running_loss_test += loss_test.item()*1000    
                 epoch_loss_test = running_loss_test / len(testset)
                 loss_by_class += loss_test.item()
                 if test_iter == 20:
@@ -208,7 +208,7 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=30, gamma=0.5)
 # train model
 model = train_model(model, criterion, optimizer_ft, 
             exp_lr_scheduler,
-            batch_size = 4,
+            batch_size = 16,
             step_size = 10,
             num_epochs = 240,
             num_workers = 2,
