@@ -96,7 +96,8 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
             optimizer.step()
 
             # statistics
-            iter_loss = loss.item()*1000
+            loss = loss*1000
+            iter_loss = loss.item()
             running_loss += loss.item()    
             epoch_loss = running_loss / len(trainset)
             
@@ -124,8 +125,9 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 
                 
                 loss_test = criterion(predicted, target)
+                loss_test = loss_test * 1000
                 iter_loss_test = loss_test.item()
-                running_loss_test += loss_test.item()*1000    
+                running_loss_test += loss_test.item()   
                 epoch_loss_test = running_loss_test / len(testset)
                 loss_by_class += loss_test.item()
                 if test_iter == 20:
