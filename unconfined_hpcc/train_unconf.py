@@ -18,7 +18,7 @@ from torchvision import datasets, models, transforms
 import time
 import os
 
-img_path = '/work/ruoshiliu/ansim/data/unconfined_steph/cropped'
+img_path = '/work/ruoshiliu/ansim/data/unconfined_steph/cropped_orientation'
 img_list_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/img_list.csv'
 train_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/train_unconf.csv'
 test_csv = '/home/ruoshiliu/github/ansim/unconfined_hpcc/test_unconf.csv'
@@ -50,15 +50,15 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         
 
         # Iterate over data.
-        trainset = ansimDataset(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, transform=None, image_size = image_size, rand_range=10)
+        trainset = ansimDataset_orientation(img_list_csv = img_list_csv, seq_csv = train_csv, root_dir = img_path, step=step_size, random_rotate = True, transform=None, image_size = image_size, rand_range=10)
         trainloader = torch.utils.data.DataLoader(trainset,
                                                      batch_size=batch_size, shuffle=True,
                                                      num_workers=num_workers)
 
         print("trainloader ready!")
-        testset = ansimDataset(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, transform=None, image_size = image_size, rand_range=0)
+        testset = ansimDataset_orientation(img_list_csv = img_list_csv, seq_csv = test_csv, root_dir = img_path, step=step_size, random_rotate = False, transform=None, image_size = image_size, rand_range=0)
         testloader = torch.utils.data.DataLoader(testset,
-                                                     batch_size=1, shuffle=False,
+                                                     batch_size=10, shuffle=False,
                                                      num_workers=num_workers)
         print("testloader ready!")
         
@@ -116,7 +116,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
                 loss_test = criterion(predicted, target)
                 loss_test = loss_test * 1000
                 iter_loss_test = loss_test.item()
-                running_loss_test += loss_test.item()
+                running_loss_test += loss_test.item()    
                 epoch_loss_test = running_loss_test / len(testset)
                 loss_by_class += loss_test.item()
                 if test_iter == 199:
@@ -156,23 +156,24 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
 
 
 model = MtConvLSTM(input_size=(128,128),
-                 input_dim=1,
+                 input_dim=2,
                  hidden_dim=[[16,32,64],[16,32,64],[32,64,128],[32,64,128,128]],
                  kernel_size=[[3,3,3],[5,3,3],[5,5,5],[7,5,5,5]],
                  num_layers=[3,3,3,4],
-                 predict_steps=5,
+                 predict_steps=8,
                  batch_first=True,
                  num_scale=4,
                  bias=True,
                  return_all_layers=True)
 
-# model = ConvLSTM(input_size=(128,128),
-#                  input_dim=1,
-#                  hidden_dim=[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],
-#                  kernel_size=[(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)],
-#                  num_layers=20,
-#                  predict_steps=int(step_size/2),
+# model = MtConvLSTM(input_size=(128,128),
+#                  input_dim=2,
+#                  hidden_dim=[[16,16,16,16,16,16],[16,16,16,16,16,16,16,16],[16,16,16,16,16,16,16,16,16,16],[16,16,16,16,16,16,16,16,16,16,16,16]],
+#                  kernel_size=[[3,3,3,3,3,3],[3,3,3,3,3,3,3,3],[3,3,3,3,3,3,3,3,3,3],[3,3,3,3,3,3,3,3,3,3,3,3]],
+#                  num_layers=[6,8,10,12],
+#                  predict_steps=10,
 #                  batch_first=True,
+#                  num_scale=4,
 #                  bias=True,
 #                  return_all_layers=True)
 
@@ -199,8 +200,8 @@ exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=30, gamma=0.5)
 model = train_model(model, criterion, optimizer_ft, 
             exp_lr_scheduler,
             batch_size = 16,
-            step_size = 20,
+            step_size = 16,
             num_epochs = 240,
-            num_workers = 4,
+            num_workers = 2,
             image_size = 128)
 torch.save(model, output_path)
