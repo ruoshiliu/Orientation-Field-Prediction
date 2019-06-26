@@ -286,7 +286,7 @@ class MtConvLSTM(nn.Module):
         return layer_output_list, last_state_list, pred_output, pred_image_list
     
     def forecast(self, layer_output_list, last_state_list, pred_output, pred_image_list, predict_steps):
-        last_pred = pred_image_list[:,9,:,:,:] # [b, c, input_size, input_size]
+        last_pred = pred_image_list[:,pred_image_list.shape[1]-1,:,:,:] # [b, c, input_size, input_size]
         pred_output = []
         pred_image_list = []
         #----------------------------------------#                                     
