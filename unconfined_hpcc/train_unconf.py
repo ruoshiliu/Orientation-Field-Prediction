@@ -141,7 +141,13 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2,  num_ep
         if epoch_num % 10 == 0 or epoch_num == 1:
             print('saving wiehgts...')
             output_path = "/home/ruoshiliu/ansim/models/dataset3/6-26_mt_paper_steph_predict/%0.4d.weights" % (epoch_num)
-            torch.save(model, output_path)
+            torch.save({
+            'epoch': epoch,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'loss': loss,
+            ...
+            }, output_path)
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
