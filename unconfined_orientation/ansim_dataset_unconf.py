@@ -31,7 +31,7 @@ mask = create_circular_mask(128,128)
 class ansimDataset(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self,img_list_csv, seq_csv, root_dir, step, random_rotate = True, transform=None, image_size=128, rand_range=10):
+    def __init__(self,img_list_csv, seq_csv, root_dir, step, gap, random_rotate = True, transform=None, image_size=128, rand_range=10):
         """
         Args:
             image_csv (string): Path to the csv file with image path.
@@ -45,6 +45,7 @@ class ansimDataset(Dataset):
         self.root_dir = root_dir
         self.transform = transform
         self.step = step
+        self.gap = gap
         self.random_rotate = random_rotate
         self.mask = mask
         self.image_size = image_size
@@ -60,7 +61,7 @@ class ansimDataset(Dataset):
         seq = torch.empty(self.step, 1, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
-            img_idx = seq_head + i - 1
+            img_idx = seq_head + self.gap * i
             img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx,0])
             image = Image.open(img_name)
             image = image.convert('L')
@@ -77,7 +78,7 @@ class ansimDataset(Dataset):
 class ansimDataset_orientation(Dataset):
     """Face Landmarks dataset."""
 
-    def __init__(self,img_list_csv, seq_csv, root_dir, step, random_rotate = True, transform=None, image_size=128, rand_range=10):
+    def __init__(self,img_list_csv, seq_csv, root_dir, step, gap, random_rotate = True, transform=None, image_size=128, rand_range=10):
         """
         Args:
             image_csv (string): Path to the csv file with image path.
@@ -91,6 +92,7 @@ class ansimDataset_orientation(Dataset):
         self.root_dir = root_dir
         self.transform = transform
         self.step = step
+        self.gap = gap
         self.random_rotate = random_rotate
         self.mask = mask
         self.image_size = image_size
@@ -106,7 +108,7 @@ class ansimDataset_orientation(Dataset):
         seq = torch.empty(self.step, 2, self.image_size, self.image_size, dtype=torch.float)
         angle = 360 * np.random.uniform(0, 1)
         for i in np.arange(self.step):
-            img_idx = seq_head + i - 1
+            img_idx = seq_head + self.gap * i
             img_name = os.path.join(self.root_dir, self.img_list.iloc[img_idx,0])
             image = Image.open(img_name)
             image = image.convert('L')
