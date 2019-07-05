@@ -148,7 +148,7 @@ def train_model(model, criterion, optimizer, scheduler, num_workers = 2, gap = 2
             'optimizer_state_dict': optimizer.state_dict(),
             'loss': loss,
             ...
-            }, )
+            }, output_path)
 
     time_elapsed = time.time() - since
     print('Training complete in {:.0f}m {:.0f}s'.format(
