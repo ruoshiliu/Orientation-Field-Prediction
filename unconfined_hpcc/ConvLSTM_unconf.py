@@ -138,7 +138,6 @@ class MtConvLSTM(nn.Module):
         
     def forward(self, input_tensor, hidden_state=None):
         """
-        
         # downsample the input_tensor to fit scale
         # hidden states of each layer, updated layer by layer
         # loop layer by layer
